@@ -297,11 +297,6 @@ section#inicio {
     padding: 30px;
     box-shadow: 10px 13px 10px rgba(0, 0, 0, 0.1);
 }
-.containers {
-    max-width: 1200px;
-    margin: 30px;
-    text-align: center;
-}
 .titulosverdesimulador {
     color: #02e437;
 }
