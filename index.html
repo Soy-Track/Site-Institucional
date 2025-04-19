@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="imagex/png" href="img/Logo-SoyTrack/iconeSoyTrackVERDE.png">
+    <link rel="stylesheet" type="text/css" href="css/index.css" media="screen" />
+    <title>SoyTrack</title>
+</head>
+<body>
+    <section id="inicio" class="inicio">
+        <div id="navbar">
+            <div id="nav-logotipo">
+                <img id="nav_logotipo_soytrack" src="img/Logo-SoyTrack/logoTipoSoyTrackBRANCA.png" alt="Banner inicial do site SoyTrack com silos em uma plantção de soja">
+            </div>
+            <div id="nav-links">
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#nossa-solucao">Nossa Solução</a></li>
+                    <li><a href="#integrantes">Integrantes</a></li>
+                    <li><a href="#fale-conosco">Fale Conosco</a></li>
+                    <li><a href="#simulador-financeiro">Simulador Financeiro</a></li>
+                </ul>
+            </div>
+            <div id="div_buttons">
+                <button id="button-cadastro" class="button-contorno" onclick="window.location.href='cadastro.html'">Cadastre-se</button>
+                <button id="button-login" class="button-preenchido" onclick="window.location.href='login.html'">Login</button>
+            </div>
+        </div>
+        <div id="conteudo-banner">
+            <div id="text-banner">
+                <p>Monitoramento</p>
+                <p>do nível de</p>
+                <p>grãos de SOJA</p>
+                <p>em SILOS</p>
+            </div>
+            <a href="#nossa-solucao" id="falsoButton-saibaMais-banner" class="button-contorno">Saiba mais</a>
+        </div>
+    </section>
+    <section id="nossa-solucao">
+        <div id="conteudo-nossaSolucao">
+            <div id="div_imagemContexto">
+                <img id="imagemContexto" src="img/Imagens-Site/fotoSitePart1.png" alt="Imagem de tecnologia e silos de armazenamento de soja">
+            </div>
+            <div id="div_textoNossaSolucao">
+                <div id="tracoAcimaDoTexto">
+                    <div id="traco-marrom"></div>
+                    <div id="traco-apoio-branco"></div>
+                </div>
+                <div id="div_tituloNossaSolucao">
+                    <h1 class="titulo">
+                        Tecnologia nos Silos
+                    </h1>
+                    <p class="titulo">
+                        de  Armazenamento 
+                    </p>
+                </div>
+                <div id="texto_topicos">
+                    <p class="texto">A <b>SoyTrack</b> apresenta uma solução de monitoramento de silos, projetada para transformar a gestão de grãos em armazenagem. Nossa plataforma utiliza sensores avançados para monitorar em tempo real o nível de grãos em silos de armazenamento, permitindo aos produtores uma visão precisa e atualizada do inventário.</p>
+                    <ul>
+                        <li>O monitoramento inadequado pode resultar em perdas significativas, podendo chegar a 15% de todos os grãos, de acordo com a Embrapa.</li> <br>
+                        <li>Por eliminar a etapa da verificação manual, o gerenciamento automatizado proporciona, ainda, uma redução de até 30% na mão de obra de emergência e nas perdas por mal armazenamento.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="integrantes" style="height: 100vh; background: #d0d0d0;"> <!-- A cor de fundo é apenas um apoio :) -->
+        Integrantes
+    </section>
+    <section id="fale-conosco" style="height: 100vh; background: #c0c0c0;"> <!-- A cor de fundo é apenas um apoio :) -->
+        Fale Conosco
+    </section>
+    <section id="simulador-financeiro" style="height: 100vh; background: #b0b0b0;"> <!-- A cor de fundo é apenas um apoio :) -->
+        Simulador Financeiro
+    </section>
+</body>
+</html>
+<script>
+    //Faz com que o site faça a mudança de foma manual
+    //Assim quando a pagina atualizar ele voltará ao topo do site
+    //IMPEDINDO O SCROLL AUTOMÁTICO PARA AS DEMAIS SEÇÕES
+    history.scrollRestoration = 'manual';
+</script>
+
+<script>
+    //FIXA A NAVBAR NO TOP E PERMITE QUE COM A FUNÇÃO .SCROLLED
+    //ALTEMAMOS O FUNDO DA NAVBAR
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+        nav_logotipo_soytrack.src = 'img/Logo-SoyTrack/logotipoSoyTrackCOLORIDA.png';
+      } else {
+        navbar.classList.remove('scrolled');
+        nav_logotipo_soytrack.src = 'img/Logo-SoyTrack/logotipoSoyTrackBRANCA.png';
+      }
+    });
+</script>
+  
+  
+  

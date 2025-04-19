@@ -1,0 +1,259 @@
+/* IMPORTANDO AS FONTES */
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('../assets/fonts/Poppins/Poppins-Bold.ttf') format('truetype');
+}
+/* ------------------------- */
+html {
+    scroll-behavior: smooth;
+}
+section {
+    height: 100vh;
+    scroll-margin-top: 70px;
+}
+body {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+}
+/* SECTION - INÍCIO --------------------------------------------- */
+.inicio {
+    background-image: url('../img/Imagens-Site/bannerPrincipal.png');
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+#navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+#nav-logotipo {
+    width: 13vw;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+#nav_logotipo_soytrack {
+    width: 100%;
+}
+#nav-links ul {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+    padding: 0;
+    margin: 0;
+}
+#nav-links li a{
+    position: relative;
+    text-decoration: none;
+    color: #000;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+    color: white;
+    cursor: pointer;
+}
+#nav-links li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0%;
+    height: 3px;
+    background-color: white;
+    transition: width 0.3s;
+}
+#nav-links li a:hover::after,
+#nav-links li a:focus::after {
+    width: 100%;
+}
+#nav-links li a:focus {
+    color: white;
+}
+
+.button-contorno {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    border-width: 2px ;
+    border-color: white;
+    border-style: solid;
+    background-color: transparent;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+}
+.button-contorno:hover {
+    background-color: white;
+    color: rgb(54, 114, 156);
+    transition: 0.2s;
+}
+.button-preenchido {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    color:rgb(54, 114, 156);
+    background-color: white;
+    font-weight: 600;
+}
+.button-preenchido:hover {
+    background-color: transparent;
+    color: white;
+    border-width: 2px;
+    border-color: white;
+    border-style: solid;
+    padding: 10px;
+}
+/* NAV QUANDO HOUVER SCROLL NA PÁGINA*/
+#navbar.scrolled {
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+#navbar.scrolled  li a {
+    font-weight: 500;
+    color: #1e2a38db;
+}
+#navbar.scrolled  .button-contorno {
+    color: #1c9700;
+    border-color: #1c9700;
+}
+#navbar.scrolled  .button-preenchido {
+    background-color: #1c9700;
+    color: white;
+}
+#navbar.scrolled li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0%;
+    height: 3px;
+    background-color: #009705;
+    transition: width 0.3s;
+}
+#navbar.scrolled li a:hover::after,
+#navbar.scrolled li a:focus::after {
+    width: 100%;
+}
+/* #navbar.scrolled li a:focus {
+    color:  #1c9700;
+} */
+#navbar.scrolled .button-contorno:hover {
+    background-color: #1c9700;
+    color: white;
+}
+#navbar.scrolled .button-preenchido:hover {
+    color: #1c9700;
+    border-color: #1c9700;
+    background-color: transparent;
+}
+/*-------------------*/
+section#inicio {
+    padding-top: 5%;
+}
+#conteudo-banner {
+    padding-left: 5%;
+}
+#text-banner {
+    font-size: 80px;
+    line-height: 1px;
+    font-weight: 700;
+    padding-top: 3%;
+    color: white;
+}
+#falsoButton-saibaMais-banner {
+    display: inline-block;
+    padding: 15px;
+    border-width: 3px;
+    width: 10%;
+    border-radius: 17px;
+    text-align: center;
+    font-size: 18px;
+}
+#falsoButton-saibaMais-banner:hover {
+    color: #76563f;
+}
+/*SECTION - NOSSA SOLUÇÃO ---------------------------------------*/
+.nossa-solucao {
+    width: 100vw;
+}
+#conteudo-nossaSolucao {
+    padding-top: 1.5%;
+    display: flex;
+    width: 100%;
+}
+#div_imagemContexto {
+    width: 45%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+}
+#div_textoNossaSolucao {
+    width: 55%;
+}
+#tracoAcimaDoTexto {
+    display: flex;
+    padding-top: 5%;
+    padding-left: 8%;
+}
+#traco-marrom {
+    padding-left: 5%; 
+    background-color: #ac4800; 
+    height: 15px; 
+    width: 35%;
+}
+#traco-apoio-branco {
+    background-color: #ffffff; 
+    height: 10px; 
+    width: 55%;
+}
+#imagemContexto {
+    width: 80%;
+    padding: 5% 15%;
+}
+#div_textNossaSolucao {
+    width: 100%;
+    height: 100vh;
+}
+.titulo {
+    font-family: "Poppins", sans-serif;
+    font-size: 50px;
+    font-weight: 900;
+    padding-left: 8%;
+    line-height: 20px;
+    color: #1e2a38;
+}
+#texto_topicos {
+    padding-left: 8%;
+    padding-right: 15%;
+    text-align: justify;
+}
+#texto_topicos ul{
+    padding-left: 5%;
+}
+.texto {
+    font-size: 17px;
+    width: 100%;
+}
+/* SECTION - INTEGRANTES ---------------------------------------- */
+
+
+/* SECTION - FALE CONOSCO --------------------------------------- */
+
+
+/* SECTION - SIMULADOR FINANCEIRO ------------------------------- */
