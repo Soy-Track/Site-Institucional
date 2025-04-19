@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,13 @@
     <link rel="stylesheet" type="text/css" href="css/index.css" media="screen" />
     <title>SoyTrack</title>
 </head>
+
 <body>
     <section id="inicio" class="inicio">
         <div id="navbar">
             <div id="nav-logotipo">
-                <img id="nav_logotipo_soytrack" src="img/Logo-SoyTrack/logoTipoSoyTrackBRANCA.png" alt="Banner inicial do site SoyTrack com silos em uma plantção de soja">
+                <img id="nav_logotipo_soytrack" src="img/Logo-SoyTrack/logoTipoSoyTrackBRANCA.png"
+                    alt="Banner inicial do site SoyTrack com silos em uma plantção de soja">
             </div>
             <div id="nav-links">
                 <ul>
@@ -23,8 +26,10 @@
                 </ul>
             </div>
             <div id="div_buttons">
-                <button id="button-cadastro" class="button-contorno" onclick="window.location.href='cadastro.html'">Cadastre-se</button>
-                <button id="button-login" class="button-preenchido" onclick="window.location.href='login.html'">Login</button>
+                <button id="button-cadastro" class="button-contorno"
+                    onclick="window.location.href='cadastro.html'">Cadastre-se</button>
+                <button id="button-login" class="button-preenchido"
+                    onclick="window.location.href='login.html'">Login</button>
             </div>
         </div>
         <div id="conteudo-banner">
@@ -40,7 +45,8 @@
     <section id="nossa-solucao">
         <div id="conteudo-nossaSolucao">
             <div id="div_imagemContexto">
-                <img id="imagemContexto" src="img/Imagens-Site/fotoSitePart1.png" alt="Imagem de tecnologia e silos de armazenamento de soja">
+                <img id="imagemContexto" src="img/Imagens-Site/fotoSitePart1.png"
+                    alt="Imagem de tecnologia e silos de armazenamento de soja">
             </div>
             <div id="div_textoNossaSolucao">
                 <div id="tracoAcimaDoTexto">
@@ -52,14 +58,19 @@
                         Tecnologia nos Silos
                     </h1>
                     <p class="titulo">
-                        de  Armazenamento 
+                        de Armazenamento
                     </p>
                 </div>
                 <div id="texto_topicos">
-                    <p class="texto">A <b>SoyTrack</b> apresenta uma solução de monitoramento de silos, projetada para transformar a gestão de grãos em armazenagem. Nossa plataforma utiliza sensores avançados para monitorar em tempo real o nível de grãos em silos de armazenamento, permitindo aos produtores uma visão precisa e atualizada do inventário.</p>
+                    <p class="texto">A <b>SoyTrack</b> apresenta uma solução de monitoramento de silos, projetada para
+                        transformar a gestão de grãos em armazenagem. Nossa plataforma utiliza sensores avançados para
+                        monitorar em tempo real o nível de grãos em silos de armazenamento, permitindo aos produtores
+                        uma visão precisa e atualizada do inventário.</p>
                     <ul>
-                        <li>O monitoramento inadequado pode resultar em perdas significativas, podendo chegar a 15% de todos os grãos, de acordo com a Embrapa.</li> <br>
-                        <li>Por eliminar a etapa da verificação manual, o gerenciamento automatizado proporciona, ainda, uma redução de até 30% na mão de obra de emergência e nas perdas por mal armazenamento.</li>
+                        <li>O monitoramento inadequado pode resultar em perdas significativas, podendo chegar a 15% de
+                            todos os grãos, de acordo com a Embrapa.</li> <br>
+                        <li>Por eliminar a etapa da verificação manual, o gerenciamento automatizado proporciona, ainda,
+                            uma redução de até 30% na mão de obra de emergência e nas perdas por mal armazenamento.</li>
                     </ul>
                 </div>
             </div>
@@ -71,10 +82,34 @@
     <section id="fale-conosco" style="height: 100vh; background: #c0c0c0;"> <!-- A cor de fundo é apenas um apoio :) -->
         Fale Conosco
     </section>
-    <section id="simulador-financeiro" style="height: 100vh; background: #b0b0b0;"> <!-- A cor de fundo é apenas um apoio :) -->
-        Simulador Financeiro
-    </section>
+    <section id="simulador-financeiro" style="height: 100vh; background: #FFFFFF;">
+        <!-- A cor de fundo é apenas um apoio :) -->
+        <div class="container-simulador">
+            <h1 class="titulo-simulador">Simulador Financeiro</h1>
+            <div class="content">
+                <!-- Box cinza !-->
+                <div class="Simulador-financeiro"> SIMULADOR FINANCEIRO COLOCAR AQUI
+                    <!--SIMULADOR FINANCEIRO-->
+                </div>
+                <div class="info-box">
+                    <div class="card">
+                        <p class="titulosverdesimulador">DESCUBRA QUANTO ESTÁ PERDENDO</p>
+                    Visualize o valor que está escorendo do seu bolso sem perceber.
+                    </div>
+                    <div class="card">
+                    <p class="titulosverdesimulador">VEJA SEU POTENCIAL DE LUCRO</p>
+                    Saiba quanto você pode ganhar com a decuisão certa.
+                    </div>
+                    <div class="card">
+                        <p class="titulosverdesimulador">DECISÕES MAIS INTELIGENTES</p>
+                        Baseie suas escolhas em números reais, não suposições.
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
 </body>
+
 </html>
 <script>
     //Faz com que o site faça a mudança de foma manual
@@ -86,17 +121,14 @@
 <script>
     //FIXA A NAVBAR NO TOP E PERMITE QUE COM A FUNÇÃO .SCROLLED
     //ALTEMAMOS O FUNDO DA NAVBAR
-    window.addEventListener('scroll', function() {
-      const navbar = document.getElementById('navbar');
-      if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-        nav_logotipo_soytrack.src = 'img/Logo-SoyTrack/logotipoSoyTrackCOLORIDA.png';
-      } else {
-        navbar.classList.remove('scrolled');
-        nav_logotipo_soytrack.src = 'img/Logo-SoyTrack/logotipoSoyTrackBRANCA.png';
-      }
+    window.addEventListener('scroll', function () {
+        const navbar = document.getElementById('navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+            nav_logotipo_soytrack.src = 'img/Logo-SoyTrack/logotipoSoyTrackCOLORIDA.png';
+        } else {
+            navbar.classList.remove('scrolled');
+            nav_logotipo_soytrack.src = 'img/Logo-SoyTrack/logotipoSoyTrackBRANCA.png';
+        }
     });
 </script>
-  
-  
-  

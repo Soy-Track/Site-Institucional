@@ -257,3 +257,54 @@ section#inicio {
 
 
 /* SECTION - SIMULADOR FINANCEIRO ------------------------------- */
+.container-simulador {
+    display: grid;
+    text-align: center;
+}
+
+.titulo-simulador {
+    font-family: "Poppins", sans-serif;
+    font-size: 60px;
+    font-weight: 800px;
+    color: #1e2a38;
+}
+
+.content {
+    display: flex;
+    margin-top: 5px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.Simulador-financeiro {
+    width: 660px;
+    height: 440px;
+    background-color: #e0e0e0;
+    border-radius: 30px;
+}
+
+.info-box {
+    margin: 5px;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.card {
+    background: rgb(244, 241, 241);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 10px 13px 10px rgba(0, 0, 0, 0.1);
+}
+.containers {
+    max-width: 1200px;
+    margin: 30px;
+    text-align: center;
+}
+.titulosverdesimulador {
+    color: #02e437;
+}
+
+
+
