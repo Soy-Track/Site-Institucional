@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> SoyTrack</title>
+</head>
+
+</html>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        height: 100vh;
+    }
+
+    .lado_esquerdo {
+    /*flex: 1; -- Usa a metada da tela*/
+        flex: 1;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    .lado_esquerdo h1 {
+        color: #003366;
+        margin-bottom: 30px;
+        font-size: 60px;
+    }
+
+    .lado_esquerdo label {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #003366;
+    }
+
+    .lado_esquerdo input {
+        width: 100%;
+        max-width: 400px;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background-color: #eee;
+        width: 800px;
+    }
+
+    .lado_esquerdo button {
+        width: 100%;
+        max-width: 300px;
+        padding: 10px;
+        background-color: #003366;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .lado_direito {
+        flex: 1;
+        background-image: url('../Site-Institucional/img/Imagens-Site/imgLogin.png');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 40px;
+        position: relative;
+    }
+
+   
+    .lado_direito h2 {
+        font-size: 70px;
+        margin-bottom: 0px;
+    }
+
+    .lado_direito p {
+        font-size: 30px;
+        max-width: 700px;
+    }
+
+    .logo{
+        font-size: 50px;
+        display: flex;
+        justify-content: center;
+    }
+
+    #logo-login{
+        width: 500px;
+        padding-bottom: 6%;
+    }
+
+    .lado_direito-itens{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+</style>
+</head>
+
+<body>
+
+    <div class="lado_esquerdo">
+        <h1>Login</h1>
+        <label>E-mail:</label>
+        <input id="ipt_email" placeholder="Digite seu e-mail">
+
+        <label >Senha:</label>
+        <input type="password" id="ipt_senha" placeholder="Digite sua senha">
+
+        <button onclick="Login()">Entrar</button>
+    </div>
+
+    <div class="lado_direito">
+        <div class="lado_direito-itens">
+            <h2 class="logo">Bem-vindo de volta!</h2>
+            <p>Faça login para acessar sua conta e aproveite todos os recursos disponíveis.</p>
+            <img src="../Site-Institucional/img/Logo-SoyTrack/logoTipoSoyTrackBRANCA.png" alt="" id="logo-login">
+        </div>
+    </div>
+
+    <script>
+        function Login() {
+            var email = ipt_email.value
+            var senha = ipt_senha.value
+            if (email == "" || senha == "") {
+                alert("Por favor, preencha todos os campos.");
+            } else {
+                alert("Login realizado com sucesso!");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
