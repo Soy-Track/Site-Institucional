@@ -79,9 +79,41 @@
     <section id="integrantes" style="height: 100vh; background: #d0d0d0;"> <!-- A cor de fundo é apenas um apoio :) -->
         Integrantes
     </section>
-    <section id="fale-conosco" style="height: 100vh; background: #c0c0c0;"> <!-- A cor de fundo é apenas um apoio :) -->
-        Fale Conosco
+
+    <section id="fale-conosco" class="faleconosco" style="height: 100vh;">
+        <div class="titulo-faleconosco">
+            <h1>Fale Conosco</h1>
+        </div>
+
+        <div class="conteudo-fale-conosco">
+            <div class="imagem-mulher">
+                <img id="mulher" src="img/Imagens-Site/imgCadastro.png" alt="Imagem">
+            </div>
+            <div class="contato">
+                <div class="nome-sobrenome">
+                    <div class="campo">
+                        <label>Nome</label>
+                        <input type="text" id="nome">
+                    </div>
+                    <div class="campo">
+                        <label>Sobrenome</label>
+                        <input type="text" id="sobrenome">
+                    </div>
+                </div>
+                <div>
+                    <label class="campo">Email</label>
+                    <input type="text" id="email">
+                </div>
+                <div class="campo">
+                    <label>Mensagem</label>
+                    <input type="text" id="mensagem">
+                </div>
+                <button id="botao-enviar">Enviar</button>
+            </div>
+        </div>
+
     </section>
+
     <section id="simulador-financeiro" style="height: 100vh; background: #FFFFFF;">
         <!-- A cor de fundo é apenas um apoio :) -->
         <div class="container-simulador">
@@ -95,11 +127,11 @@
                 <div class="info-box">
                     <div class="card">
                         <p class="titulosverdesimulador">DESCUBRA QUANTO ESTÁ PERDENDO</p>
-                    Visualize o valor que está escorendo do seu bolso sem perceber.
+                        Visualize o valor que está escorendo do seu bolso sem perceber.
                     </div>
                     <div class="card">
-                    <p class="titulosverdesimulador">VEJA SEU POTENCIAL DE LUCRO</p>
-                    Saiba quanto você pode ganhar com a decuisão certa.
+                        <p class="titulosverdesimulador">VEJA SEU POTENCIAL DE LUCRO</p>
+                        Saiba quanto você pode ganhar com a decuisão certa.
                     </div>
                     <div class="card">
                         <p class="titulosverdesimulador">DECISÕES MAIS INTELIGENTES</p>
@@ -107,7 +139,7 @@
                     </div>
                 </div>
             </div>
-        </div>    
+        </div>
 </body>
 
 </html>
