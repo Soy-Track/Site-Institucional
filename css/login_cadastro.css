@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+}
+
+.lado_esquerdo {
+/*flex: 1; -- Usa a metada da tela*/
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+.lado_esquerdo h1 {
+    color: #003366;
+    margin-bottom: 30px;
+    font-size: 60px;
+}
+
+.lado_esquerdo label {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #003366;
+    font-size: 25px;
+    
+}
+
+.lado_esquerdo input {
+    width: 100%;
+    max-width: 400px;
+    padding: 18px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #eee;
+    width: 400px;
+}
+
+.lado_esquerdo button {
+    width: 100%;
+    max-width: 420px;
+    padding: 18px;
+    background-color: #003366;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.lado_direito {
+    flex: 1;
+    background-image: url('../img/Imagens-Site/imgLogin.png');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 40px;
+    position: relative;
+}
+
+.lado_direito_cadastro {
+    flex: 1;
+    background-image: url('../img/Imagens-Site/imgCadastro.png');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 40px;
+    position: relative;
+}
+
+
+.lado_direito-itens h2 {
+    font-size: 70px;
+    margin-bottom: 0px;
+}
+
+.lado_direito-itens p {
+    font-size: 30px;
+    max-width: 700px;
+}
+.lado_direito-itens b {
+    font-size: 40px;
+    max-width: 700px;
+}
+
+.lado_direito-itens{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo{
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+#logo-login{
+    width: 500px;
+    padding-bottom: 6%;
+}
