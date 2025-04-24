@@ -197,9 +197,52 @@
             <div class="content">
                 <!-- Box cinza !-->
                 <div class="Simulador-financeiro">
+                    <body>
+                        <br><br><br><br><br><br>
+                        Número de Silos: <input type="number" id="ipt_silos"> <br> <br>
 
-                    </script>
-</body>
+
+                        Capacidade (ton/silo): <input type="number" id="ipt_capacidade"> <br><br>
+                        <button onclick = 'calcular()'>Calcular</button> <br> <br>
+
+                        <div id="resultados"></div>
+                    </body>
+                    </html>
+                        <script>
+                            function calcular() {
+                                if (ipt_silos.value < 1) {
+                                    alert('Insira o número de silos')
+                                } else if(ipt_capacidade.value < 1){
+                                alert('Insira a capacidade do(s) silo(s)')
+                            }
+                                else{
+                                    // Pegar valores
+                                var silos = parseInt(document.getElementById('ipt_silos').value);
+                                var capacidade = parseInt(document.getElementById('ipt_capacidade').value);
+
+
+                                // Cálculos
+                                var total = silos * capacidade;
+                                var perdaSem = total * 0.05;  // 5% sem sensor
+                                var perdaCom = total * 0.035; // 3.5% com sensor
+                                var economia = perdaSem - perdaCom;
+                                var valorEconomizado = economia * 1780; // Preço da Soja: R$1780/ton
+
+                                // Mostrar resultados
+                                resultados.innerHTML =`Resultados: <br> <br>
+                                    Perda sem sensor: ${(perdaSem.toFixed(2))} ton <br> <br>
+                                    Perda com sensor: ${(perdaCom.toFixed(2))} ton <br> <br>
+                                    Economia: ${(economia.toFixed(2))} ton <br> <br>
+                                    Valor economizado: R$${(valorEconomizado.toFixed(2))}`
+                                ;
+                                }
+
+                                }
+
+
+                        </script>
+                    </body>
+                  
 </div>
 <!--Box informações-->
 <div class="info-box">
