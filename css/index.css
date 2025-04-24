@@ -257,6 +257,34 @@ section#inicio {
     box-sizing:border-box;
     width:100%;  
 } */
+.imagem-integrante {
+    display: flex;
+    align-items: center;
+    height: 30%;
+    width: 30%;
+    flex-direction: column;
+}
+
+.section-fileira1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 3%;
+}
+.section-fileira2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#integrante {
+    width: 50%;
+    height: 90%;
+    border: 10px solid green; 
+    border-radius: 100%;
+}
+
+
 .mains {
   display: flex;
     }
