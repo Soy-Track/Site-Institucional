@@ -18,6 +18,7 @@ section {
 body {
     margin: 0;
     font-family: "Montserrat", sans-serif;
+    overflow-x: hidden;
 }
 /* SECTION - INÍCIO --------------------------------------------- */
 .inicio {
@@ -323,19 +324,21 @@ section#inicio {
 
 
 .titulo-faleconosco {
-    display: flex;
+    font-family: "Poppins", sans-serif;
+    font-size: 50px;
+    font-weight: 900;
+    line-height: 20px;
+    color: #ffffff;
     justify-content: center;
+    text-align: center;
     align-items: center;
-    font-size: 40px;
-    color: white;
-    height: 15%;
-    font-family: poppins;
+    padding-bottom: 2%;
 }
 
 .conteudo-fale-conosco {
     display: flex;
     flex-direction: row;
-    height: 85%;
+    height: 60%;
 }
 
 .imagem-mulher {
@@ -346,15 +349,22 @@ section#inicio {
     width: 50%;
 }
 
+#mulher {
+    width: 50%;
+    height: 90%;
+    border: 10px solid white; 
+    border-radius: 100%;
+}
+
 .contato {
+    /* padding-right: 5%; */
+    /* padding-left: 5%; */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 500px;
+    width: 40%;
     gap: 20px;
-    font-family: Montserrat;
-
 }
 label {
     font-weight: 600;
@@ -363,10 +373,12 @@ label {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    padding-left: 20%;
+    padding-right: 10%;
 }
 .nome-sobrenome label {
     display: block;
-    width: fit-content;
+    width: 100%;
 }
 input {
     margin: 0;
@@ -381,51 +393,53 @@ input {
     color: white;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    width: 90%;
+}
+.campo #nome {
+    width: 90%;
 }
 .labelFaleConosco {
     padding-bottom: 1px;
 }
 
 #nome {
-    width: 200px;
+    width: 80%;
     /* height: 50px; */
     border-radius: 15px;
     border: solid white;
 }
 
 #sobrenome {
-    width: 270px;
+    width: 80%;
     /* height: 50px; */
     border-radius: 15px;
     border: solid white;
 }
 
 #email {
-    width: 500px;
+    width: 100%;
     /* height: 50px; */
     border-radius: 15px;
     border: solid white;
 }
 
 #mensagem {
-    width: 480px; 
-    padding: 10px 10px;
+    width: 98%; 
+    padding: 1% 1%;
     font-size: 17px;
-    font-family: Monteserrat, sans-serif;
     resize: vertical;
     border-radius: 15px;
     border: solid white;
 }
 
 #botao-enviar {
-    width: 500px;
-    height: 50px;
+    width: 91%;
+    padding:15px;
     border-radius: 15px;
     border: none;
     background-color: #ac4800;
     color: white;
-    font-size: large;
+    font-size: 17px;
     font-family: Montserrat;
 }
 #botao-enviar:hover {
@@ -433,14 +447,6 @@ input {
     cursor: pointer;
     transition: 0.3s;
 }
-
-#mulher {
-    width: 400px;
-    height: 400px;
-    border: 10px solid white;
-    border-radius: 50%;
-}
-
 /* SECTION - SIMULADOR FINANCEIRO ------------------------------- */
 .container-simulador {
     display: grid;

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projeto Silos Inteligentes</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    nav {
+      background-color: #023e8a;
+      color: white;
+      display: flex;
+      justify-content: space-around;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 60px 20px;
+      min-height: 100vh;
+    }
+
+    #inicio       { background-color: #caf0f8; }
+    #solucao      { background-color: #ade8f4; }
+    #integrantes  { background-color: #90e0ef; }
+    #contato      { background-color: #48cae4; }
+    #simulador    { background-color: #00b4d8; }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    input, button {
+      padding: 8px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    button {
+      background-color: #0077b6;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #023e8a;
+    }
+
+    .result {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#inicio">Início</a>
+    <a href="#solucao">Nossa Solução</a>
+    <a href="#integrantes">Integrantes</a>
+    <a href="#contato">Fale Conosco</a>
+    <a href="#simulador">Simulador Financeiro</a>
+  </nav>
+
+  <section id="inicio">
+    <h2>Início</h2>
+    <p>Bem-vindo ao projeto de monitoramento inteligente de silos! Aqui buscamos inovação no agronegócio com sensores de nível para armazenamento seguro e eficiente de grãos.</p>
+  </section>
+
+  <section id="solucao">
+    <h2>Nossa Solução</h2>
+    <p>Desenvolvemos uma solução de baixo custo para monitoramento remoto do nível de grãos em silos de soja utilizando sensores ultrassônicos e uma interface web amigável para agricultores e cooperativas.</p>
+  </section>
+
+  <section id="integrantes">
+    <h2>Integrantes</h2>
+    <ul>
+      <li>Leão – Dev Full Stack</li>
+      <li>Fulano Silva – Hardware e Eletrônica</li>
+      <li>Beltrana Souza – Design e Apresentações</li>
+    </ul>
+  </section>
+
+  <section id="contato">
+    <h2>Fale Conosco</h2>
+    <p>Email: contato@silosinteligentes.com.br</p>
+    <p>Telefone: (11) 99999-9999</p>
+  </section>
+
+  <section id="simulador">
+    <h2>Simulador Financeiro</h2>
+    <p>Simule quanto você economiza ao evitar perdas de grãos:</p>
+    <label for="qtd">Quantidade de grãos (toneladas):</label><br/>
+    <input type="number" id="qtd" placeholder="Ex: 100"><br/>
+    <label for="perda">% de perda sem monitoramento:</label><br/>
+    <input type="number" id="perda" placeholder="Ex: 5"><br/>
+    <label for="preco">Preço da soja por tonelada (R$):</label><br/>
+    <input type="number" id="preco" placeholder="Ex: 150"><br/>
+    <button onclick="calcular()">Calcular Economia</button>
+    <div class="result" id="resultado"></div>
+  </section>
+
+  <script>
+    function calcular() {
+      const qtd = parseFloat(document.getElementById('qtd').value);
+      const perda = parseFloat(document.getElementById('perda').value);
+      const preco = parseFloat(document.getElementById('preco').value);
+
+      if (isNaN(qtd) || isNaN(perda) || isNaN(preco)) {
+        document.getElementById('resultado').innerText = "Por favor, preencha todos os campos corretamente.";
+        return;
+      }
+
+      const perdaEmToneladas = (perda / 100) * qtd;
+      const economia = perdaEmToneladas * preco;
+
+      document.getElementById('resultado').innerText = `Economia estimada: R$ ${economia.toFixed(2)} evitando ${perdaEmToneladas.toFixed(2)} toneladas perdidas.`;
+    }
+  </script>
+
+</body>
+</html>
