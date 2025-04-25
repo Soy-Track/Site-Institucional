@@ -295,6 +295,7 @@ section#inicio {
     background-color: rgb(255, 255, 255);
     color: #202020;
     border-radius: 10px;
+    padding-bottom: 1%;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .cardsol>img{
@@ -426,7 +427,7 @@ input {
     width: 90%;
 }
 .labelFaleConosco {
-    padding-bottom: 1px;
+    padding-bottom: 1%;
 }
 
 #nome {
@@ -451,8 +452,8 @@ input {
 }
 
 #mensagem {
-    width: 98%; 
-    padding: 1% 1%;
+    width: 96%; 
+    padding: 2% 2%;
     font-size: 17px;
     resize: vertical;
     border-radius: 15px;
