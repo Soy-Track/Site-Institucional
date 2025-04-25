@@ -311,6 +311,8 @@ section#inicio {
     color: #1e2a38;
     display: flex;
     justify-content: center;
+    background-color: #00af26;
+
 }
 
 #titulo-card {
@@ -474,53 +476,43 @@ input {
     transition: 0.3s;
 }
 /* SECTION - SIMULADOR FINANCEIRO ------------------------------- */
-.container-simulador {
-    background-color: red;
-    height: 80%;
-    width: 100%;
-    display: grid;
-    text-align: center;
-}
-
 .titulo-simulador {
-    background-color: blue;
     font-family: "Poppins", sans-serif;
     font-size: 50px;
     font-weight: 900;
-    line-height: 20px;
-    color: #ffffff;
+    padding-top: 3% 0;
+    color: #1e2a38;
+    display: flex;
     justify-content: center;
-    text-align: center;
-    align-items: center;
-    padding-bottom: 2%;
+    background-color: #00af26;
 }
 .content {
-    height: 100%;
+    height: 70%;
     background-color: yellow;
     display: flex;
     padding-left: 4%;
     padding-right: 4%;
 }
 
-.Simulador-financeiro {
-    background-color: #ac4800;
+.conteudo-financeiro {
+    background-color: #ac1100;
     width: 45%;
     height: 100%;
     border-radius: 2%;
 }
 .textosimulador {
     margin-left: 15px;
-  font-size: 18px;
-  color: black;
+    font-size: 18px;
+    color: black;
 }
 .txt-simulador {
-padding-top: 5%;
-padding-bottom: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
 .info-box-simulador {
-margin-left: 0.5%;
-background-color: purple;
- height: 100%;
- width: 45%;
+    margin-left: 0.5%;
+    background-color: rgb(189, 0, 111);
+    height: 100%;
+    width: 45%;
 }
 
