@@ -191,7 +191,7 @@
 
     </section>
 
-    <section id="simulador-financeiro" style="height: 100vh; background: #00bbff;">
+    <section id="simulador-financeiro" style="height: 100vh;">
         <!-- A cor de fundo é apenas um apoio :) -->
             <div class="titulo-simulador">
                 Simulador Financeiro
@@ -200,32 +200,51 @@
                <!-- Box-Simulador -->
                 <div class="conteudo-financeiro">
                     <div class='txt-simulador'>
-                        Número de Silos: <input type="number" id="ipt_silos"> <br> <br>
+                        Número de Silos: <input type="number" id="ipt_silos" class="ipt-simulador"> <br> <br>
 
-                        Capacidade (ton/silo): <input type="number" id="ipt_capacidade"> <br><br>
-                        <button onclick='calcular()'>Calcular</button> <br> <br>
+                        Capacidade (ton/silo): <input type="number" id="ipt_capacidade" class="ipt-simulador"> <br><br>
+                        <button onclick='calcular()' class="button-simulador">Calcular</button> <br> <br>
 
-                        <div id="resultados">Resultados </div>
+                        <div id="resultados"> </div>
                     </div>
                 </div>
-                <!-- Box-Cards-Aolado -->
+                <!-- Box-Cards-Ao lado -->
                 <div class="info-box-simulador">
                     <div class="card-simulador">
+                        <div class="imagem-card-simulador">
+                            <div class="card-circulo">
 
-                        <span class="textosimulador">
-
-                        </span>
+                            </div>
+                        </div>
+                        <div class="card-texto">
+                            <p class="titulo-card-verde">TITULO</p>
+                            <p class="conteudo-card"> CONTEUDO</p>
+                        </div>
                     </div>
                     <div class="card-simulador">
+                        <div class="imagem-card-simulador">
+                            <div class="card-circulo">
 
-                        <span class="textosimulador">
+                            </div>
+                        </div>
+                        <div class="card-texto">
+                            <p class="titulo-card-verde">TITULO</p>
+                            <p class="conteudo-card"> CONTEUDO</p>
+                        </div>
 
-                        </span>
+                        
                     </div>
                     <div class="card-simulador">
+                        <div class="imagem-card-simulador">
+                            <div class="card-circulo">
 
-                        <span class="textosimulador">
-                        </span>
+                            </div>
+                        </div>
+                        <div class="card-texto">
+                            <p class="titulo-card-verde">TITULO</p>
+                            <p class="conteudo-card"> CONTEUDO</p>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -276,10 +295,10 @@
 
             // Mostrar resultados
             resultados.innerHTML = `Resultados: <br> <br>
-                                    Perda sem sensor: ${(perdaSem.toFixed(2))} ton <br> <br>
-                                    Perda com sensor: ${(perdaCom.toFixed(2))} ton <br> <br>
-                                    Economia: ${(economia.toFixed(2))} ton <br> <br>
-                                    Valor economizado: R$${(valorEconomizado.toFixed(2))}`
+                                    Perda sem sensor: <i style='color:red'>${(perdaSem.toFixed(2))} ton </i> <br> <br>
+                                    Perda com sensor: <i style='color:green'> ${(perdaCom.toFixed(2))} ton </i> <br> <br>
+                                    Economia: <i style='color:green'>${(economia.toFixed(2))} ton </i> <br> <br>
+                                    Valor economizado: <i style='color:green'>R$${(valorEconomizado.toFixed(2))} </i>`
                 ;
         }
 

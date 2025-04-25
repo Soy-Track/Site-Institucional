@@ -311,7 +311,6 @@ section#inicio {
     color: #1e2a38;
     display: flex;
     justify-content: center;
-    background-color: #00af26;
 
 }
 
@@ -484,35 +483,75 @@ input {
     color: #1e2a38;
     display: flex;
     justify-content: center;
-    background-color: #00af26;
 }
 .content {
     height: 70%;
-    background-color: yellow;
     display: flex;
+    justify-content: center;
     padding-left: 4%;
     padding-right: 4%;
 }
 
 .conteudo-financeiro {
-    background-color: #ac1100;
+    background-color: white;
     width: 45%;
     height: 100%;
     border-radius: 2%;
-}
-.textosimulador {
-    margin-left: 15px;
-    font-size: 18px;
-    color: black;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 .txt-simulador {
-    padding-top: 5%;
-    padding-bottom: 5%;
+    padding-top: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .info-box-simulador {
     margin-left: 0.5%;
-    background-color: rgb(189, 0, 111);
     height: 100%;
     width: 45%;
+}
+.card-simulador {
+    display: flex;
+    display: column;
+    background-color: white;
+    height: 29%;
+    margin: 3%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.imagem-card-simulador{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 25%;
+}
+.card-texto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 75%;
+}
+.titulo-card-verde{
+    padding: 0;
+    margin: 0;
+    color:#1c9700;
+    font-size: 140%;
+
+}
+.card-circulo {
+    background:#1c9700;
+    border-radius: 50%;
+    width: 70%;
+    height: 70%;
+}
+.ipt-simulador {
+    padding: 1%;
+    text-indent: 3%;
+    font-size: 120%;
+}
+.button-simulador {
+    font-size: 120%;
 }
 
