@@ -475,60 +475,52 @@ input {
 }
 /* SECTION - SIMULADOR FINANCEIRO ------------------------------- */
 .container-simulador {
+    background-color: red;
+    height: 80%;
     width: 100%;
     display: grid;
     text-align: center;
 }
 
 .titulo-simulador {
+    background-color: blue;
     font-family: "Poppins", sans-serif;
-    font-size: 300%;
-    font-weight: 40%;
-    color: #1e2a38;
+    font-size: 50px;
+    font-weight: 900;
+    line-height: 20px;
+    color: #ffffff;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding-bottom: 2%;
 }
-
 .content {
+    height: 100%;
+    background-color: yellow;
     display: flex;
-    margin-left: 6%;
-    margin-right: 6%;
+    padding-left: 4%;
+    padding-right: 4%;
 }
 
 .Simulador-financeiro {
-    width: 66%;
+    background-color: #ac4800;
+    width: 45%;
     height: 100%;
-    background-color: rgb(255, 255, 255);
     border-radius: 2%;
-}
-
-.info-box {
-    margin: 0.5%;
-    width: 55%;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.card {
-    display: flex;
-    align-items: center;
-    background: rgb(255, 255, 255);
-    border-radius: 2%;
-    padding: 4%;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
-}
-.circulosimulador {
-        background: green;
-        border-radius: 50%;
-        width: 100px;
-        height: 100px;
-        flex-shrink: 0;
-
 }
 .textosimulador {
     margin-left: 15px;
   font-size: 18px;
   color: black;
 }
-
-
+.txt-simulador {
+padding-top: 5%;
+padding-bottom: 5%;
+}
+.info-box-simulador {
+margin-left: 0.5%;
+background-color: purple;
+ height: 100%;
+ width: 45%;
+}
 

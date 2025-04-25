@@ -193,82 +193,44 @@
     <section id="simulador-financeiro" style="height: 100vh; background: #FFFFFF;">
         <!-- A cor de fundo é apenas um apoio :) -->
         <div class="container-simulador">
-            <h1 class="titulo-simulador">Simulador Financeiro</h1>
+            <p class="titulo-simulador">Simulador Financeiro</p>
             <div class="content">
+
                 <!-- Box cinza !-->
                 <div class="Simulador-financeiro">
-                    <body>
-                        <br><br><br><br><br><br>
+                    <div class='txt-simulador'>
                         Número de Silos: <input type="number" id="ipt_silos"> <br> <br>
 
 
                         Capacidade (ton/silo): <input type="number" id="ipt_capacidade"> <br><br>
-                        <button onclick = 'calcular()'>Calcular</button> <br> <br>
+                        <button onclick='calcular()'>Calcular</button> <br> <br>
 
-                        <div id="resultados"></div>
-                    </body>
-                    </html>
-                        <script>
-                            function calcular() {
-                                if (ipt_silos.value < 1) {
-                                    alert('Insira o número de silos')
-                                } else if(ipt_capacidade.value < 1){
-                                alert('Insira a capacidade do(s) silo(s)')
-                            }
-                                else{
-                                    // Pegar valores
-                                var silos = parseInt(document.getElementById('ipt_silos').value);
-                                var capacidade = parseInt(document.getElementById('ipt_capacidade').value);
+                        <div id="resultados"> </div>
+                    </div>
+                </div>
+                <!--Box informações-->
+                <div class="info-box-simulador">
+                    <div class="card-simulador">
 
+                        <span class="textosimulador">
 
-                                // Cálculos
-                                var total = silos * capacidade;
-                                var perdaSem = total * 0.05;  // 5% sem sensor
-                                var perdaCom = total * 0.035; // 3.5% com sensor
-                                var economia = perdaSem - perdaCom;
-                                var valorEconomizado = economia * 1780; // Preço da Soja: R$1780/ton
+                        </span>
+                    </div>
+                    <div class="card-simulador">
 
-                                // Mostrar resultados
-                                resultados.innerHTML =`Resultados: <br> <br>
-                                    Perda sem sensor: ${(perdaSem.toFixed(2))} ton <br> <br>
-                                    Perda com sensor: ${(perdaCom.toFixed(2))} ton <br> <br>
-                                    Economia: ${(economia.toFixed(2))} ton <br> <br>
-                                    Valor economizado: R$${(valorEconomizado.toFixed(2))}`
-                                ;
-                                }
+                        <span class="textosimulador">
 
-                                }
+                        </span>
+                    </div>
+                    <div class="card-simulador">
 
-
-                        </script>
-                    </body>
-                  
-</div>
-<!--Box informações-->
-<div class="info-box">
-    <div class="card">
-        <div class="circulosimulador">
+                        <span class="textosimulador">
+                        </span>
+                    </div>
+                </div>
+            </div>
         </div>
-        <span class="textosimulador"> Descubra quanto está perdendo <br> <br>
-            Visualize o valor que está escorendo do seu bolso perceber.</span>
-    </div>
-    <div class="card">
-        <div class="circulosimulador">
-        </div>
-        <span class="textosimulador"> Veja seu potencial de lucro <br> <br>
-            Saiba quanto você pode ganhar com a decisão certa.</span>
-    </div>
-    <div class="card">
-        <div class="circulosimulador">
-        </div>
-        <span class="textosimulador"> Decisões mais inteligentes <br> <br>
-            Baseie suas escolhas em números reais, não suposições.
-        </span>
-    </div>
-</div>
-</div>
-</div>
-</section>
+    </section>
 </body>
 
 </html>
@@ -292,4 +254,35 @@
             nav_logotipo_soytrack.src = 'img/Logo-SoyTrack/logotipoSoyTrackBRANCA.png';
         }
     });
+</script>
+<script>
+    function calcular() {
+        if (ipt_silos.value < 1) {
+            alert('Insira o número de silos')
+        } else if (ipt_capacidade.value < 1) {
+            alert('Insira a capacidade do(s) silo(s)')
+        }
+        else {
+            // Pegar valores
+            var silos = parseInt(document.getElementById('ipt_silos').value);
+            var capacidade = parseInt(document.getElementById('ipt_capacidade').value);
+
+
+            // Cálculos
+            var total = silos * capacidade;
+            var perdaSem = total * 0.05;  // 5% sem sensor
+            var perdaCom = total * 0.035; // 3.5% com sensor
+            var economia = perdaSem - perdaCom;
+            var valorEconomizado = economia * 1780; // Preço da Soja: R$1780/ton
+
+            // Mostrar resultados
+            resultados.innerHTML = `Resultados: <br> <br>
+                                    Perda sem sensor: ${(perdaSem.toFixed(2))} ton <br> <br>
+                                    Perda com sensor: ${(perdaCom.toFixed(2))} ton <br> <br>
+                                    Economia: ${(economia.toFixed(2))} ton <br> <br>
+                                    Valor economizado: R$${(valorEconomizado.toFixed(2))}`
+                ;
+        }
+
+    }
 </script>
