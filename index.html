@@ -200,10 +200,10 @@
                <!-- Box-Simulador -->
                 <div class="conteudo-financeiro">
                     <div class='txt-simulador'>
-                        Número de Silos: <input type="number" id="ipt_silos" class="ipt-simulador"> <br> <br>
+                        Número de Silos: <input type="number" id="ipt_silos" class="ipt-simulador">
 
-                        Capacidade (ton/silo): <input type="number" id="ipt_capacidade" class="ipt-simulador"> <br><br>
-                        <button onclick='calcular()' class="button-simulador">Calcular</button> <br> <br>
+                        Capacidade (ton/silo): <input type="number" id="ipt_capacidade" class="ipt-simulador">
+                        <button onclick='calcular()' class="button-simulador">Calcular</button> 
 
                         <div id="resultados"> </div>
                     </div>
@@ -294,11 +294,11 @@
             var valorEconomizado = economia * 1780; // Preço da Soja: R$1780/ton
 
             // Mostrar resultados
-            resultados.innerHTML = `Resultados: <br> <br>
-                                    Perda sem sensor: <i style='color:red'>${(perdaSem.toFixed(2))} ton </i> <br> <br>
-                                    Perda com sensor: <i style='color:green'> ${(perdaCom.toFixed(2))} ton </i> <br> <br>
-                                    Economia: <i style='color:green'>${(economia.toFixed(2))} ton </i> <br> <br>
-                                    Valor economizado: <i style='color:green'>R$${(valorEconomizado.toFixed(2))} </i>`
+            resultados.innerHTML = `<span style="margin-bottom: 30px">Resultados:</span> <br>
+                                    Perda sem sensor: <i style='color:red'>${(perdaSem.toFixed(2))} ton </i> <br>
+                                    Perda com sensor: <i style='color:green'> ${(perdaCom.toFixed(2))} ton </i> <br>
+                                    Economia: <i style='color:green'>${(economia.toFixed(2))} ton </i> <br>
+                                    Valor economizado: <i style='color:green'>R$${(valorEconomizado.toFixed(2))} </i> <br>`
                 ;
         }
 

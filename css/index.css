@@ -484,9 +484,11 @@ input {
     color: #1e2a38;
     display: flex;
     justify-content: center;
+    padding-top: 2%;
+    padding-bottom: 1%;
 }
 .content {
-    height: 70%;
+    height: 65%;
     display: flex;
     justify-content: center;
     padding-left: 4%;
@@ -501,11 +503,18 @@ input {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 .txt-simulador {
-    padding-top: 10%;
+    width: 80%;
+    padding-top: 5%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    padding-left: 20%;
+}
+#resultados {
+    height: 20vh;
+}
+.txt-resultado {
+    margin-bottom: 30px;
 }
 .info-box-simulador {
     margin-left: 0.5%;
@@ -516,8 +525,8 @@ input {
     display: flex;
     display: column;
     background-color: white;
-    height: 29%;
-    margin: 3%;
+    height: 31%;
+    margin-bottom: 2.5%;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .imagem-card-simulador{
@@ -549,10 +558,15 @@ input {
 }
 .ipt-simulador {
     padding: 1%;
+    margin-bottom: 5%;
     text-indent: 3%;
-    font-size: 120%;
+    font-size: 100%;
+    width: 67%;
 }
 .button-simulador {
-    font-size: 120%;
+    font-size: 100%;
+    width: 70%;
+    padding: 2% 5%;
+    margin-bottom: 5%;
 }
 
