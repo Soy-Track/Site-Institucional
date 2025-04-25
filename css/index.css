@@ -260,8 +260,8 @@ section#inicio {
 .imagem-integrante {
     display: flex;
     align-items: center;
-    height: 30%;
-    width: 30%;
+    height: 20%;
+    width: 20%;
     flex-direction: column;
 }
 
@@ -312,6 +312,7 @@ section#inicio {
     color: #1e2a38;
     display: flex;
     justify-content: center;
+    padding-top: 2%;
 
 }
 
