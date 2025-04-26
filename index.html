@@ -202,8 +202,8 @@
                     <div class='txt-simulador'>
                         Número de Silos: <input type="number" id="ipt_silos" class="ipt-simulador">
 
-                        Capacidade (ton/silo): <input type="number" id="ipt_capacidade" class="ipt-simulador">
-                        <button onclick='calcular()' class="button-simulador">Calcular</button> 
+                        Capacidade (t/silo): <input type="number" id="ipt_capacidade" class="ipt-simulador">
+                        <button onclick='calcular()' class="button-simulador">Simular</button> 
 
                         <div id="resultados"> </div>
                     </div>
@@ -213,12 +213,14 @@
                     <div class="card-simulador">
                         <div class="imagem-card-simulador">
                             <div class="card-circulo">
-
+                                
                             </div>
                         </div>
                         <div class="card-texto">
-                            <p class="titulo-card-verde">TITULO</p>
-                            <p class="conteudo-card"> CONTEUDO</p>
+                            <p class="titulo-card-verde">🔒 Mais Segurança, Menos Perdas</p>
+                            <p class="conteudo-card"> Reduza riscos e aumente a eficiência operacional.
+                                Evite transbordamentos, falta de insumos e desperdícios. Segundo a Embrapa cerca de 5% de toda a sofra do Brasil é
+                            perdida por mal gerenciamento da armazenagem. Reduza essa perda em até 1,5% com nossa solução! </p>
                         </div>
                     </div>
                     <div class="card-simulador">
@@ -228,8 +230,10 @@
                             </div>
                         </div>
                         <div class="card-texto">
-                            <p class="titulo-card-verde">TITULO</p>
-                            <p class="conteudo-card"> CONTEUDO</p>
+                            <p class="titulo-card-verde">💸 Controle de Estoque que Gera Economia</p>
+                            <p class="conteudo-card"> Evite perdas, compre apenas o necessário e reduza custos operacionais.
+                                Com o monitoramento em tempo real dos silos, você sabe exatamente quando e quanto reabastecer, evitando compras desnecessárias, desperdícios e custos extras com emergências.                                
+                                </p>
                         </div>
 
                         
@@ -241,8 +245,9 @@
                             </div>
                         </div>
                         <div class="card-texto">
-                            <p class="titulo-card-verde">TITULO</p>
-                            <p class="conteudo-card"> CONTEUDO</p>
+                            <p class="titulo-card-verde">⚙️ Instalação Rápida e Retorno Garantido</p>
+                            <p class="conteudo-card"> Baixo investimento, alta economia.
+                                Nossa solução tem instalação rápida e investimento acessível, proporcionando retorno financeiro em poucos meses graças à redução de perdas e otimização da gestão de estoque.</p>
                         </div>
                         
                     </div>
@@ -276,9 +281,9 @@
 <script>
     function calcular() {
         if (ipt_silos.value < 1) {
-            alert('Insira o número de silos')
+            alert('Por favor insira o número de silos')
         } else if (ipt_capacidade.value < 1) {
-            alert('Insira a capacidade do(s) silo(s)')
+            alert('Por favor insira a capacidade dos silos')
         }
         else {
             // Pegar valores
