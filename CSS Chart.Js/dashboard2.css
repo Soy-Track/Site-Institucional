@@ -65,6 +65,7 @@ h1 {
     color: #008a00;
     font-family: poppins;
     font-size: 23px;
+    padding-left: 1%;
 }
 
 #resto {
@@ -73,12 +74,13 @@ h1 {
     height: 90%;
     margin-left: 1%;
     margin-right: 1%;
+    padding-left: 1%;
 }
 
 #esquerda {
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 75%;
 }
 
 #KPIs {
@@ -130,8 +132,8 @@ h1 {
     height: 45%;
     color: #1e2a38;
     font-size: 80%;
-    padding-left: 2%;
-    padding-right: 2%;
+    padding-left: 4%;
+    padding-right: 4%;
     padding-top: 2%;
 }
 
@@ -154,8 +156,8 @@ h1 {
 #alertas {
     display: flex;
     flex-direction: column;
-    height: 95%;
-    width: 80%;
+    height: 94%;
+    width: 85%;
     background-color: white;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }

@@ -57,22 +57,22 @@
                             <div id="graf1">
                                 <h5>Nível de grãos de soja no silo durante os últimos 7 dias</h5>
                                 <select id="selecao" class="selecao">
-                                    <option value="">Silo 1</option>
-                                    <option value="">Silo 2</option>
-                                    <option value="">Silo 3</option>
-                                    <option value="">Silo 4</option>
-                                    <option value="">Silo 5</option>
-                                    <option value="">Silo 6</option>
-                                    <option value="">Silo 7</option>
+                                    <option value="silo1">Silo 1</option>
+                                    <option value="silo2">Silo 2</option>
+                                    <option value="silo3">Silo 3</option>
+                                    <option value="silo4">Silo 4</option>
+                                    <option value="silo5">Silo 5</option>
+                                    <option value="silo6">Silo 6</option>
+                                    <option value="silo7">Silo 7</option>
                                 </select>
                             </div>
-                            <canvas id="graficoLinha" style="position: relative; width: 100%; height: 100%;"></canvas>
+                            <canvas id="graficoLinha" style="position: relative; width: 100%; height: 90%;"></canvas>
                         </div>
                         <div class="graf">
                             <div id="graf2">
                                 <h5>Nível de grãos de soja em metros em cada silo</h5>
                             </div>
-                            <canvas id="graficoBarra" style="position: relative; width: 100%; height: 90%;"></canvas>
+                            <canvas id="graficoBarra" style="position: relative; width: 100%; height: 80%;"></canvas>
                         </div>
                     </div>
                 </div>
@@ -144,6 +144,7 @@
         'Silo 4',
         'Silo 5',
         'Silo 6',
+        'Silo 7',
     ];
 
     const data = {
