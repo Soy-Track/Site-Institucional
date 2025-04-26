@@ -200,10 +200,10 @@
                <!-- Box-Simulador -->
                 <div class="conteudo-financeiro">
                     <div class='txt-simulador'>
-                        Número de Silos: <input type="number" id="ipt_silos" class="ipt-simulador" placeholder="ex: 10">
+                        <label class="label-simulador">Número de Silos: </label> <input type="number" id="ipt_silos" class="ipt-simulador" placeholder="Ex: 10">
 
-                        Capacidade (t/silo): <input type="number" id="ipt_capacidade" class="ipt-simulador" placeholder="ex: 1200">
-                        <button onclick='calcular()' class="button-simulador">Simular</button> 
+                        <label  class="label-simulador">Capacidade (t/silo): </label> <input type="number" id="ipt_capacidade" class="ipt-simulador" placeholder="Ex: 1200">
+                        <button onclick='calcular()' class="button-simulador">Simular Faturamento</button> 
 
                         <div id="resultados"> </div>
                     </div>
@@ -320,11 +320,11 @@
             var valorEconomizado = economia * 1780; // Preço da Soja: R$1780/ton
 
             // Mostrar resultados
-            resultados.innerHTML = `<span style="margin-bottom: 30px">Resultados:</span> <br>
-                                    Perda sem sensor: <i style='color:red'>${(perdaSem.toFixed(2))} ton </i> <br>
-                                    Perda com sensor: <i style='color:green'> ${(perdaCom.toFixed(2))} ton </i> <br>
-                                    Economia: <i style='color:green'>${(economia.toFixed(2))} ton </i> <br>
-                                    Valor economizado: <i style='color:green'>R$${(valorEconomizado.toFixed(2))} </i> <br>`;
+            resultados.innerHTML = `<div style='font-weight: 600;'>Resultados:</div> <br>
+                                    Perda sem sensor: <i style='color:red; font-weight: 600;'>${(perdaSem.toFixed(2))} ton </i> <br>
+                                    Perda com sensor: <i style='color:green; font-weight: 600;'> ${(perdaCom.toFixed(2))} ton </i> <br>
+                                    Economia: <i style='color:green; font-weight: 600;'>${(economia.toFixed(2))} ton </i> <br>
+                                    Valor economizado: <i style='color:green; font-weight: 600;'>R$${(valorEconomizado.toFixed(2))} </i> <br>`;
         }
 
     }

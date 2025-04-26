@@ -498,10 +498,38 @@ input {
 
 .conteudo-financeiro {
     background-color: white;
-    width: 45%;
-    height: 100%;
+    width: 40%;
+    height: 95%;
     border-radius: 2%;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    padding-top: 1%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.ipt-simulador {
+    padding: 2% 1%;
+    margin-bottom: 5%;
+    text-indent: 2%;
+    font-size: 100%;
+    width: 67%;
+    border-radius: 7px;
+    border-width: 1%;
+    border-style: solid;
+    border-color: #bcbcbc;
+}
+.label-simulador {
+    padding-bottom: 1%;
+    color: #1e2a38;
+}
+.button-simulador {
+    font-size: 100%;
+    width: 70%;
+    padding: 3% 5%;
+    margin-bottom: 5%;
+    border-radius: 7px;
+    border-style: none;
+    background-color:#003366;
+    color: white;
+    font-weight: 500;
+    font-family: Montserrat;
 }
 .txt-simulador {
     width: 80%;
@@ -513,6 +541,8 @@ input {
 }
 #resultados {
     height: 20vh;
+    font-weight: 500;
+    line-height: 110%;
 }
 .txt-resultado {
     margin-bottom: 30px;
@@ -520,7 +550,7 @@ input {
 .info-box-simulador {
     margin-left: 0.5%;
     height: 100%;
-    width: 45%;
+    width: 50%;
 }
 .card-simulador {
     display: flex;
@@ -528,6 +558,7 @@ input {
     background-color: white;
     height: 31%;
     margin-bottom: 2.5%;
+    border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .imagem-card-simulador{
@@ -548,26 +579,15 @@ input {
     padding: 0;
     margin: 0;
     color:#1c9700;
-    font-size: 140%;
+    font-size: 120%;
+    font-weight: 600;
 
 }
 .card-circulo {
     background:#1c9700;
     border-radius: 50%;
-    width: 70%;
+    width: 60%;
     height: 70%;
 }
-.ipt-simulador {
-    padding: 1%;
-    margin-bottom: 5%;
-    text-indent: 3%;
-    font-size: 100%;
-    width: 67%;
-}
-.button-simulador {
-    font-size: 100%;
-    width: 70%;
-    padding: 2% 5%;
-    margin-bottom: 5%;
-}
+
 
