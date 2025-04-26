@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="chartJs.css">
     <link rel="stylesheet" href="dashboard2.css">
     <title>Dashboard SoyTrack</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1"></script>
@@ -12,121 +11,194 @@
 
 <body>
     <section class="dash">
-            <div id="titulo">
-                <img src="iconeSoyTrackVERDE.png" height="70%">
-                <h2>Monitoramento dos Silos</h2>
-            </div>
-            <div id="resto">
-                <div id="esquerda">
-                    <div id="KPIs">
-                        <div class="kpi">
-                            <div class="titulo-kpi">
-                                <h3>Silos Próximos da Capacidade Máxima</h3>
-                            </div>
-                            <div  class="valor-kpi">
-                                <h1>2</h1>
-                            </div>
+        <div id="titulo">
+            <img src="iconeSoyTrackVERDE.png" height="70%">
+            <h2>Monitoramento dos Silos</h2>
+        </div>
+        <div id="resto">
+            <div id="esquerda">
+                <div id="KPIs">
+                    <div class="kpi">
+                        <div class="titulo-kpi">
+                            <h3>Silos Próximos da Capacidade Máxima</h3>
                         </div>
-                        <div class="kpi">
-                            <div class="titulo-kpi">
-                                <h3>Capacidade Total Disponível nos Silos</h3>
-                            </div>
-                            <div  class="valor-kpi">
-                                <h1>646t</h1>
-                            </div>
-                        </div>
-                        <div class="kpi">
-                            <div class="titulo-kpi">
-                                <h3>Total de Toneladas Armazenada nos Silos</h3>
-                            </div>
-                            <div  class="valor-kpi">
-                                <h1>595t</h1>
-                            </div>
-                        </div>
-                        <div class="kpi">
-                            <div class="titulo-kpi">
-                                <h3>Total de Alertas Emitidos no Último Mês</h3>
-                            </div>
-                            <div  class="valor-kpi">
-                                <h1>9</h1>
-                            </div>
+                        <div class="valor-kpi">
+                            <h1 id="prox_txt">0</h1>
                         </div>
                     </div>
-                    <div id="graficos">
-                        <div class="graf">
-                            <div id="graf1">
-                                <h5>Nível de grãos de soja no silo durante os últimos 7 dias</h5>
-                                <select id="selecao" class="selecao">
-                                    <option value="silo1">Silo 1</option>
-                                    <option value="silo2">Silo 2</option>
-                                    <option value="silo3">Silo 3</option>
-                                    <option value="silo4">Silo 4</option>
-                                    <option value="silo5">Silo 5</option>
-                                    <option value="silo6">Silo 6</option>
-                                    <option value="silo7">Silo 7</option>
-                                </select>
-                            </div>
-                            <canvas id="graficoLinha" style="position: relative; width: 100%; height: 90%;"></canvas>
+                    <div class="kpi">
+                        <div class="titulo-kpi">
+                            <h3>Capacidade Total Disponível nos Silos</h3>
                         </div>
-                        <div class="graf">
-                            <div id="graf2">
-                                <h5>Nível de grãos de soja em metros em cada silo</h5>
-                            </div>
-                            <canvas id="graficoBarra" style="position: relative; width: 100%; height: 80%;"></canvas>
+                        <div class="valor-kpi">
+                            <h1 id="disponibilidade_txt">0t</h1>
+                        </div>
+                    </div>
+                    <div class="kpi">
+                        <div class="titulo-kpi">
+                            <h3>Total de Toneladas Armazenada nos Silos</h3>
+                        </div>
+                        <div class="valor-kpi">
+                            <h1 id="armazenagem_txt">0t</h1>
+                        </div>
+                    </div>
+                    <div class="kpi">
+                        <div class="titulo-kpi">
+                            <h3>Total de Alertas Emitidos no Último Mês</h3>
+                        </div>
+                        <div class="valor-kpi">
+                            <h1>9</h1>
                         </div>
                     </div>
                 </div>
-                <div id="direita">
-                    <div id="alertas">
-                        <div id="titulo-alertas">
-                            <h2>Alertas</h2>
+                <div id="graficos">
+                    <div class="graf">
+                        <div id="graf1">
+                            <h5>Nível de grãos de soja no silo durante os últimos 7 dias</h5>
+                            <select id="silo" onchange="VARsilos()" class="seleção">
+                                <option value="si1">Silo 1</option>
+                                <option value="si2">Silo 2</option>
+                                <option value="si3">Silo 3</option>
+                                <option value="si4">Silo 4</option>
+                                <option value="si5">Silo 5</option>
+                                <option value="si6">Silo 6</option>
+                            </select>
                         </div>
-                        <div id="box-alertas">
-                            <div class="caixinhas">
-                                <img src="Caution-Background-PNG.png" style="width: 15%; padding-left: 3%">
-                                <div class="estado-alerta">
-                                    Silo 4 próximo do limite!
-                                    <b style="font-size: 70%;">22/04/2025 16:45</b>
-                                </div>
-                            </div>
-                            <div class="caixinhas">
-                                <img src="Caution-Background-PNG.png" style="width: 15%; padding-left: 3%">
-                                <div class="estado-alerta">
-                                    Silo 6 próximo do limite!
-                                    <b style="font-size: 70%;">20/04/2025 20:35</b>
-                                </div>
-                            </div>
-                            <div class="caixinhas">
-                                <img src="Caution-Background-PNG.png" style="width: 15%; padding-left: 3%">
-                                <div class="estado-alerta">
-                                    Silo 1 próximo do limite!
-                                    <b style="font-size: 70%;">12/04/2025 01:05</b>
-                                </div>
-                            </div>
-                            <div class="caixinhas">
-                                <img src="Caution-Background-PNG.png" style="width: 15%; padding-left: 3%">
-                                <div class="estado-alerta">
-                                    Silo 6 próximo do limite!
-                                    <b style="font-size: 70%;">04/04/2025 14:40</b>
-                                </div>
-                            </div>
-                            <div class="caixinhas">
-                                <img src="Caution-Background-PNG.png" style="width: 15%; padding-left: 3%">
-                                <div class="estado-alerta">
-                                    Silo 3 próximo do limite!
-                                    <b style="font-size: 70%;">03/04/2025 19:20</b>
-                                </div>
-                            </div>
+                        <canvas id="graficoLinha" style="position: relative; width: 100%; height: 110%;"></canvas>
+                    </div>
+                    <div class="graf">
+                        <div id="graf2">
+                            <h5>Nível de grãos de soja em metros em cada silo</h5>
                         </div>
+                        <canvas id="graficoBarra" style="position: relative; width: 100%; height: 90%;"></canvas>
                     </div>
                 </div>
             </div>
+            <div id="direita">
+                <div id="alertas">
+                    <div id="titulo-alertas">
+                        <h2>Alertas</h2>
+                    </div>
+                    <div id="box-alertas">
+                        <h4 class="caixinhas">
+                            <img src="Caution-Background-PNG.png" width="15%">
+                            <div class="estado-alerta">
+                                Silo 4 próximo do limite!
+                                <b style="font-size: 70%;">22/04/2025 16:45</b>
+                            </div>
+                        </h4>
+                        <h4 class="caixinhas">
+                            <img src="Caution-Background-PNG.png" width="15%">
+                            <div class="estado-alerta">
+                                Silo 6 próximo do limite!
+                                <b style="font-size: 70%;">20/04/2025 20:35</b>
+                            </div>
+                        </h4>
+                        <h4 class="caixinhas">
+                            <img src="Caution-Background-PNG.png" width="15%">
+                            <div class="estado-alerta">
+                                Silo 1 próximo do limite!
+                                <b style="font-size: 70%;">12/04/2025 01:05</b>
+                            </div>
+                        </h4>
+                        <h4 class="caixinhas">
+                            <img src="Caution-Background-PNG.png" width="15%">
+                            <div class="estado-alerta">
+                                Silo 6 próximo do limite!
+                                <b style="font-size: 70%;">04/04/2025 14:40</b>
+                            </div>
+                        </h4>
+                        <h4 class="caixinhas">
+                            <img src="Caution-Background-PNG.png" width="15%">
+                            <div class="estado-alerta">
+                                Silo 3 próximo do limite!
+                                <b style="font-size: 70%;">03/04/2025 19:20</b>
+                            </div>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 </body>
 
 </html>
 
 <script>
+    var dia = [0, 0, 0, 0, 0, 0, 0, 7]
+    var silo1 = 5
+    var silo2 = 4
+    var silo3 = 3
+    var silo4 = 6
+    var silo5 = 7
+    var silo6 = 2
+
+    // Toneladas de soja totais que cabem dentro de 6 silos de 7m por 3,5r
+    var total_silos = 1452.405 / 6
+    // Toneladas de soja que cabem dentro de um sétimo de um silo
+    var setimo_silo = total_silos / 7
+    // Total de soja armazenada em todos os silos
+    var total_armazenado = 0
+    // Total disponível nos silos para armazenamento
+    var total_livre = 1452.405
+
+    var irregular = 0
+
+    function irregularidade() {
+        if (silo1 >= 6) {
+            irregular++
+        }
+        if (silo2 >= 6) {
+            irregular++
+        }
+        if (silo3 >= 6) {
+            irregular++
+        }
+        if (silo4 >= 6) {
+            irregular++
+        }
+        if (silo5 >= 6) {
+            irregular++
+        }
+        if (silo6 >= 6) {
+            irregular++
+        }
+        prox_txt.innerHTML = irregular
+    }
+
+    function calcular() {
+        var exibir_silo1 = silo1 * setimo_silo
+        var exibir_silo2 = silo2 * setimo_silo
+        var exibir_silo3 = silo3 * setimo_silo
+        var exibir_silo4 = silo4 * setimo_silo
+        var exibir_silo5 = silo5 * setimo_silo
+        var exibir_silo6 = silo6 * setimo_silo
+
+        total_armazenado = exibir_silo1 + exibir_silo2 + exibir_silo3 + exibir_silo4 + exibir_silo5 + exibir_silo6
+        total_livre = total_livre - total_armazenado
+
+        disponibilidade_txt.innerHTML = `${total_livre.toFixed(3)}t`
+        armazenagem_txt.innerHTML = `${total_armazenado.toFixed(3)}t`
+    }
+
+    function VARsilos() {
+        if (silo.value == "si1") {
+            dia = [0, 2, 3, 4, 4, 5, silo1, 7]
+        } else if (silo.value == "si2") {
+            dia = [0, 0, 1, 1, 2, 3, silo2, 7]
+        } else if (silo.value == "si3") {
+            dia = [0, 0, 0, 0, 2, 3, silo3, 7]
+        } else if (silo.value == "si4") {
+            dia = [0, 2, 3, 5, 5, 6, silo4, 7]
+        } else if (silo.value == "si5") {
+            dia = [0, 1, 3, 4, 6, 6, silo5, 7]
+        } else if (silo.value == "si6") {
+            dia = [0, 0, 0, 1, 1, 2, silo6, 7]
+        }
+        graficoLinha.data.datasets[0].data = dia
+        graficoLinha.update()
+    }
+
     const labels = [
         '22/04',
         '23/04',
@@ -144,7 +216,6 @@
         'Silo 4',
         'Silo 5',
         'Silo 6',
-        'Silo 7',
     ];
 
     const data = {
@@ -153,7 +224,7 @@
             label: 'Nível de grãos de soja',
             backgroundColor: '#45a834',
             borderColor: '#45a834',
-            data: [0, 0, 1, 3, 6, 7, 7, 7],
+            data: dia,
         }]
     }
 
@@ -163,7 +234,7 @@
             label: 'Nível de grãos de soja',
             backgroundColor: '#febc1d',
             borderColor: '#febc1d',
-            data: [1, 4, 3, 6, 7, 2, 7],
+            data: [silo1, silo2, silo3, silo4, silo5, silo6, 7],
         }]
     };
 
@@ -175,13 +246,13 @@
             scales: {
                 y: {
                     title: {
-                        display : true,
+                        display: true,
                         text: 'Altura(m)'
                     }
                 },
                 x: {
                     title: {
-                        display : true,
+                        display: true,
                         text: 'Tempo(dias)'
                     }
                 }
@@ -196,7 +267,7 @@
             scales: {
                 y: {
                     title: {
-                        display : true,
+                        display: true,
                         text: 'Altura(m)'
                     }
                 }
@@ -204,11 +275,17 @@
         }
     };
 
-    const graficoLinha = new Chart(document.getElementById('graficoLinha'),
+    const graficoLinha = new Chart(
+        document.getElementById('graficoLinha'),
         config
     );
 
-    const graficoBarra = new Chart(document.getElementById('graficoBarra'),
+    const graficoBarra = new Chart(
+        document.getElementById('graficoBarra'),
         config2
     );
+
+    VARsilos()
+    irregularidade()
+    calcular()
 </script>
