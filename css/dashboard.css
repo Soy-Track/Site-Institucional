@@ -1,11 +1,11 @@
 @font-face {
     font-family: montserrat;
-    src: url(Montserrat-Bold.ttf);
+    src: url("../assets/fonts/Montserrat/static/Montserrat-Bold.ttf");
 }
 
 @font-face {
     font-family: poppins;
-    src: url(Poppins-Bold.ttf);
+    src: url("../assets/fonts/Poppins/Poppins-Bold.ttf");
 }
 
 body {
