@@ -56,7 +56,7 @@
                         <div class="graf">
                             <div id="graf1">
                                 <h5>Nível de grãos de soja no silo durante os últimos 7 dias</h5>
-                                <select class="seleção">
+                                <select id="selecao" class="selecao">
                                     <option value="">Silo 1</option>
                                     <option value="">Silo 2</option>
                                     <option value="">Silo 3</option>
@@ -82,41 +82,41 @@
                             <h2>Alertas</h2>
                         </div>
                         <div id="box-alertas">
-                            <h4 class="caixinhas">
-                                <img src="Caution-Background-PNG.png" width="15%">
+                            <div class="caixinhas">
+                                <img src="Caution-Background-PNG.png" style="width: 15%; padding-left: 3%">
                                 <div class="estado-alerta">
                                     Silo 4 próximo do limite!
                                     <b style="font-size: 70%;">22/04/2025 16:45</b>
                                 </div>
-                            </h4>
-                            <h4 class="caixinhas">
-                                <img src="Caution-Background-PNG.png" width="15%">
+                            </div>
+                            <div class="caixinhas">
+                                <img src="Caution-Background-PNG.png" style="width: 15%; padding-left: 3%">
                                 <div class="estado-alerta">
                                     Silo 6 próximo do limite!
                                     <b style="font-size: 70%;">20/04/2025 20:35</b>
                                 </div>
-                            </h4>
-                            <h4 class="caixinhas">
-                                <img src="Caution-Background-PNG.png" width="15%">
+                            </div>
+                            <div class="caixinhas">
+                                <img src="Caution-Background-PNG.png" style="width: 15%; padding-left: 3%">
                                 <div class="estado-alerta">
                                     Silo 1 próximo do limite!
                                     <b style="font-size: 70%;">12/04/2025 01:05</b>
                                 </div>
-                            </h4>
-                            <h4 class="caixinhas">
-                                <img src="Caution-Background-PNG.png" width="15%">
+                            </div>
+                            <div class="caixinhas">
+                                <img src="Caution-Background-PNG.png" style="width: 15%; padding-left: 3%">
                                 <div class="estado-alerta">
                                     Silo 6 próximo do limite!
                                     <b style="font-size: 70%;">04/04/2025 14:40</b>
                                 </div>
-                            </h4>
-                            <h4 class="caixinhas">
-                                <img src="Caution-Background-PNG.png" width="15%">
+                            </div>
+                            <div class="caixinhas">
+                                <img src="Caution-Background-PNG.png" style="width: 15%; padding-left: 3%">
                                 <div class="estado-alerta">
                                     Silo 3 próximo do limite!
                                     <b style="font-size: 70%;">03/04/2025 19:20</b>
                                 </div>
-                            </h4>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -203,13 +203,11 @@
         }
     };
 
-    const graficoLinha = new Chart(
-        document.getElementById('graficoLinha'),
+    const graficoLinha = new Chart(document.getElementById('graficoLinha'),
         config
     );
 
-    const graficoBarra = new Chart(
-        document.getElementById('graficoBarra'),
+    const graficoBarra = new Chart(document.getElementById('graficoBarra'),
         config2
     );
 </script>
