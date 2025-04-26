@@ -185,7 +185,7 @@
                     <label class="labelFaleConosco">Mensagem</label>
                     <textarea rows="4" id="mensagem"></textarea>
                 </div>
-                <button id="botao-enviar">Enviar</button>
+                <button id="botao-enviar" onclick="faleConosco()">Enviar</button>
             </div>
         </div>
 
@@ -278,6 +278,27 @@
         }
     });
 </script>
+
+<script>
+    function faleConosco() {
+        var ax_nome = nome.value;
+        var ax_sobrenome = sobrenome.value;
+        var ax_email = email.value;
+        var ax_mensagem = mensagem.value;
+        if (ax_nome == '') {
+            alert('Campo de nome vazio!' + '\n' + 'Por favor preencha com seu nome');
+        } else if (ax_email == '') {
+            alert('Campo de e-mail vazio!' + '\n' + 'Por favor preencha com seu e-mail');
+        } else if (ax_email.includes('@') == false || ax_email.includes('.') == false) {
+            alert('E-mail inválido!' + '\n' + 'Por favor digite um e-mail válido')
+        } else if (ax_mensagem == '') {
+            alert('Campo de mensagem vazio!' + '\n' + 'Por favor escreva sua mensagem antes de enviar')
+        } else {
+            alert('Mensagem enviada com sucesso! ✅')
+        }
+    }
+</script>
+
 <script>
     function calcular() {
         if (ipt_silos.value < 1) {
@@ -303,8 +324,7 @@
                                     Perda sem sensor: <i style='color:red'>${(perdaSem.toFixed(2))} ton </i> <br>
                                     Perda com sensor: <i style='color:green'> ${(perdaCom.toFixed(2))} ton </i> <br>
                                     Economia: <i style='color:green'>${(economia.toFixed(2))} ton </i> <br>
-                                    Valor economizado: <i style='color:green'>R$${(valorEconomizado.toFixed(2))} </i> <br>`
-                ;
+                                    Valor economizado: <i style='color:green'>R$${(valorEconomizado.toFixed(2))} </i> <br>`;
         }
 
     }
