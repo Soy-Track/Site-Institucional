@@ -4,7 +4,7 @@ body {
     display: flex;
     height: 100vh;
 }
-
+      /*---- LADO ESQUERDO ---- */
 .lado_esquerdo {
 /*flex: 1; -- Usa a metada da tela*/
     flex: 1;
@@ -19,25 +19,32 @@ body {
 
 .lado_esquerdo h1 {
     color: #003366;
-    margin-bottom: 30px;
-    font-size: 60px;
+    margin: 0%;
+    font-size: 260%;
 }
 
 .lado_esquerdo label {
-    width: 100%;
-    max-width: 400px;
-    margin-bottom: 5px;
+    width: 150%;
+    max-width: 62%;
+    margin-bottom: 1%;
+    font-weight: bold;
+    color: #003366;
+    font-size: 140%;
+}
+#nivel_label_cadastro{
+    width: 180%;
+    max-width: 62%;
+    margin-bottom: 1%;
     font-weight: bold;
     color: #003366;
     font-size: 25px;
-    
 }
 
 .lado_esquerdo input {
     width: 100%;
     max-width: 400px;
-    padding: 18px;
-    margin-bottom: 20px;
+    padding: 1.5%;
+    margin-bottom: 2%;
     border: 1px solid #ccc;
     border-radius: 8px;
     background-color: #eee;
@@ -45,9 +52,10 @@ body {
 }
 
 .lado_esquerdo button {
-    width: 100%;
-    max-width: 420px;
-    padding: 18px;
+    width: 110%;
+    max-width: 62%;
+    margin-bottom: 1%;
+    padding: 1.8%;
     background-color: #003366;
     color: white;
     border: none;
@@ -56,6 +64,13 @@ body {
     cursor: pointer;
 }
 
+.link_login_esqueci_senha{
+   width: 62%;
+}
+
+
+
+      /* ----LADO DIREITO ---- */
 .lado_direito {
     flex: 1;
     background-image: url('../img/Imagens-Site/imgLogin.png');
@@ -83,17 +98,28 @@ body {
 }
 
 
+
+.input_cadastro_login{
+    font-size: 100%;
+}
+.ipt_nivel_alinhamento{
+    display: flex;
+    padding-bottom: 2%;
+    margin-bottom: 3%;
+}
+
+
 .lado_direito-itens h2 {
-    font-size: 70px;
+    font-size: 300%;
     margin-bottom: 0px;
 }
 
 .lado_direito-itens p {
-    font-size: 30px;
+    font-size: 170%;
     max-width: 700px;
 }
 .lado_direito-itens b {
-    font-size: 40px;
+    font-size: 100%;    
     max-width: 700px;
 }
 
@@ -104,12 +130,15 @@ body {
 }
 
 .logo{
-    font-size: 50px;
     display: flex;
     justify-content: center;
 }
 
 #logo-login{
-    width: 500px;
+    width: 50%;
     padding-bottom: 6%;
+}
+
+#entrar {
+  color:white;
 }

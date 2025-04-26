@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,35 +8,50 @@
     <link rel="stylesheet" href="../Site-Institucional/css/login_cadastro.css">
     <title> SoyTrack</title>
 </head>
+
 <body>
     <!-- essa parte é a do lado esquerdo, mas a estilização é a mesma do lado direito do login -->
     <div class="lado_direito_cadastro">
         <div class="lado_direito-itens">
             <h2 class="logo">Crie sua conta!</h2>
             <p>Junte-se a nós para ter um controle preciso do nível de grãos dos seus silos.
-            <br><b>O cadastro é rápido e fácil!</b></p>
+                <br><b>O cadastro é rápido e fácil!</b>
+            </p>
             <img src="../Site-Institucional/img/Logo-SoyTrack/logoTipoSoyTrackBRANCA.png" alt="" id="logo-login">
         </div>
     </div>
 
-<!-- essa parte é a do lado direito, mas a estilização é a mesma do lado esquerdo do login -->
+    <!-- essa parte é a do lado direito, mas a estilização é a mesma do lado esquerdo do login -->
     <div class="lado_esquerdo">
         <h1>Cadastro</h1>
         <label>Nome:</label>
-        <input id="ipt_nomeCadastro" placeholder="Digite seu nome completo">
+        <input id="ipt_nomeCadastro" class="input_cadastro_login" placeholder="Digite seu nome completo">
         <label>E-mail:</label>
-        <input id="ipt_emailCadastro" placeholder="Digite seu E-mail">
-        <label>Telefone:</label>
-        <input id="ipt_telefoneCadastro" placeholder="Digite seu telefone">
-        <button onclick="cadastro()">Cadastrar</button>
+        <input id="ipt_emailCadastro" class="input_cadastro_login" placeholder="Digite seu E-mail" type="email">
+        <label>Senha:</label>
+        <input id="ipt_senhaCadastro" class="input_cadastro_login" placeholder="Crie uma senha forte" type="password">
+        <label>Token:</label>
+        <input id="ipt_tokenCadastro" class="input_cadastro_login" placeholder="Digite o token de sua empresa">
+        <span class="ipt_nivel_alinhamento">
+            <label id="nivel_label_cadastro">Nível de gestão:</label>
+            <select id="nivel_cadastro" class="input_cadastro_login">
+                <option value="0">Básico (Funcionários)</option>
+                <option value="1">Avançado (Gerenciadores)</option>
+            </select>
+        </span>
+        <button onclick="cadastro()" class="input_cadastro_login">Cadastrar</button>
+        <div class="link_login_esqueci_senha">
+            <p>Já tem conta?<a href="../Site-Institucional/login.html">Faça login</a></p>
+        </div>
     </div>
 
- 
+
 </body>
+
 </html>
 
 <script>
     function cadastro() {
-        
+
     }
 </script>

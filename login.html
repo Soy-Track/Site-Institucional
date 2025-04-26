@@ -15,10 +15,13 @@
     <div class="lado_esquerdo">
         <h1>Login</h1>
         <label>E-mail:</label>
-        <input id="ipt_email" placeholder="Digite seu e-mail">
+        <input id="ipt_email" class="input_cadastro_login" placeholder="Digite seu e-mail" type="email">
         <label>Senha:</label>
-        <input type="password" id="ipt_senha" placeholder="Digite sua senha">
-        <button onclick="Login()">Entrar</button>
+        <input type="password" id="ipt_senha" class="input_cadastro_login" placeholder="Digite sua senha">
+        <button onclick="Login()"><a id="entrar" href="../Site-Institucional/CSS Chart.Js/dashboard2.html">Entrar</a></button>
+        <div class="link_login_esqueci_senha">
+            <p id="esqueci_senha_login"><a href="#">Esqueci minha senha</a></p>
+        </div>
     </div>
 
     <div class="lado_direito">
@@ -30,6 +33,7 @@
     </div>
 
 </body>
+
 </html>
 
 <script>
