@@ -37,7 +37,7 @@
                         </div>
                         <div class="kpi">
                             <div class="titulo-kpi">
-                                <h3>Volume Médio Ocupado nos Silos</h3>
+                                <h3>Total de Toneladas Armazenada nos Silos</h3>
                             </div>
                             <div  class="valor-kpi">
                                 <h1>595t</h1>
@@ -54,19 +54,25 @@
                     </div>
                     <div id="graficos">
                         <div class="graf">
-                            <select class="seleção">
-                                <option value="">Silo 1</option>
-                                <option value="">Silo 2</option>
-                                <option value="">Silo 3</option>
-                                <option value="">Silo 4</option>
-                                <option value="">Silo 5</option>
-                                <option value="">Silo 6</option>
-                                <option value="">Silo 7</option>
-                            </select>
-                            <canvas id="graficoLinha" style="position: relative; width: 100%; height: 90%;"></canvas>
+                            <div id="graf1">
+                                <h5>Nível de grãos de soja no silo durante os últimos 7 dias</h5>
+                                <select class="seleção">
+                                    <option value="">Silo 1</option>
+                                    <option value="">Silo 2</option>
+                                    <option value="">Silo 3</option>
+                                    <option value="">Silo 4</option>
+                                    <option value="">Silo 5</option>
+                                    <option value="">Silo 6</option>
+                                    <option value="">Silo 7</option>
+                                </select>
+                            </div>
+                            <canvas id="graficoLinha" style="position: relative; width: 100%; height: 100%;"></canvas>
                         </div>
                         <div class="graf">
-                            <canvas id="graficoBarra" style="position: relative; width: 100%; height: 100%;"></canvas>
+                            <div id="graf2">
+                                <h5>Nível de grãos de soja em metros em cada silo</h5>
+                            </div>
+                            <canvas id="graficoBarra" style="position: relative; width: 100%; height: 90%;"></canvas>
                         </div>
                     </div>
                 </div>
@@ -78,23 +84,38 @@
                         <div id="box-alertas">
                             <h4 class="caixinhas">
                                 <img src="Caution-Background-PNG.png" width="15%">
-                                Silo 4 em estado de alerta!
+                                <div class="estado-alerta">
+                                    Silo 4 próximo do limite!
+                                    <b style="font-size: 70%;">22/04/2025 16:45</b>
+                                </div>
                             </h4>
                             <h4 class="caixinhas">
                                 <img src="Caution-Background-PNG.png" width="15%">
-                                Silo 6 em estado de alerta!
+                                <div class="estado-alerta">
+                                    Silo 6 próximo do limite!
+                                    <b style="font-size: 70%;">20/04/2025 20:35</b>
+                                </div>
                             </h4>
                             <h4 class="caixinhas">
                                 <img src="Caution-Background-PNG.png" width="15%">
-                                Silo 1 em estado de alerta!
+                                <div class="estado-alerta">
+                                    Silo 1 próximo do limite!
+                                    <b style="font-size: 70%;">12/04/2025 01:05</b>
+                                </div>
                             </h4>
                             <h4 class="caixinhas">
                                 <img src="Caution-Background-PNG.png" width="15%">
-                                Silo 6 em estado de alerta!
+                                <div class="estado-alerta">
+                                    Silo 6 próximo do limite!
+                                    <b style="font-size: 70%;">04/04/2025 14:40</b>
+                                </div>
                             </h4>
                             <h4 class="caixinhas">
                                 <img src="Caution-Background-PNG.png" width="15%">
-                                Silo 3 em estado de alerta!
+                                <div class="estado-alerta">
+                                    Silo 3 próximo do limite!
+                                    <b style="font-size: 70%;">03/04/2025 19:20</b>
+                                </div>
                             </h4>
                         </div>
                     </div>
@@ -107,12 +128,13 @@
 
 <script>
     const labels = [
+        '22/04',
+        '23/04',
+        '24/04',
+        '25/04',
         '26/04',
         '27/04',
-        '28/04',
-        '29/04',
-        '30/04',
-        '31/04',
+        '28/04'
     ];
 
     const labels2 = [
@@ -127,17 +149,17 @@
     const data = {
         labels: labels,
         datasets: [{
-            label: 'Nível de grãos de soje no silo 1',
+            label: 'Nível de grãos de soja',
             backgroundColor: '#45a834',
             borderColor: '#45a834',
-            data: [0, 1, 3, 4, 5, 7, 7],
+            data: [0, 0, 1, 3, 6, 7, 7, 7],
         }]
-    };
+    }
 
     const data2 = {
         labels: labels2,
         datasets: [{
-            label: 'Nível de grãos de soja nos silos:',
+            label: 'Nível de grãos de soja',
             backgroundColor: '#febc1d',
             borderColor: '#febc1d',
             data: [1, 4, 3, 6, 7, 2, 7],
@@ -148,13 +170,37 @@
     const config = {
         type: 'line',
         data: data,
-        options: {}
+        options: {
+            scales: {
+                y: {
+                    title: {
+                        display : true,
+                        text: 'Altura(m)'
+                    }
+                },
+                x: {
+                    title: {
+                        display : true,
+                        text: 'Tempo(dias)'
+                    }
+                }
+            }
+        }
     };
 
     const config2 = {
         type: 'bar',
         data: data2,
-        options: {}
+        options: {
+            scales: {
+                y: {
+                    title: {
+                        display : true,
+                        text: 'Altura(m)'
+                    }
+                }
+            }
+        }
     };
 
     const graficoLinha = new Chart(
