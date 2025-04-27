@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="pt">
 
 <head>
@@ -30,13 +30,15 @@
         <input id="ipt_emailCadastro" class="input_cadastro_login" placeholder="Digite seu E-mail" type="email">
         <label>Senha:</label>
         <input id="ipt_senhaCadastro" class="input_cadastro_login" placeholder="Crie uma senha forte" type="password">
+        <label>Confirme sua senha:</label>
+        <input id="ipt_confirSenha" class="input_cadastro_login" placeholder="Confirme sua senha" type="password">
         <label>Token:</label>
         <input id="ipt_tokenCadastro" class="input_cadastro_login" placeholder="Digite o token de sua empresa">
         <span class="ipt_nivel_alinhamento">
-            <label id="nivel_label_cadastro">Nível de permissão:</label>
+            <label id="nivel_label_cadastro" for="nivel_cadastro">Nível de permissão:</label>
             <select id="nivel_cadastro" class="input_cadastro_login">
-                <option value="0">Básico (Funcionários)</option>
-                <option value="1">Avançado (Gerenciadores)</option>
+                <option value= "0">Básico (Funcionários)</option>
+                <option value= "1">Avançado (Gerenciadores)</option>
             </select>
         </span>
         <button onclick="cadastro()" class="input_cadastro_login">Cadastrar</button>
@@ -52,6 +54,28 @@
 
 <script>
     function cadastro() {
-
+        var nome = ipt_nomeCadastro.value
+        var email = ipt_emailCadastro.value
+        var senha = ipt_senhaCadastro.value
+        var confirma_senha = ipt_confirSenha.value
+        var token = ipt_tokenCadastro.value 
+        var permissao = nivel_cadastro.value
+    
+        if (nome == "") {
+            alert("Por favor, preencha o campo nome.");
+        } else if (email =="") {
+            alert("Por favor, preencha o campo do email.");
+        }else if (senha =="") {
+            alert("Por favor, preencha o campo de senha.");
+        }else if (confirma_senha =="") {
+            alert("Por favor, preencha o campo de confirmação de senha.");
+        }else if (token =="") {
+            alert("Por favor, preencha o campo do token.");
+        }else   if (permissao == 1) {
+            alert("Cadastro enviado para análise, por gentileza aguarde o retorno!")
+        }else if (permissao == 0) {
+            alert("Cadastro realizado com sucesso!")
+        }
+        
     }
 </script>
