@@ -112,7 +112,14 @@ body {
     font-size: 80%;
     color: darkblue;
 }
-
+.input_cadastro_login{
+    font-size: 70%;
+    max-width: 62%;
+}
+.qinput_cadastro_login{
+    font-size: 90%;
+    max-width: 62%;
+}
 
 .input_cadastro_login{
     font-size: 70%;
@@ -122,8 +129,12 @@ body {
     display: flex;
     margin-bottom: 2%;
     margin-top: 2%;
+    width: 60%;
 }
-
+.ipt_nivel_alinhamento select{
+    width: 60%;
+    height: 80%;
+}
 
 .lado_direito-itens h2 {
     font-size: 280%;
