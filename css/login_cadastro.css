@@ -77,7 +77,10 @@ body {
    font-size: 70%;
 }
 
-
+#id_link_login_esqueci_senha{
+    width: 62%;
+   font-size: 110%;
+}
 
       /* ----LADO DIREITO ---- */
 .lado_direito {
