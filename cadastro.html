@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt">
 
 <head>
@@ -27,9 +27,10 @@
         <label>Nome:</label>
         <input id="ipt_nomeCadastro" class="input_cadastro_login" placeholder="Digite seu nome completo">
         <label>E-mail:</label>
-        <input id="ipt_emailCadastro" class="input_cadastro_login" placeholder="Digite seu E-mail" type="email">
+        <input oninput="email()"id="ipt_emailCadastro" class="input_cadastro_login" placeholder="Digite seu E-mail" type="email">
         <label>Senha:</label>
-        <input id="ipt_senhaCadastro" class="input_cadastro_login" placeholder="Crie uma senha forte" type="password">
+        <input oninput="senha()"  id="ipt_senhaCadastro" class="input_cadastro_login" placeholder="Crie uma senha forte" type="password">
+        <div id="txt" class="link_login_esqueci_senha"></div>
         <label>Confirme sua senha:</label>
         <input id="ipt_confirSenha" class="input_cadastro_login" placeholder="Confirme sua senha" type="password">
         <label>Token:</label>
@@ -37,8 +38,8 @@
         <span class="ipt_nivel_alinhamento">
             <label id="nivel_label_cadastro" for="nivel_cadastro">Nível de permissão:</label>
             <select id="nivel_cadastro" class="input_cadastro_login">
-                <option value= "0">Básico (Funcionários)</option>
-                <option value= "1">Avançado (Gerenciadores)</option>
+                <option value="0">Básico (Funcionários)</option>
+                <option value="1">Avançado (Gerenciadores)</option>
             </select>
         </span>
         <button onclick="cadastro()" class="input_cadastro_login">Cadastrar</button>
@@ -46,7 +47,7 @@
             <p>Já tem conta?<a href="../Site-Institucional/login.html">Faça login</a></p>
         </div>
     </div>
-
+    
 
 </body>
 
@@ -58,24 +59,46 @@
         var email = ipt_emailCadastro.value
         var senha = ipt_senhaCadastro.value
         var confirma_senha = ipt_confirSenha.value
-        var token = ipt_tokenCadastro.value 
+        var token = ipt_tokenCadastro.value
         var permissao = nivel_cadastro.value
-    
+
         if (nome == "") {
             alert("Por favor, preencha o campo nome.");
-        } else if (email =="") {
+        } else if (email == "") {
             alert("Por favor, preencha o campo do email.");
-        }else if (senha =="") {
+        } else if (email.includes('@') == false || email.includes('.') == false) {
+             alert('E-mail inválido!' + '\n' + 'Por favor digite um e-mail válido')
+        }else if (senha == "") {
             alert("Por favor, preencha o campo de senha.");
-        }else if (confirma_senha =="") {
+        } else if (confirma_senha == "") {
             alert("Por favor, preencha o campo de confirmação de senha.");
-        }else if (token =="") {
+        } else if (token == "") {
             alert("Por favor, preencha o campo do token.");
-        }else   if (permissao == 1) {
+        } else if (senha != confirma_senha) {
+            alert('Senha inválida. Verifique a senha criada e sua confirmação para prosseguir!')
+        } else if (permissao == 1) {
             alert("Cadastro enviado para análise, por gentileza aguarde o retorno!")
-        }else if (permissao == 0) {
-            alert("Cadastro realizado com sucesso!")
+        } else if (permissao == 0) {
+            alert("Cadastro enviado para análise, por gentileza aguarde o retorno!")
+            ipt_nomeCadastro.value = "";
+            ipt_nomeCadastro.value= "";
+            ipt_emailCadastro.value= "";
+            ipt_senhaCadastro.value= "";
+            ipt_confirSenha.value= "";
+            ipt_tokenCadastro.value= "";
         }
-        
     }
+
+    function senha() {
+        var senha = ipt_senhaCadastro.value
+            if ((senha.includes('1') || senha.includes('2') || senha.includes('3') || senha.includes('4') || senha.includes('5') || 
+            senha.includes('6') || senha.includes('7') || senha.includes('8') || senha.includes('9') || senha.includes('0')) && 
+            (senha.includes('!') || senha.includes('@') ||senha.includes('#') ||senha.includes('$') ||senha.includes('%') ||
+            senha.includes('¨') ||senha.includes('&') ||senha.includes('*')) && (senha.length>=6)) {
+                txt.innerHTML=`<span style="color: darkgreen;">Senha forte </span>`
+            } else{
+                txt.innerHTML=`<span style="color: red;">Senha fraca</span>` 
+            }       
+    }
+
 </script>

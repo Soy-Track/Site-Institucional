@@ -46,9 +46,9 @@
             alert("Por favor, preencha o campo do email.");
         } else if (senha == "") {
             alert("Por favor, preencha o campo da senha.");
-        } else if (email == "fernanda@sementech.com" && senha == "123" && tentativas > 0) {
+        } else if (email == "fernanda@sementec.com" && senha == "123" && tentativas > 0) {
             window.location.href = '../Site-Institucional/DASHBOARD/dashboard.html';
-        } else if (email == "fernanda@sementech.com" && senha == "123" && tentativas <= 0) {
+        } else if (email == "fernanda@sementec.com" && senha == "123" && tentativas <= 0) {
             txt.innerHTML = `<span style="color: crimson;">Sua conta está bloqueada por segurança. Verifique sua caixa de e-mail com instruções para desbloqueá-la.</span>`;
         } else {
             while (tentativas > 0) { 
