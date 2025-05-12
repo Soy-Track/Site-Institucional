@@ -35,13 +35,6 @@
         <input id="ipt_confirSenha" class="input_cadastro_login" placeholder="Confirme sua senha" type="password">
         <label>Token:</label>
         <input id="ipt_tokenCadastro" class="input_cadastro_login" placeholder="Digite o token de sua empresa">
-        <span class="ipt_nivel_alinhamento">
-            <label id="nivel_label_cadastro" for="nivel_cadastro">Nível de permissão:</label>
-            <select id="nivel_cadastro" class="input_cadastro_login">
-                <option value="0">Básico</option>
-                <option value="1">Avançado</option>
-            </select>
-        </span>
         <button onclick="cadastro()" class="input_cadastro_login">Cadastrar</button>
         <div id="id_link_login_esqueci_senha">
             <p>Já tem conta? <a href="../Site-Institucional/login.html"> Faça login</a></p>
@@ -95,9 +88,9 @@
             senha.includes('6') || senha.includes('7') || senha.includes('8') || senha.includes('9') || senha.includes('0')) && 
             (senha.includes('!') || senha.includes('@') ||senha.includes('#') ||senha.includes('$') ||senha.includes('%') ||
             senha.includes('¨') ||senha.includes('&') ||senha.includes('*')) && (senha.length>=6)) {
-                txt.innerHTML=`<span style="color: darkgreen;">Senha forte </span>`
+                txt.innerHTML=`<span style="color: darkgreen;">Senha forte</span>`
             } else{
-                txt.innerHTML=`<span style="color: red;">Senha fraca</span>` 
+                txt.innerHTML=`<span style="color: red;">Senha fraca (precisa ter pelo menos um caracter especial, um número e 6 caracteres no mínimo)</span>` 
             }       
     }
 

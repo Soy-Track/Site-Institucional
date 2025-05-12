@@ -125,7 +125,7 @@ body {
     font-size: 70%;
     max-width: 62%;
 }
-.ipt_nivel_alinhamento{
+/* .ipt_nivel_alinhamento{
     display: flex;
     margin-bottom: 2%;
     margin-top: 2%;
@@ -134,7 +134,7 @@ body {
 .ipt_nivel_alinhamento select{
     width: 60%;
     height: 80%;
-}
+} */
 
 .lado_direito-itens h2 {
     font-size: 280%;
