@@ -57,7 +57,7 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 15%;
+    width: 30%;
     height: 100%;
     font-family: 'Montserrat', sans-serif;
     gap: 5%;
@@ -109,8 +109,6 @@ h1 {
 #div_sair:hover {
     background-color:  #002a51;
 }
-
-
 
 .dash {
     height: 100vh;
@@ -194,7 +192,7 @@ h1 {
     justify-content: center;
     height: 45%;
     color: #1e2a38;
-    font-size: 90%;
+    font-size: 80%;
     padding-left: 6%;
     padding-right: 6%;
     margin-top: 2%;
@@ -206,7 +204,7 @@ h1 {
     justify-content: center;
     height: 45%;
     color: #1e2a38;
-    font-size: 90%;
+    font-size: 80%;
     padding-left: 6%;
     margin-top: 2%;
 }
