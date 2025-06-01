@@ -19,7 +19,7 @@
             </div>
             <div id="div_nav_links">
                 <div class="div_link" onclick="window.location.href='dashboard.html'">Página Principal</div>
-                <div class="div_link" onclick="window.location.href='silos.html'" >Silos de Soja</div>
+                <div class="div_link" onclick="window.location.href='silos.html'">Silos de Soja</div>
                 <div class="div_link">Funcionários</div>
                 <div class="div_link" id="link_relatorio" onclick="window.location.href='relatorios.html'">Relatório
                 </div>
@@ -38,7 +38,8 @@
                     <div id="KPIs">
                         <div class="kpi">
                             <div class="titulo-kpi-icone">
-                                <h3>Silos Próximos da Capacidade Máxima</h3><i class='bx  bx-info-circle'></i>
+                                <h3>Silos Próximos da Capacidade Máxima</h3><button popovertarget="modal"><i
+                                        class='bx  bx-info-circle'></i></button>
                             </div>
                             <div class="valor-kpi">
                                 <h1 id="prox_txt">0</h1>
@@ -62,7 +63,8 @@
                         </div>
                         <div class="kpi">
                             <div class="titulo-kpi-icone">
-                                <h3>Total de Alertas Graves Emitidos no Último Mês</h3><i class='bx  bx-info-circle'></i>
+                                <h3>Total de Alertas Graves Emitidos no Último Mês</h3><button popovertarget="modal1"><i
+                                        class='bx  bx-info-circle'></i></button>
                             </div>
                             <div class="valor-kpi">
                                 <h1>9</h1>
@@ -82,7 +84,7 @@
                                     <option value="si6">Silo 6</option>
                                 </select>
                             </div>
-                            <canvas id="graficoLinha" style="position: relative; width: 100%; height: 100%;"></canvas>
+                            <canvas id="graficoLinha" style="position: relative; width: 100%; height: 109%;"></canvas>
                         </div>
                         <div class="graf">
                             <div id="graf2">
@@ -97,7 +99,7 @@
                 <div id="direita">
                     <div id="alertas">
                         <div id="titulo-alertas">
-                            <h2>Alertas</h2><i class='bx  bx-info-circle'></i>
+                            <h2>Alertas</h2><button popovertarget="modal2"><i class='bx  bx-info-circle'></i></button>
                         </div>
                         <div id="box-alertas">
                             <div class="caixinhas">
@@ -135,12 +137,208 @@
                                     <b style="font-size: 70%;">03/04/2025 19:20</b>
                                 </div>
                             </div>
+                            <div class="caixinhas">
+                                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%">
+                                <div class="estado-alerta">
+                                    Silo 3 próximo do limite!
+                                    <b style="font-size: 70%;">03/04/2025 19:20</b>
+                                </div>
+                            </div>
+                            <div class="caixinhas">
+                                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%">
+                                <div class="estado-alerta">
+                                    Silo 3 próximo do limite!
+                                    <b style="font-size: 70%;">03/04/2025 19:20</b>
+                                </div>
+                            </div>
+                            <div class="caixinhas">
+                                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%">
+                                <div class="estado-alerta">
+                                    Silo 3 próximo do limite!
+                                    <b style="font-size: 70%;">03/04/2025 19:20</b>
+                                </div>
+                            </div>
+                            <div class="caixinhas">
+                                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%">
+                                <div class="estado-alerta">
+                                    Silo 3 próximo do limite!
+                                    <b style="font-size: 70%;">03/04/2025 19:20</b>
+                                </div>
+                            </div>
+                            <div class="caixinhas">
+                                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%">
+                                <div class="estado-alerta">
+                                    Silo 3 próximo do limite!
+                                    <b style="font-size: 70%;">03/04/2025 19:20</b>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- AS DIVS DOS POPUP COMEÇA AQUI -->
+
+    <div id="modal" popover="auto" class="style_modal">
+        <div id="Background"></div>
+        <div id="alinha-h2-button">
+            <h2>Silos próximo da capacidade maxima</h2>
+            <button popovertarget="modal">x</button>
+        </div>
+        <div class="barra_caixinhas">
+            <div class="caixinhas">
+                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%">
+                <div class="estado-alerta">
+                    Silo 3 próximo do limite!
+                    <b style="font-size: 70%;">03/04/2025 19:20</b>
+                </div>
+            </div>
+            <div class="caixinhas">
+                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%">
+                <div class="estado-alerta">
+                    Silo 1 próximo do limite!
+                    <b style="font-size: 70%;">03/04/2025 19:20</b>
+                </div>
+            </div>
+            <div class="caixinhas">
+                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%">
+                <div class="estado-alerta">
+                    Silo 3 próximo do limite!
+                    <b style="font-size: 70%;">03/04/2025 19:20</b>
+                </div>
+            </div>
+            <div class="caixinhas">
+                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%">
+                <div class="estado-alerta">
+                    Silo 5 próximo do limite!
+                    <b style="font-size: 70%;">03/04/2025 19:20</b>
+                </div>
+            </div>
+            <div class="caixinhas">
+                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%">
+                <div class="estado-alerta">
+                    Silo 7 próximo do limite!
+                    <b style="font-size: 70%;">03/04/2025 19:20</b>
+                </div>
+            </div>
+            <div class="caixinhas">
+                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%">
+                <div class="estado-alerta">
+                    Silo 8 próximo do limite!
+                    <b style="font-size: 70%;">03/04/2025 19:20</b>
+                </div>
+            </div>
+            <div class="caixinhas">
+                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%">
+                <div class="estado-alerta">
+                    Silo 9 próximo do limite!
+                    <b style="font-size: 70%;">03/04/2025 19:20</b>
+                </div>
+            </div>
+            <div class="caixinhas">
+                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%">
+                <div class="estado-alerta">
+                    Silo 11 próximo do limite!
+                    <b style="font-size: 70%;">03/04/2025 19:20</b>
+                </div>
+            </div>
+            <div class="caixinhas">
+                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%">
+                <div class="estado-alerta">
+                    Silo 13 próximo do limite!
+                    <b style="font-size: 70%;">03/04/2025 19:20</b>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal1" popover="auto" class="style_modal">
+        <div id="alinha-h2-button">
+            <h2>Silos com alertas graves no último mês</h2>
+            <button popovertarget="modal1">x</button>
+        </div>
+        <div class="barra_caixinhas">
+            <div class="caixinhas">
+                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%">
+                <div class="estado-alerta">
+                    Silo 3 próximo do limite!
+                    <b style="font-size: 70%;">03/04/2025 19:20</b>
+                </div>
+            </div>
+            <div class="caixinhas">
+                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%">
+                <div class="estado-alerta">
+                    Silo 1 próximo do limite!
+                    <b style="font-size: 70%;">03/04/2025 19:20</b>
+                </div>
+            </div>
+            <div class="caixinhas">
+                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%">
+                <div class="estado-alerta">
+                    Silo 3 próximo do limite!
+                    <b style="font-size: 70%;">03/04/2025 19:20</b>
+                </div>
+            </div>
+            <div class="caixinhas">
+                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%">
+                <div class="estado-alerta">
+                    Silo 5 próximo do limite!
+                    <b style="font-size: 70%;">03/04/2025 19:20</b>
+                </div>
+            </div>
+            <div class="caixinhas">
+                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%">
+                <div class="estado-alerta">
+                    Silo 7 próximo do limite!
+                    <b style="font-size: 70%;">03/04/2025 19:20</b>
+                </div>
+            </div>
+            <div class="caixinhas">
+                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%">
+                <div class="estado-alerta">
+                    Silo 8 próximo do limite!
+                    <b style="font-size: 70%;">03/04/2025 19:20</b>
+                </div>
+            </div>
+            <div class="caixinhas">
+                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%">
+                <div class="estado-alerta">
+                    Silo 9 próximo do limite!
+                    <b style="font-size: 70%;">03/04/2025 19:20</b>
+                </div>
+            </div>
+            <div class="caixinhas">
+                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%">
+                <div class="estado-alerta">
+                    Silo 11 próximo do limite!
+                    <b style="font-size: 70%;">03/04/2025 19:20</b>
+                </div>
+            </div>
+            <div class="caixinhas">
+                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%">
+                <div class="estado-alerta">
+                    Silo 13 próximo do limite!
+                    <b style="font-size: 70%;">03/04/2025 19:20</b>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal2" popover="auto" class="style_modal">
+        <div id="alinha-h2-button">
+            <h2>Legenda dos Alertas</h2>
+            <button popovertarget="modal2">x</button>
+        </div>
+        <div class="text-modal">
+            <p>-Grave</p>
+            <p>-Médio</p>
+            <p>-Normal</p>
+        </div>
+    </div>
+
+    <!-- AS DIVS DOS POPUP TERMINA AQUI -->
 </body>
 
 </html>

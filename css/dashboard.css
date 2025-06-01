@@ -192,7 +192,7 @@ h1 {
     justify-content: center;
     height: 45%;
     color: #1e2a38;
-    font-size: 80%;
+    font-size: 70%;
     padding-left: 6%;
     padding-right: 6%;
     margin-top: 2%;
@@ -231,6 +231,11 @@ h1 {
     color: #1e2a38;
 }
 
+.kpi button{
+    border: none;
+    padding: 0% ;
+}
+
 #direita {
     width: 30%;
     display: flex;
@@ -265,6 +270,11 @@ h1 {
     left: 15%;
 }
 
+#titulo-alertas button{
+    border: none;
+    padding: 0%;
+}
+
 #box-alertas {
     display: flex;
     flex-direction: column;
@@ -272,6 +282,9 @@ h1 {
     height: 85%;
     width: 100%;
     gap: 5%;
+    height: 500px; 
+  overflow-y: scroll; 
+  border: 1px solid #ccc;
 }
 
 .caixinhas {
@@ -304,4 +317,39 @@ b {
     justify-content: flex-end;
     margin-right: 1%;
     padding-top: 2%;
+}
+
+.barra_caixinhas{
+ height: 500px; 
+  overflow-y: scroll; 
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.style_modal{
+    position: fixed;
+    left: 35%;
+    top: 20%;
+    /* border: none; */
+    width: 30%;
+    z-index: 999;
+    
+ 
+}
+.style_modal h2{    
+    text-align: center;
+}
+
+.style_modal .caixinhas{
+   display: flex;
+   justify-self: center;
+}
+
+#alinha-h2-button{
+    display: flex;
+    justify-content: space-between;
+}
+
+.text-modal{
+    text-align: center;
 }
