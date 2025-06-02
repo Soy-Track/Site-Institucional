@@ -338,7 +338,7 @@ b {
     padding-top: 1%; 
 }
 
-#silo-selecionado {
+#silo_selecionado {
     margin: 0;
     background-color: white;
     border: 1px solid #ddd;

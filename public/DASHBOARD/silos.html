@@ -43,17 +43,8 @@
       <div class="titulo-esquerda">
         <div id="titulo">
           <img src="../img/Logo-SoyTrack/iconeSoyTrackVERDE.png" height="70%" />
-          <h2>Monitoramento Individual <select
-            id="silo-selecionado"
-            onchange="atualizarGraficos()"
-            class="selecao"
-          >
-            <option value="si1">Silo 1</option>
-            <option value="si2">Silo 2</option>
-            <option value="si3">Silo 3</option>
-            <option value="si4">Silo 4</option>
-            <option value="si5">Silo 5</option>
-            <option value="si6">Silo 6</option>
+          <h2>Monitoramento Individual 
+            <select id="silo_selecionado" onchange="atualizarGraficos()" class="selecao">
           </select></h2>
         </div>
 
@@ -189,7 +180,7 @@
   </body>
 </html>
 
-<script>
+<script>/*
   // Dados dos silos
   const silos = {
     si1: { valorAtual: 5, historico: [0, 2, 3, 4, 4, 5, 5] },
@@ -205,7 +196,7 @@
 
     
 
-    const siloSelecionado = document.getElementById("silo-selecionado").value;
+    const siloSelecionado = document.getElementById("silo_selecionado").value;
     const dados = silos[siloSelecionado];
     
 
@@ -282,5 +273,7 @@
     configLinha
   );
 
-  atualizarGraficos();
+  atualizarGraficos();*/
 </script>
+
+<script src="silos.js"></script>
