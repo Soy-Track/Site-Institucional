@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/solicitacoes.css">
+    <title>Dashboard SoyTrack</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1"></script>
+</head>
+
+<body>
+    <section class="dash">
+        <div id="navbar_lateral">
+            <div id="icone_navbar">
+                <img id="icone_soytrack" src="../img/Logo-SoyTrack/iconeSoyTrackBRANCO.png" alt="Logo SoyTrack">
+            </div>
+            <div id="div_nav_links">
+                <div class="div_link" onclick="window.location.href='dashboard.html'">Página Principal</div>
+                <div class="div_link" onclick="window.location.href='silos.html'" >Silos de Soja</div>
+                <div class="div_link">Funcionários</div>
+                <div class="div_link" id="link_relatorio" onclick="window.location.href='relatorios.html'">Relatório</div>
+            </div>
+            <div id="div_sair">SAIR</div>
+        </div>
+        <div id="solicitacoes">
+            <div id="titulo">
+                <img src="../img/Logo-SoyTrack/iconeSoyTrackVERDE.png" height="70%">
+                <h2>Solicitações de novos Funcionários</h2>
+            </div>
+            <div id="conteudo_solicitacoes">
+                <table>
+                    <tr id="titulo_tabela">
+                        <td>#</td>
+                        <td>Nome</td>
+                        <td>E-mail</td>
+                        <td>Nível</td>
+                        <td>Solicitação</td>
+                    </tr>
+                    <tr class="dados_tabela">
+                        <td>7</td>
+                        <td>Alberto Souza</td>
+                        <td>alberto.souza@gmail.com</td>
+                        <td>1</td>
+                        <td>
+                            <button class="btAceitar">Aceitar</button>
+                            <button class="btNegar">Negar</button>
+                        </td>
+                    </tr>
+                    <tr class="dados_tabela">
+                        <td>8</td>
+                        <td>Rebecca Nunes</td>
+                        <td>rebecca.nunes@gmail.com</td>
+                        <td>1</td>
+                        <td>
+                            <button class="btAceitar">Aceitar</button>
+                            <button class="btNegar">Negar</button>
+                        </td>
+                    </tr>
+                    <tr class="dados_tabela">
+                        <td>9</td>
+                        <td>Bruno Silva</td>
+                        <td>bruno.silva@gmail.com</td>
+                        <td>1</td>
+                        <td>
+                            <button class="btAceitar">Aceitar</button>
+                            <button class="btNegar">Negar</button>
+                        </td>
+                    </tr>
+                    <tr class="dados_tabela">
+                        <td>10</td>
+                        <td>Aline Mendonça</td>
+                        <td>aline.mendonca@gmail.com</td>
+                        <td>1</td>
+                        <td>
+                            <button class="btAceitar">Aceitar</button>
+                            <button class="btNegar">Negar</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+    </section>
+</body>
+
+</html>
