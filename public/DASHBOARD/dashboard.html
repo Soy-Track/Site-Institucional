@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+<title>Dashboard SoyTrack</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1"></script>
+</head>
+
+<body>
+    <section class="dash">
+        <div id="navbar_lateral">
+            <div id="icone_navbar">
+                <img id="icone_soytrack" src="../img/Logo-SoyTrack/iconeSoyTrackBRANCO.png" alt="Logo SoyTrack">
+            </div>
+            <div id="div_nav_links">
+                <div class="div_link" onclick="window.location.href='dashboard.html'">Página Principal</div>
+                <div class="div_link" onclick="window.location.href='silos.html'">Silos de Soja</div>
+                <div class="div_link">Funcionários</div>
+                <div class="div_link" id="link_relatorio" onclick="window.location.href='relatorios.html'">Relatório
+                </div>
+            </div>
+            <div id="div_sair">SAIR</div>
+        </div>
+
+
+        <div class="titulo-esquerda">
+            <div id="titulo">
+                <img src="../img/Logo-SoyTrack/iconeSoyTrackVERDE.png" height="70%">
+                <h2>Monitoramento dos Silos</h2>
+            </div>
+            <div id="resto">
+                <div id="esquerda">
+                    <div id="KPIs">
+                        <div class="kpi">
+                            <div class="titulo-kpi-icone">
+                                <h3>Silos Próximos da Capacidade Máxima</h3>
+                                <button class="mod" popovertarget="modal">
+                                    <i class='bx  bx-info-circle'></i>
+                                </button>
+                            </div>
+                            <div class="valor-kpi">
+                                <h1 id="prox_txt"></h1>
+                            </div>
+                        </div>
+                        <div class="kpi">
+                            <div class="titulo-kpi">
+                                <h3>Silos com Menor Volume Armazenado</h3>
+                            </div>
+                            <div class="valor-kpi">
+                                <h1 id="disponibilidade_txt"></h1>
+                            </div>
+                        </div>
+                        <div class="kpi">
+                            <div class="titulo-kpi">
+                                <h3>Silo com a Maior Quantidade de Alertas no Último mês</h3>
+                            </div>
+                            <div class="valor-kpi">
+                                <h1 id="armazenagem_txt"></h1>
+                            </div>
+                        </div>
+                        <div class="kpi">
+                            <div class="titulo-kpi-icone">
+                                <h3>Total de Alertas Graves Emitidos no Último Mês</h3>
+
+                            </div>
+                            <div class="valor-kpi">
+                                <h1 id="alertas_txt"></h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="graficos">
+                        <div class="graf">
+                            <div id="graf1">
+                                <h5>Nível de grãos de soja no silo durante os últimos 7 dias</h5>
+                                <select id="silo" onchange="VARsilos()" class="seleção"></select>
+                            </div>
+                            <canvas id="graficoLinha" style="position: relative; width: 100%; height: 109%;"></canvas>
+                        </div>
+                        <div class="graf">
+                            <div id="graf2">
+                                <h5>Nível em metros de grãos de soja em cada silo</h5>
+                            </div>
+                            <canvas id="graficoBarra" style="position: relative; width: 100%; height: 95%;"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="direita">
+                    <div id="alertas">
+                        <div id="titulo-alertas">
+                            <h2>Alertas</h2>
+                            <button id="modall2" class="mod" popovertarget="modal2">
+                                <i class='bx  bx-info-circle'></i>
+                            </button>
+                        </div>
+                        <div id="box_alertas">
+                            <div class="caixinhas">
+                                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%">
+                                <div class="estado-alerta">
+                                    Alerta simulado!
+                                    <b style="font-size: 70%;">22/04/2025 16:45</b>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AS DIVS DOS POPUP COMEÇA AQUI -->
+
+    <div id="modal" popover="auto" class="style_modal">
+        <div id="Background"></div>
+        <div id="alinha-h2-button">
+            <h2>Silos próximos da capacidade maxima</h2>
+            <button class="botaofechar" popovertarget="modal">X</button>
+        </div>
+        <div class="barra_caixinhas">
+            <h2 id="tit_modal">Lista dos silos prestes a atingir a capacidade máxima:</h2>
+            <div id="novos_alertas"></div>
+        </div>
+    </div>
+
+    <div id="modal1" popover="auto" class="style_modal">
+        <div id="alinha-h2-button">
+            <h2>Silos com alertas graves no último mês</h2>
+            <button popovertarget="modal1">x</button>
+        </div>
+        <div class="barra_caixinhas">
+            <div class="caixinhas">
+                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%">
+                <div class="estado-alerta">
+                    Silo 3 próximo do limite!
+                    <b style="font-size: 70%;">03/04/2025 19:20</b>
+                </div>
+            </div>
+            <div class="caixinhas">
+                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%">
+                <div class="estado-alerta">
+                    Silo 1 próximo do limite!
+                    <b style="font-size: 70%;">03/04/2025 19:20</b>
+                </div>
+            </div>
+            <div class="caixinhas">
+                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%">
+                <div class="estado-alerta">
+                    Silo 3 próximo do limite!
+                    <b style="font-size: 70%;">03/04/2025 19:20</b>
+                </div>
+            </div>
+            <div class="caixinhas">
+                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%">
+                <div class="estado-alerta">
+                    Silo 5 próximo do limite!
+                    <b style="font-size: 70%;">03/04/2025 19:20</b>
+                </div>
+            </div>
+            <div class="caixinhas">
+                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%">
+                <div class="estado-alerta">
+                    Silo 7 próximo do limite!
+                    <b style="font-size: 70%;">03/04/2025 19:20</b>
+                </div>
+            </div>
+            <div class="caixinhas">
+                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%">
+                <div class="estado-alerta">
+                    Silo 8 próximo do limite!
+                    <b style="font-size: 70%;">03/04/2025 19:20</b>
+                </div>
+            </div>
+            <div class="caixinhas">
+                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%">
+                <div class="estado-alerta">
+                    Silo 9 próximo do limite!
+                    <b style="font-size: 70%;">03/04/2025 19:20</b>
+                </div>
+            </div>
+            <div class="caixinhas">
+                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%">
+                <div class="estado-alerta">
+                    Silo 11 próximo do limite!
+                    <b style="font-size: 70%;">03/04/2025 19:20</b>
+                </div>
+            </div>
+            <div class="caixinhas">
+                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%">
+                <div class="estado-alerta">
+                    Silo 13 próximo do limite!
+                    <b style="font-size: 70%;">03/04/2025 19:20</b>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal2" popover="auto" class="style_modal">
+        <div id="alinha-h2-button">
+            <h2>Legenda dos Alertas</h2>
+            <button class="botaofechar" popovertarget="modal2">x</button>
+        </div>
+        <div class="text-modal">
+            <p class="desc"><span id="grave">Grave-</span> Alertas graves representam silos próximos de 100% de ocupação. Atenção máxima recomendada.</p>
+            <p class="desc"><span id="moderado">Moderado-</span> Alertas moderados representam silos que apresentam nível elevado de ocupação e que podem atingir a capacidade total em breve.</p>
+            <p class="desc"><span id="leve">Leve-</span> Alertas leves representam silos com ocupação considerável, porém em estado controlado.</p>
+        </div>
+    </div>
+
+    <!-- AS DIVS DOS POPUP TERMINA AQUI -->
+</body>
+
+</html>
+
+<script src="dash.js"></script>

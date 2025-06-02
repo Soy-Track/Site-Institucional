@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- link que adiciona a logo verde ao lado do nome na aba do site -->
     <link rel="shortcut icon" type="imagex/png" href="img/Logo-SoyTrack/iconeSoyTrackVERDE.png">
-    <link rel="stylesheet" href="../Site-Institucional/css/login_cadastro.css">
+    <link rel="stylesheet" href="css/login_cadastro.css">
     <title> SoyTrack</title>
 </head>
 
@@ -29,7 +29,7 @@
         <div class="lado_direito-itens">
             <h2 class="logo">Bem-vindo de volta!</h2>
             <p>Faça login para acessar sua conta e aproveite todos os recursos disponíveis.</p>
-            <img src="../Site-Institucional/img/Logo-SoyTrack/logoTipoSoyTrackBRANCA.png" alt="" id="logo-login">
+            <img src="img/Logo-SoyTrack/logoTipoSoyTrackBRANCA.png" alt="" id="logo-login">
         </div>
     </div>
 
@@ -47,7 +47,7 @@
         } else if (senha == "") {
             alert("Por favor, preencha o campo da senha.");
         } else if (email == "fernanda@sementec.com" && senha == "123" && tentativas > 0) {
-            window.location.href = '../Site-Institucional/DASHBOARD/dashboard.html';
+            window.location.href = 'DASHBOARD/dashboard.html';
         } else if (email == "fernanda@sementec.com" && senha == "123" && tentativas <= 0) {
             txt.innerHTML = `<span style="color: crimson;">Sua conta está bloqueada por segurança. Verifique sua caixa de e-mail com instruções para desbloqueá-la.</span>`;
         } else {
