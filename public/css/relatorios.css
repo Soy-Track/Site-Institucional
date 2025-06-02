@@ -57,6 +57,17 @@
     border-width: 0px 0px 0px 7px;
     border-color: white;
 }
+#link_dashboard {
+    background-color:  #003b72;
+    border-style: solid;
+    border-width: 0px 0px 0px 7px;
+    border-color: transparent;
+}
+#link_dashboard:hover {
+    background-color:#003261;
+    border-style: solid;
+    border-width: 0px 0px 0px 7px;
+}
 .div_link:hover {
     background-color:#003261;
     border-style: solid;

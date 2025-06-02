@@ -51,11 +51,22 @@
     border-style: solid;
     border-color: transparent;
 }
-#link_relatorio {
+#link_solicitacoes {
     background-color:#003565;
     border-style: solid;
     border-width: 0px 0px 0px 7px;
     border-color: white;
+}
+#link_dashboard {
+    background-color:  #003b72;
+    border-style: solid;
+    border-width: 0px 0px 0px 7px;
+    border-color: transparent;
+}
+#link_dashboard:hover {
+    background-color:#003261;
+    border-style: solid;
+    border-width: 0px 0px 0px 7px;
 }
 .div_link:hover {
     background-color:#003261;
@@ -116,20 +127,28 @@ td {
     height: 10vh;
 }
 .btAceitar {
-    background-color: #0c9b1c;
+    background-color: #179b27;
     color: white;
-    padding: 6%;
+    padding: 7%;
     border-radius: 10px;
     font-size: 90%;
     font-weight: 600;
     border: none;
 }
+.btAceitar:hover {
+    background-color: #068114;
+    cursor: pointer;
+}
 .btNegar {
-    background-color: #c71a1a;
+    background-color: #c72727;
     color: white;
-    padding: 6%;
+    padding: 7%;
     border-radius: 10px;
     font-size: 90%;
     font-weight: 600;
     border: none;
+}
+.btNegar:hover {
+    background-color: #ae0e0e;
+    cursor: pointer;
 }

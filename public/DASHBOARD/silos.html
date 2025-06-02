@@ -1,279 +1,247 @@
 <!DOCTYPE html>
 <html lang="pt">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard Soytrack</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1"></script>
-    <link rel="stylesheet" href="../css/silos.css" />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
-    />
-  </head>
-  <body>
-    <section class="dash">
-      <div id="navbar_lateral">
-        <div id="icone_navbar">
-          <img
-            id="icone_soytrack"
-            src="../img/Logo-SoyTrack/iconeSoyTrackBRANCO.png"
-            alt="Logo SoyTrack"
-          />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Soytrack</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1"></script>
+  <link rel="stylesheet" href="../css/silos.css" />
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
+</head>
+
+<body>
+  <section class="dash">
+    <div id="navbar_lateral">
+      <div id="icone_navbar">
+        <img id="icone_soytrack" src="../img/Logo-SoyTrack/iconeSoyTrackBRANCO.png" alt="Logo SoyTrack" />
+      </div>
+      <div id="div_nav_links">
+        <div class="div_link" id="link_dashboard" onclick="window.location.href='dashboard.html'">Página Principal</div>
+        <div class="div_link" id="link_silos" onclick="window.location.href='silos.html'">Silos de Soja</div>
+        <div class="div_link" id="link_solicitacoes" onclick="window.location.href='solicitacoes.html'">Solicitações
         </div>
-        <div id="div_nav_links">
-          <div class="div_link" onclick="window.location.href='dashboard.html'">
-            Página Principal
-          </div>
-          <div class="div_link" onclick="window.location.href='silos.html'">
-            Silos de Soja
-          </div>
-          <div class="div_link">Funcionários</div>
-          <div
-            class="div_link"
-            id="link_relatorio"
-            onclick="window.location.href='relatorios.html'"
-          >
-            Relatório
-          </div>
+        <div class="div_link" id="link_relatorio" onclick="window.location.href='relatorios.html'">Relatório
         </div>
-        <div id="div_sair">SAIR</div>
+      </div>
+      <div id="div_sair">SAIR</div>
+    </div>
+
+    <div class="titulo-esquerda">
+      <div id="titulo">
+        <img src="../img/Logo-SoyTrack/iconeSoyTrackVERDE.png" height="70%" />
+        <h2>Monitoramento Individual
+          <select id="silo_selecionado" onchange="atualizarGraficos()" class="selecao">
+          </select>
+        </h2>
       </div>
 
-      <div class="titulo-esquerda">
-        <div id="titulo">
-          <img src="../img/Logo-SoyTrack/iconeSoyTrackVERDE.png" height="70%" />
-          <h2>Monitoramento Individual 
-            <select id="silo_selecionado" onchange="atualizarGraficos()" class="selecao">
-          </select></h2>
-        </div>
 
 
-
-        <div id="resto">
-          <div id="esquerda">
-            <div id="container-esquerdo"></div>
-            <div id="KPIs">
-              <div class="kpi">
-                <div class="titulo-kpi-icone">
-                  <h3>Silos Próximos da Capacidade Máxima</h3>
-                  <i class="bx bx-info-circle"></i>
-                </div>
-                <div class="valor-kpi">
-                  <h1 id="prox_txt">0</h1>
-                </div>
-              </div>
-              <div class="kpi">
-                <div class="titulo-kpi">
-                  <h3>Capacidade Total Disponível nos Silos</h3>
-                </div>
-                <div class="valor-kpi">
-                  <h1 id="disponibilidade_txt">0t</h1>
-                </div>
-              </div>
-              <div class="kpi">
-                <div class="titulo-kpi">
-                  <h3>Total de Toneladas Armazenada nos Silos</h3>
-                </div>
-                <div class="valor-kpi">
-                  <h1 id="armazenagem_txt">0t</h1>
-                </div>
-              </div>
-              <div class="kpi">
-                <div class="titulo-kpi-icone">
-                  <h3>Total de Alertas Graves Emitidos no Último Mês</h3>
-                  <i class="bx bx-info-circle"></i>
-                </div>
-                <div class="valor-kpi">
-                  <h1>9</h1>
-                </div>
-              </div>
-            </div>
-            <div id="graficos">
-              <!-- Gráfico de barra individual -->
-              <div class="graf" >
-                <div id="graf2">
-                  <h5>Nível atual do silo selecionado</h5>
-                  
-                </div>
-                <canvas
-                  id="graficoBarra"
-                  style="width: 100%; height: 100%"
-                ></canvas>
-              </div>
-
-              <!-- Gráfico de linhas para o silo selecionado -->
-              <div class="graf">
-                <h5>Histórico dos últimos 7 dias</h5>
-                <canvas
-                  id="graficoLinha"
-                  style="width: 100%; height: 100%"
-                ></canvas>
-              </div>
-            </div>
-          </div>
-
-          <div id="direita">
-             
-            <div id="alertas">
-              <div id="titulo-alertas">
-                <h2>Alertas</h2>
+      <div id="resto">
+        <div id="esquerda">
+          <div id="container-esquerdo"></div>
+          <div id="KPIs">
+            <div class="kpi">
+              <div class="titulo-kpi-icone">
+                <h3>Silos Próximos da Capacidade Máxima</h3>
                 <i class="bx bx-info-circle"></i>
               </div>
-              <div id="box-alertas">
-                <div class="caixinhas">
-                  <img
-                    src="../img/Imagens-Site/Caution-Background-PNG.png"
-                    width="15%"
-                  />
-                  <div class="estado-alerta">
-                    Silo 4 próximo do limite!
-                    <b style="font-size: 70%">22/04/2025 16:45</b>
-                  </div>
+              <div class="valor-kpi">
+                <h1 id="prox_txt">0</h1>
+              </div>
+            </div>
+            <div class="kpi">
+              <div class="titulo-kpi">
+                <h3>Capacidade Total Disponível nos Silos</h3>
+              </div>
+              <div class="valor-kpi">
+                <h1 id="disponibilidade_txt">0t</h1>
+              </div>
+            </div>
+            <div class="kpi">
+              <div class="titulo-kpi">
+                <h3>Total de Toneladas Armazenada nos Silos</h3>
+              </div>
+              <div class="valor-kpi">
+                <h1 id="armazenagem_txt">0t</h1>
+              </div>
+            </div>
+            <div class="kpi">
+              <div class="titulo-kpi-icone">
+                <h3>Total de Alertas Graves Emitidos no Último Mês</h3>
+                <i class="bx bx-info-circle"></i>
+              </div>
+              <div class="valor-kpi">
+                <h1>9</h1>
+              </div>
+            </div>
+          </div>
+          <div id="graficos">
+            <!-- Gráfico de barra individual -->
+            <div class="graf">
+              <div id="graf2">
+                <h5>Nível atual do silo selecionado</h5>
+
+              </div>
+              <canvas id="graficoBarra" style="width: 100%; height: 100%"></canvas>
+            </div>
+
+            <!-- Gráfico de linhas para o silo selecionado -->
+            <div class="graf">
+              <h5>Histórico dos últimos 7 dias</h5>
+              <canvas id="graficoLinha" style="width: 100%; height: 100%"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div id="direita">
+
+          <div id="alertas">
+            <div id="titulo-alertas">
+              <h2>Alertas</h2>
+              <i class="bx bx-info-circle"></i>
+            </div>
+            <div id="box-alertas">
+              <div class="caixinhas">
+                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%" />
+                <div class="estado-alerta">
+                  Silo 4 próximo do limite!
+                  <b style="font-size: 70%">22/04/2025 16:45</b>
                 </div>
-                <div class="caixinhas">
-                  <img
-                    src="../img/Imagens-Site/Caution-Background-PNG.png"
-                    width="15%"
-                  />
-                  <div class="estado-alerta">
-                    Silo 6 próximo do limite!
-                    <b style="font-size: 70%">20/04/2025 20:35</b>
-                  </div>
+              </div>
+              <div class="caixinhas">
+                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%" />
+                <div class="estado-alerta">
+                  Silo 6 próximo do limite!
+                  <b style="font-size: 70%">20/04/2025 20:35</b>
                 </div>
-                <div class="caixinhas">
-                  <img
-                    src="../img/Imagens-Site/Caution-Background-PNG.png"
-                    width="15%"
-                  />
-                  <div class="estado-alerta">
-                    Silo 1 próximo do limite!
-                    <b style="font-size: 70%">12/04/2025 01:05</b>
-                  </div>
+              </div>
+              <div class="caixinhas">
+                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%" />
+                <div class="estado-alerta">
+                  Silo 1 próximo do limite!
+                  <b style="font-size: 70%">12/04/2025 01:05</b>
                 </div>
-                <div class="caixinhas">
-                  <img
-                    src="../img/Imagens-Site/Caution-Background-PNG.png"
-                    width="15%"
-                  />
-                  <div class="estado-alerta">
-                    Silo 6 próximo do limite!
-                    <b style="font-size: 70%">04/04/2025 14:40</b>
-                  </div>
+              </div>
+              <div class="caixinhas">
+                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%" />
+                <div class="estado-alerta">
+                  Silo 6 próximo do limite!
+                  <b style="font-size: 70%">04/04/2025 14:40</b>
                 </div>
-                <div class="caixinhas">
-                  <img
-                    src="../img/Imagens-Site/Caution-Background-PNG.png"
-                    width="15%"
-                  />
-                  <div class="estado-alerta">
-                    Silo 3 próximo do limite!
-                    <b style="font-size: 70%">03/04/2025 19:20</b>
-                  </div>
+              </div>
+              <div class="caixinhas">
+                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%" />
+                <div class="estado-alerta">
+                  Silo 3 próximo do limite!
+                  <b style="font-size: 70%">03/04/2025 19:20</b>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  </body>
+    </div>
+  </section>
+</body>
+
 </html>
 
 <script>/*
-  // Dados dos silos
-  const silos = {
-    si1: { valorAtual: 5, historico: [0, 2, 3, 4, 4, 5, 5] },
-    si2: { valorAtual: 4, historico: [0, 0, 1, 1, 2, 3, 4] },
-    si3: { valorAtual: 3, historico: [0, 0, 0, 0, 2, 3, 3] },
-    si4: { valorAtual: 6, historico: [0, 2, 3, 5, 5, 6, 6] },
-    si5: { valorAtual: 7, historico: [0, 1, 3, 4, 6, 6, 7] },
-    si6: { valorAtual: 2, historico: [0, 0, 0, 1, 1, 2, 2] },
-  };
+// Dados dos silos
+const silos = {
+si1: { valorAtual: 5, historico: [0, 2, 3, 4, 4, 5, 5] },
+si2: { valorAtual: 4, historico: [0, 0, 1, 1, 2, 3, 4] },
+si3: { valorAtual: 3, historico: [0, 0, 0, 0, 2, 3, 3] },
+si4: { valorAtual: 6, historico: [0, 2, 3, 5, 5, 6, 6] },
+si5: { valorAtual: 7, historico: [0, 1, 3, 4, 6, 6, 7] },
+si6: { valorAtual: 2, historico: [0, 0, 0, 1, 1, 2, 2] },
+};
 
-  // Função para atualizar ambos gráficos
-  function atualizarGraficos() {
+// Função para atualizar ambos gráficos
+function atualizarGraficos() {
 
-    
+ 
 
-    const siloSelecionado = document.getElementById("silo_selecionado").value;
-    const dados = silos[siloSelecionado];
-    
+const siloSelecionado = document.getElementById("silo_selecionado").value;
+const dados = silos[siloSelecionado];
+ 
 
-    // Atualiza gráfico de barras (individual)
-    graficoBarra.data.datasets[0].data = [dados.valorAtual];
-    graficoBarra.data.labels = [`Silo ${siloSelecionado.slice(2)}`];
-    graficoBarra.update();
+// Atualiza gráfico de barras (individual)
+graficoBarra.data.datasets[0].data = [dados.valorAtual];
+graficoBarra.data.labels = [`Silo ${siloSelecionado.slice(2)}`];
+graficoBarra.update();
 
-    // Atualiza gráfico de linhas (histórico)
-    graficoLinha.data.datasets[0].data = dados.historico;
-    graficoLinha.update();
+// Atualiza gráfico de linhas (histórico)
+graficoLinha.data.datasets[0].data = dados.historico;
+graficoLinha.update();
 
-    // Atualiza cálculos de toneladas
-    calcular();
-    irregularidade();
-  }
+// Atualiza cálculos de toneladas
+calcular();
+irregularidade();
+}
 
-  // Configuração do gráfico de barra (individual)
-  const configBarra = {
-    type: "bar",
-    data: {
-      labels: ["Silo 1"], // Inicial
-      datasets: [
-        {
-          label: "Nível atual",
-          backgroundColor: "#febc1d",
-          borderColor: "#febc1d",
-          data: [silos.si1.valorAtual], // Inicia com Silo 1
-        },
-      ],
-    },
-    options: {
-      scales: {
-        y: {
-          max: 7,
-          title: { display: true, text: "Altura (m)" },
-        },
-      },
-    },
-  };
+// Configuração do gráfico de barra (individual)
+const configBarra = {
+type: "bar",
+data: {
+labels: ["Silo 1"], // Inicial
+datasets: [
+  {
+    label: "Nível atual",
+    backgroundColor: "#febc1d",
+    borderColor: "#febc1d",
+    data: [silos.si1.valorAtual], // Inicia com Silo 1
+  },
+],
+},
+options: {
+scales: {
+  y: {
+    max: 7,
+    title: { display: true, text: "Altura (m)" },
+  },
+},
+},
+};
 
-  const configLinha = {
-    type: "line",
-    data: {
-      labels: ["22/04", "23/04", "24/04", "25/04", "26/04", "27/04", "28/04"],
-      datasets: [
-        {
-          label: "Nível histórico",
-          backgroundColor: "#45a834",
-          borderColor: "#45a834",
-          data: silos.si1.historico, // Inicia com Silo 1
-        },
-      ],
-    },
-    options: {
-      scales: {
-        y: {
-          max: 7,
-          title: { display: true, text: "Altura (m)" },
-        },
-        x: {
-          title: { display: true, text: "Data" },
-        },
-      },
-    },
-  };
+const configLinha = {
+type: "line",
+data: {
+labels: ["22/04", "23/04", "24/04", "25/04", "26/04", "27/04", "28/04"],
+datasets: [
+  {
+    label: "Nível histórico",
+    backgroundColor: "#45a834",
+    borderColor: "#45a834",
+    data: silos.si1.historico, // Inicia com Silo 1
+  },
+],
+},
+options: {
+scales: {
+  y: {
+    max: 7,
+    title: { display: true, text: "Altura (m)" },
+  },
+  x: {
+    title: { display: true, text: "Data" },
+  },
+},
+},
+};
 
-  const graficoBarra = new Chart(
-    document.getElementById("graficoBarra"),
-    configBarra
-  );
-  const graficoLinha = new Chart(
-    document.getElementById("graficoLinha"),
-    configLinha
-  );
+const graficoBarra = new Chart(
+document.getElementById("graficoBarra"),
+configBarra
+);
+const graficoLinha = new Chart(
+document.getElementById("graficoLinha"),
+configLinha
+);
 
-  atualizarGraficos();*/
+atualizarGraficos();*/
 </script>
 
 <script src="silos.js"></script>
