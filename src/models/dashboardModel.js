@@ -166,6 +166,82 @@ function alertar(idempresa) {
     return database.executar(instrucaoSql);
 }
 
+function exibirbarrinha(idempresa, nomesilo) {
+    var instrucaoSql = `
+    select e.idEmpresa,
+		s.idSilo,
+		c.idCaptura,
+		truncate((s.altura - c.distancia), 2) AS distancia,
+		c.dtCaptura
+        from empresa e
+		join silo s ON e.idEmpresa = s.FKempresa
+		join sensor sen ON s.idSilo = sen.FKsilo
+		join captura c ON sen.idSensor = c.FKsensor
+        join (
+			select e.idEmpresa, s.idSilo, max(c.dtCaptura) as dt
+			from empresa e
+			join silo s ON e.idEmpresa = s.FKempresa
+			join sensor sen ON s.idSilo = sen.FKsilo
+			join captura c ON sen.idSensor = c.FKsensor
+			group by s.idSilo
+		) datas_mais_recentes on datas_mais_recentes.dt = c.dtCaptura and s.idSilo = datas_mais_recentes.idSilo
+        where e.idEmpresa = ${idempresa} and s.nomeSilo = ${nomesilo}
+        order by idSilo;
+    `
+    return database.executar(instrucaoSql);
+}
+
+function calcularTON(idempresa, nomesilo) {
+    var instrucaoSql = `
+    select altura, (diametro / 2) as raio from silo
+        join empresa
+        on FKempresa = idEmpresa
+        where idEmpresa = ${idempresa} and nomeSilo = ${nomesilo};
+    `
+    return database.executar(instrucaoSql);
+}
+
+function alertarsilo(idempresa, nomesilo) {
+    var instrucaoSql = `
+    select silo.nomeSilo, 
+		alerta.*, 
+		captura.* 
+		from alerta
+		join captura
+		on idCaptura = FKcaptura
+		join sensor
+		on idSensor = FKsensor
+		join silo
+		on idSilo = FKsilo
+		join empresa
+		on idEmpresa = FKempresa
+		where idEmpresa = ${idempresa} and nomeSilo = ${nomesilo}
+        order by idAlerta desc
+        limit 5;
+    `
+    return database.executar(instrucaoSql);
+}
+
+function contagemsilos(idempresa, nomesilo) {
+    var instrucaoSql = `
+    select count(idAlerta) as qtd_alertas
+		from alerta
+		join captura
+		on idCaptura = FKcaptura
+		join sensor
+		on idSensor = FKsensor
+		join silo
+		on idSilo = FKsilo
+		join empresa
+		on idEmpresa = FKempresa
+		where idEmpresa = ${idempresa} and nomeSilo = ${nomesilo} 
+        and alerta.nome = 'grave' 
+        and dtCaptura >= CURRENT_DATE - INTERVAL 30 DAY
+        order by idAlerta desc;
+    `
+    return database.executar(instrucaoSql);
+}
+
 module.exports = {
     selecinardadosgrafico,
     contarsilos,
@@ -175,4 +251,8 @@ module.exports = {
     exibirkpi3,
     exibirkpi4,
     alertar,
+    exibirbarrinha,
+    calcularTON,
+    alertarsilo,
+    contagemsilos,
 }

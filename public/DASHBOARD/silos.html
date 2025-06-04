@@ -31,12 +31,9 @@
       <div id="titulo">
         <img src="../img/Logo-SoyTrack/iconeSoyTrackVERDE.png" height="70%" />
         <h2>Monitoramento Individual
-          <select id="silo_selecionado" onchange="atualizarGraficos()" class="selecao">
-          </select>
+          <select id="silo_selecionado" onchange="atualizarGraficos()" class="selecao"></select>
         </h2>
       </div>
-
-
 
       <div id="resto">
         <div id="esquerda">
@@ -44,16 +41,15 @@
           <div id="KPIs">
             <div class="kpi">
               <div class="titulo-kpi-icone">
-                <h3>Silos Próximos da Capacidade Máxima</h3>
-                <i class="bx bx-info-circle"></i>
+                <h3 style="font-size: 20px;">Você está visualizando:</h3>
               </div>
               <div class="valor-kpi">
-                <h1 id="prox_txt">0</h1>
+                <h1 style="color: #003261;" id="prox_txt"></h1>
               </div>
             </div>
             <div class="kpi">
               <div class="titulo-kpi">
-                <h3>Capacidade Total Disponível nos Silos</h3>
+                <h3 style="font-size: 15px;">Armazenamento Disponível Atualmente</h3>
               </div>
               <div class="valor-kpi">
                 <h1 id="disponibilidade_txt">0t</h1>
@@ -61,7 +57,7 @@
             </div>
             <div class="kpi">
               <div class="titulo-kpi">
-                <h3>Total de Toneladas Armazenada nos Silos</h3>
+                <h3 style="font-size: 15px;">Armazenamento Ocupado Atualmente</h3>
               </div>
               <div class="valor-kpi">
                 <h1 id="armazenagem_txt">0t</h1>
@@ -70,10 +66,9 @@
             <div class="kpi">
               <div class="titulo-kpi-icone">
                 <h3>Total de Alertas Graves Emitidos no Último Mês</h3>
-                <i class="bx bx-info-circle"></i>
               </div>
               <div class="valor-kpi">
-                <h1>9</h1>
+                <h1 id="total_alertas_txt"></h1>
               </div>
             </div>
           </div>
@@ -99,44 +94,17 @@
 
           <div id="alertas">
             <div id="titulo-alertas">
-              <h2>Alertas</h2>
-              <i class="bx bx-info-circle"></i>
+              <h2 style="color: #00203d;">Últimos 5 Alertas</h2 style="color: #003261;">
             </div>
-            <div id="box-alertas">
+            <div id="box_alertas">
               <div class="caixinhas">
                 <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%" />
                 <div class="estado-alerta">
-                  Silo 4 próximo do limite!
+                  Silo X em estado de alerta grave!
                   <b style="font-size: 70%">22/04/2025 16:45</b>
                 </div>
               </div>
-              <div class="caixinhas">
-                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%" />
-                <div class="estado-alerta">
-                  Silo 6 próximo do limite!
-                  <b style="font-size: 70%">20/04/2025 20:35</b>
-                </div>
               </div>
-              <div class="caixinhas">
-                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%" />
-                <div class="estado-alerta">
-                  Silo 1 próximo do limite!
-                  <b style="font-size: 70%">12/04/2025 01:05</b>
-                </div>
-              </div>
-              <div class="caixinhas">
-                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%" />
-                <div class="estado-alerta">
-                  Silo 6 próximo do limite!
-                  <b style="font-size: 70%">04/04/2025 14:40</b>
-                </div>
-              </div>
-              <div class="caixinhas">
-                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%" />
-                <div class="estado-alerta">
-                  Silo 3 próximo do limite!
-                  <b style="font-size: 70%">03/04/2025 19:20</b>
-                </div>
               </div>
             </div>
           </div>

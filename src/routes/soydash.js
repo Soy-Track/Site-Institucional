@@ -35,4 +35,20 @@ router.get("/alertar/:idempresa", function (req, res) {
     dashboardController.alertar(req, res);
 })
 
+router.get("/exibirbarrinha/:idempresa/:nomesilo", function (req, res) {
+    dashboardController.exibirbarrinha(req, res);
+})
+
+router.get("/calcularTON/:idempresa/:nomesilo", function (req, res) {
+    dashboardController.calcularTON(req, res);
+})
+
+router.get("/alertarsilo/:idempresa/:nomesilo", function (req, res) {
+    dashboardController.alertarsilo(req, res);
+})
+
+router.get("/contagemsilos/:idempresa/:nomesilo", function (req, res) {
+    dashboardController.contagemsilos(req, res);
+})
+
 module.exports = router;

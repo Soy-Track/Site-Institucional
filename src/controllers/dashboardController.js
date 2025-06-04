@@ -65,6 +65,42 @@ function alertar(req, res) {
     });
 }
 
+function exibirbarrinha(req, res) {
+    var idempresa = req.params.idempresa;
+    var nomesilo = req.params.nomesilo;
+
+    dashboardModel.exibirbarrinha(idempresa, nomesilo).then((resultado) => {
+        res.status(201).json(resultado);
+    });
+}
+
+function calcularTON(req, res) {
+    var idempresa = req.params.idempresa;
+    var nomesilo = req.params.nomesilo;
+
+    dashboardModel.calcularTON(idempresa, nomesilo).then((resultado) => {
+        res.status(201).json(resultado);
+    });
+}
+
+function alertarsilo(req, res) {
+    var idempresa = req.params.idempresa;
+    var nomesilo = req.params.nomesilo;
+
+    dashboardModel.alertarsilo(idempresa, nomesilo).then((resultado) => {
+        res.status(201).json(resultado);
+    });
+}
+
+function contagemsilos(req, res) {
+    var idempresa = req.params.idempresa;
+    var nomesilo = req.params.nomesilo;
+
+    dashboardModel.contagemsilos(idempresa, nomesilo).then((resultado) => {
+        res.status(201).json(resultado);
+    });
+}
+
 module.exports = {
     selecinardadosgrafico,
     contarsilos,
@@ -74,4 +110,8 @@ module.exports = {
     exibirkpi3,
     exibirkpi4,
     alertar,
+    exibirbarrinha,
+    calcularTON,
+    alertarsilo,
+    contagemsilos,
 };
