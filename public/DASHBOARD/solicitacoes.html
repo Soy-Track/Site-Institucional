@@ -30,56 +30,20 @@
                 <img src="../img/Logo-SoyTrack/iconeSoyTrackVERDE.png" height="70%">
                 <h2>Solicitações de novos Funcionários</h2>
             </div>
-            <div id="conteudo_solicitacoes">
-                <table>
-                    <tr id="titulo_tabela">
-                        <td>#</td>
-                        <td>Nome</td>
-                        <td>E-mail</td>
-                        <td>Nível</td>
-                        <td>Solicitação</td>
-                    </tr>
-                    <tr class="dados_tabela">
-                        <td>7</td>
-                        <td>Alberto Souza</td>
-                        <td>alberto.souza@gmail.com</td>
-                        <td>1</td>
-                        <td>
-                            <button class="btAceitar">Aceitar</button>
-                            <button class="btNegar">Negar</button>
-                        </td>
-                    </tr>
-                    <tr class="dados_tabela">
-                        <td>8</td>
-                        <td>Rebecca Nunes</td>
-                        <td>rebecca.nunes@gmail.com</td>
-                        <td>1</td>
-                        <td>
-                            <button class="btAceitar">Aceitar</button>
-                            <button class="btNegar">Negar</button>
-                        </td>
-                    </tr>
-                    <tr class="dados_tabela">
-                        <td>9</td>
-                        <td>Bruno Silva</td>
-                        <td>bruno.silva@gmail.com</td>
-                        <td>1</td>
-                        <td>
-                            <button class="btAceitar">Aceitar</button>
-                            <button class="btNegar">Negar</button>
-                        </td>
-                    </tr>
-                    <tr class="dados_tabela">
-                        <td>10</td>
-                        <td>Aline Mendonça</td>
-                        <td>aline.mendonca@gmail.com</td>
-                        <td>1</td>
-                        <td>
-                            <button class="btAceitar">Aceitar</button>
-                            <button class="btNegar">Negar</button>
-                        </td>
-                    </tr>
-                </table>
+            <div>
+                <div id="conteudo_solicitacoes">
+                    <table id="tabelaPedidos">
+                        <tr id="titulo_tabela">
+                            <td>#</td>
+                            <td id="titulo_nome">Nome</td>
+                            <td id="titulo_email">E-mail</td>
+                            <td>Solicitação</td>
+                        </tr>
+                    </table>
+                    <div>
+                        <table id="conteudoPedidos"></table>
+                    </div>
+                </div>
             </div>
         </div>
         
@@ -87,3 +51,5 @@
 </body>
 
 </html>
+
+<script src="pedidos.js"></script>

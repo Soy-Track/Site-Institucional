@@ -1,0 +1,81 @@
+function buscarPedidos() {
+    var idempresaVar = localStorage.idEmpresa
+    // para teste
+    idempresaVar = 1
+
+    fetch(`/empresa/buscarPedidos/${idempresaVar}`, {
+        method: "GET",
+    })
+        .then(function (resposta) {
+            resposta.json().then((resposta2) => {
+                console.log(resposta2)
+                conteudoPedidos.innerHTML = ""
+                if (resposta2.length == 0) {
+                    conteudoPedidos.innerHTML = `<br> <span id="mensagem_sol">Você não possui solicitações no momento</span>`
+                }
+                for (let i = 0; i < resposta2.length; i++) {
+                    conteudoPedidos.innerHTML += `
+                    <tr class="dados_tabela">
+                        <td>${i + 1}</td>
+                        <td>${resposta2[i].nome}</td>
+                        <td>${resposta2[i].email}</td>
+                        <td>
+                            <div class="div_btSolicitacao">
+                                <button onclick="aceitar(${resposta2[i].idFuncionario})" class="btAceitar">Aceitar</button>
+                                <button onclick="negar(${resposta2[i].idFuncionario})" class="btNegar">Negar</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <br>
+                    `;
+                }
+            })
+        })
+        .catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+}
+
+function aceitar(id_funcionario) {
+    var idfuncionarioVar = id_funcionario
+
+    fetch("/empresa/atualizarstatus", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            idFuncionario: idfuncionarioVar,
+        }),
+    })
+        .then(function (resposta) {
+            console.log("resposta: ", resposta);
+            buscarPedidos()
+        })
+        .catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+}
+
+function negar(id_funcionario) {
+    var idfuncionarioVar = id_funcionario
+
+    fetch("/empresa/recusarfuncionario", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            idFuncionario: idfuncionarioVar,
+        }),
+    })
+        .then(function (resposta) {
+            console.log("resposta: ", resposta);
+            buscarPedidos()
+        })
+        .catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+}
+
+buscarPedidos()

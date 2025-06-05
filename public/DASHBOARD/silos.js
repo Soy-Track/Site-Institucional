@@ -216,7 +216,6 @@ function atualizardadosgrafico() {
 
                         const dataTratada = `${dia}/${mes} ${horas}:${minutos}:${segundos}`;
 
-
                         labels[i] = dataTratada
                     }
                     iniciarsilos()

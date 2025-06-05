@@ -112,6 +112,17 @@ table {
     height: 5vh;
     background-color: rgb(28, 56, 82);
     color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 3%;
+    padding-right: 4%;
+}
+#titulo_nome {
+    margin-right: 40px;
+}
+#titulo_email {
+    margin-right: 60px;
 }
 tr:not(:last-child) td {
     border-bottom: 1px solid #ddd;
@@ -125,11 +136,20 @@ td {
 .dados_tabela {
     font-weight: 400;
     height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 3%;
+    padding-right: 6.5%;
+}
+.div_btSolicitacao {
+    display: flex;
+    gap: 3px;
 }
 .btAceitar {
     background-color: #179b27;
     color: white;
-    padding: 7%;
+    padding: 13%;
     border-radius: 10px;
     font-size: 90%;
     font-weight: 600;
@@ -142,7 +162,7 @@ td {
 .btNegar {
     background-color: #c72727;
     color: white;
-    padding: 7%;
+    padding: 13%;
     border-radius: 10px;
     font-size: 90%;
     font-weight: 600;
@@ -151,4 +171,9 @@ td {
 .btNegar:hover {
     background-color: #ae0e0e;
     cursor: pointer;
+}
+
+#mensagem_sol {
+    padding: 30px;
+    font-size: 30px;
 }
