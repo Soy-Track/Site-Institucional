@@ -440,13 +440,13 @@ function atualizar() {
     }, 2000);
 }
 
-//atualizar()
+atualizar()
 
 contagemsilos()
 
-//atualizardadosgrafico()
-//atualizarbarrinha()
-//atualizaralerta()
+atualizardadosgrafico()
+atualizarbarrinha()
+atualizaralerta()
 
 alertarsilo()
 exibirbarrinha()
