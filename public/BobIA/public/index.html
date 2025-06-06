@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="relatorios.css">
+    <link rel="stylesheet" href="bobIA.css">
+    <title>Dashboard SoyTrack</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1"></script>
+</head>
+
+<body>
+    <section class="dash">
+        <div id="navbar_lateral">
+            <div id="icone_navbar">
+                <img id="icone_soytrack" src="img/Logo-SoyTrack/iconeSoyTrackBRANCO.png" alt="Logo SoyTrack">
+            </div>
+            <div id="div_nav_links">
+                <div class="div_link" id="link_relatorio" onclick="window.location.href='index.html'">BobIA</div>
+                <div class="div_link" onclick="redirecionar()">Jira</div>
+            </div>
+            <div id="div_sair">SAIR</div>
+        </div>
+        <div id="relatorio">
+            <div id="titulo">
+                <img src="img/Logo-SoyTrack/iconeSoyTrackVERDE.png" height="70%">
+                <h2>SoyTrack</h2>
+            </div>
+            <div id="container">
+                <div id="all">
+                    <img id="imgsoytrackinho" src="img/soytrackinho.png" alt="">
+                    <div id="elementos">
+                        <div id="topo">
+                            <img id="bobimg" src="img/bob_logo.png">
+                            <h1>BobIA</h1>
+                        </div>
+                        <textarea id="pergunta" type="text" placeholder="Digite a pergunta..."></textarea>
+                        <br>
+                        <button id="botres" onclick="gerarResposta()">Gerar Resposta</button>
+                        <h3>Resposta da IA:</h3>
+                        <div id="resposta"></div>
+                    </div>
+                </div>
+            </div>
+    </section>
+</body>
+
+</html>
+
+<script>
+
+    async function gerarResposta() {
+        const pergunta = document.getElementById('pergunta').value;
+
+        const response = await fetch('/perguntar', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ pergunta })
+        });
+
+        const data = await response.json();
+
+        resposta.style.display = 'block';
+        document.getElementById('resposta').innerText = data.resultado;
+    }
+
+</script>
+
+<script>
+    function redirecionar() {
+        window.open('https://www.atlassian.com/br/software/jira')
+    }
+</script>
