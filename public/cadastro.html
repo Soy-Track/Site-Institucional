@@ -9,7 +9,7 @@
     <title> SoyTrack</title>
 </head>
 
-<body>
+<body onload ="listar(), listaremail()">
     <!-- essa parte é a do lado esquerdo, mas a estilização é a mesma do lado direito do login -->
     <div class="lado_direito_cadastro">
         <div class="lado_direito-itens">
@@ -35,7 +35,7 @@
         <input id="ipt_confirSenha" class="input_cadastro_login" placeholder="Confirme sua senha" type="password">
         <label>Token:</label>
         <input id="ipt_tokenCadastro" class="input_cadastro_login" placeholder="Digite o token de sua empresa">
-        <button onclick="cadastro()" class="input_cadastro_login">Cadastrar</button>
+        <button onclick="cadastrar()" class="input_cadastro_login">Cadastrar</button>
         <div id="id_link_login_esqueci_senha">
             <p>Já tem conta? <a href="login.html"> Faça login</a></p>
         </div>
@@ -47,51 +47,139 @@
 </html>
 
 <script>
-    function cadastro() {
-        var nome = ipt_nomeCadastro.value
-        var email = ipt_emailCadastro.value
-        var senha = ipt_senhaCadastro.value
-        var confirma_senha = ipt_confirSenha.value
-        var token = ipt_tokenCadastro.value
-        var permissao = nivel_cadastro.value
+   let listaEmpresasCadastradas = [];
+  let listaemail = [];
 
-        if (nome == "") {
-            alert("Por favor, preencha o campo nome.");
-        } else if (email == "") {
-            alert("Por favor, preencha o campo do email.");
-        } else if (email.includes('@') == false || email.includes('.') == false) {
-             alert('E-mail inválido!' + '\n' + 'Por favor digite um e-mail válido')
-        }else if (senha == "") {
-            alert("Por favor, preencha o campo de senha.");
-        } else if (confirma_senha == "") {
-            alert("Por favor, preencha o campo de confirmação de senha.");
-        } else if (token == "") {
-            alert("Por favor, preencha o campo do token.");
-        } else if (senha != confirma_senha) {
-            alert('Senha inválida. Verifique a senha criada e sua confirmação para prosseguir!')
-        } else if (permissao == 1) {
-            alert("Cadastro enviado para análise, por gentileza aguarde o retorno!")
-        } else if (permissao == 0) {
-            alert("Cadastro enviado para análise, por gentileza aguarde o retorno!")
-            ipt_nomeCadastro.value = "";
-            ipt_nomeCadastro.value= "";
-            ipt_emailCadastro.value= "";
-            ipt_senhaCadastro.value= "";
-            ipt_confirSenha.value= "";
-            ipt_tokenCadastro.value= "";
-        }
+  function cadastrar() {
+
+    var nomeVar = ipt_nomeCadastro.value
+    var emailVar = ipt_emailCadastro.value
+    var senhaVar = ipt_senhaCadastro.value
+    var confirma_senhaVar = ipt_confirSenha.value
+    var tokenVar = ipt_tokenCadastro.value
+    var tokenvalido = false;
+    var email_em_uso = false;
+
+    for (let i = 0; i < listaemail.length; i++) {
+      if (listaemail[i].email == emailVar) {
+        console.log("email já em uso");
+        email_em_uso = true;
+        break;
+      }
     }
 
-    function senha() {
-        var senha = ipt_senhaCadastro.value
-            if ((senha.includes('1') || senha.includes('2') || senha.includes('3') || senha.includes('4') || senha.includes('5') || 
-            senha.includes('6') || senha.includes('7') || senha.includes('8') || senha.includes('9') || senha.includes('0')) && 
-            (senha.includes('!') || senha.includes('@') ||senha.includes('#') ||senha.includes('$') ||senha.includes('%') ||
-            senha.includes('¨') ||senha.includes('&') ||senha.includes('*')) && (senha.length>=6)) {
-                txt.innerHTML=`<span style="color: darkgreen;">Senha forte</span>`
-            } else{
-                txt.innerHTML=`<span style="color: red;">Senha fraca (precisa ter pelo menos um caracter especial, um número e 6 caracteres no mínimo)</span>` 
-            }       
+    for (let i = 0; i < listaEmpresasCadastradas.length; i++) {
+      if (listaEmpresasCadastradas[i].idtoken == tokenVar) {
+        var idEmpresaVincular = listaEmpresasCadastradas[i].fkempresa
+        console.log("Código de ativação válido.");
+        tokenvalido = true;
+        break;
+      }
     }
 
+    if (nomeVar == "") {
+      alert("Por favor, preencha o campo nome.");
+    } else if (emailVar == "") {
+      alert("Por favor, preencha o campo do email.");
+    } else if (emailVar.includes('@') == false || emailVar.includes('.') == false) {
+      alert('E-mail inválido!' + '\n' + 'Por favor digite um e-mail válido')
+    } else if (senhaVar == "") {
+      alert("Por favor, preencha o campo de senha.");
+    } else if (confirma_senhaVar == "") {
+      alert("Por favor, preencha o campo de confirmação de senha.");
+    } else if (tokenVar == "") {
+      alert("Por favor, preencha o campo do token.");
+    } else if (senhaVar != confirma_senhaVar) {
+      alert('Senha inválida. Verifique a senha criada e sua confirmação para prosseguir!')
+    } else if (tokenvalido == false) {
+      alert('token invalido por favor verifique');
+    } else if (email_em_uso == true) {
+      alert('email já está sendo usado por favor tente um novo email')
+    } else {
+      fetch("/usuarios/cadastrar", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          // crie um atributo que recebe o valor recuperado aqui
+          // Agora vá para o arquivo routes/usuario.js
+          nomeServer: nomeVar,
+          emailServer: emailVar,
+          senhaServer: senhaVar,
+          empresaServer: idEmpresaVincular,
+
+        }),
+      })
+        .then(function (resposta) {
+          console.log("resposta: ", resposta);
+          if (resposta.ok) {
+            alert('Cadastro enviado para a analise');
+            window.location = "login.html";
+            ipt_nomeCadastro.value = ""
+            ipt_emailCadastro.value = ""
+            ipt_senhaCadastro.value = ""
+            ipt_confirSenha.value = ""
+            ipt_tokenCadastro.value = ""
+          } else {
+            alert("Houve um erro ao tentar realizar o cadastro!");
+          }
+        })
+        .catch(function (resposta) {
+          console.log(`#ERRO: ${resposta}`);
+        });
+    }
+  }
+
+  function senha() {
+    var senha = ipt_senhaCadastro.value
+    if ((senha.includes('1') || senha.includes('2') || senha.includes('3') || senha.includes('4') || senha.includes('5') ||
+      senha.includes('6') || senha.includes('7') || senha.includes('8') || senha.includes('9') || senha.includes('0')) &&
+      (senha.includes('!') || senha.includes('@') || senha.includes('#') || senha.includes('$') || senha.includes('%') ||
+        senha.includes('¨') || senha.includes('&') || senha.includes('*')) && (senha.length >= 6)) {
+      txt.innerHTML = `<span style="color: darkgreen;">Senha forte</span>`
+    } else {
+      txt.innerHTML = `<span style="color: red;">Senha fraca (precisa ter pelo menos um caracter especial, um número e 6 caracteres no mínimo)</span>`
+    }
+  }
+
+  function listar() {
+    fetch("/empresas/listar", {
+      method: "GET",
+    })
+      .then(function (resposta) {
+        resposta.json().then((empresas) => {
+          empresas.forEach((empresa) => {
+            listaEmpresasCadastradas.push(empresa);
+
+            console.log("listaEmpresasCadastradas")
+            console.log(listaEmpresasCadastradas[0].idtoken)
+          });
+        });
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
+    fetch('')
+  }
+
+  function listaremail() {
+    fetch("/empresas/listaremail", {
+      method: "GET",
+    })
+      .then(function (resposta) {
+        resposta.json().then((empresas) => {
+          empresas.forEach((email) => {
+            listaemail.push(email);
+
+            console.log("listaEmpresasCadastradas")
+            console.log(listaemail[0].email)
+          });
+        });
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
+    fetch('')
+  }
 </script>

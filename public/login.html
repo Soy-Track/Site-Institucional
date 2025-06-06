@@ -18,7 +18,7 @@
         <input id="ipt_email" class="input_cadastro_login" placeholder="Digite seu e-mail" type="email">
         <label>Senha:</label>
         <input type="password" id="ipt_senha" class="input_cadastro_login" placeholder="Digite sua senha">
-        <button onclick="Login()">Entrar</button>
+        <button onclick="entrar()">Entrar</button>
         <!-- <div class="link_login_esqueci_senha">
             <p id="esqueci_senha_login"><a href="#">Esqueci minha senha</a></p>
         </div> -->
@@ -38,34 +38,66 @@
 </html>
 
 <script>
-    var tentativas = 4;
-    function Login() {
-        var email = ipt_email.value
-        var senha = ipt_senha.value
-        if (email == "") {
-            alert("Por favor, preencha o campo do email.");
-        } else if (senha == "") {
-            alert("Por favor, preencha o campo da senha.");
-        } else if (email == "fernanda@sementec.com" && senha == "123" && tentativas > 0) {
-            window.location.href = 'DASHBOARD/dashboard.html';
-        } else if (email == "fernanda@sementec.com" && senha == "123" && tentativas <= 0) {
-            txt.innerHTML = `<span style="color: crimson;">Sua conta está bloqueada por segurança. Verifique sua caixa de e-mail com instruções para desbloqueá-la.</span>`;
-        } else {
-            while (tentativas > 0) { 
-                tentativas--;
-                if (tentativas > 0) {
-                    alert(`Dados inválidos. Você possui ${tentativas} tentativas`);
+    function entrar() {
+        var emailVar = ipt_email.value;
+        var senhaVar = ipt_senha.value;
+
+        if (emailVar == "" || senhaVar == "") {
+        alert('informe a senha e o email antes de fazer o login no site')
+        }
+        else {
+
+            
+            console.log("FORM LOGIN: ", emailVar);
+            console.log("FORM SENHA: ", senhaVar);
+            
+            fetch("/usuarios/autenticar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    emailServer: emailVar,
+                    senhaServer: senhaVar
+                })
+            }).then(function (resposta) {
+                console.log("ESTOU NO THEN DO entrar()!")
+        
+                if (resposta.ok) {
+                    console.log(resposta);
+                    resposta.json().then(json => {
+                        console.log(json);
+                        console.log(JSON.stringify(json));
+                        localStorage.EMAIL_FUNCIONARIO = json.email;
+                        localStorage.NOME_FUNCIONARIO = json.nome;
+                        localStorage.ID_FUNCIONARIO = json.id; 
+                        localStorage.EMPRESA = json.empresa; 
+                        localStorage.FK_NIVEL = json.nivel; 
+                        localStorage.PERMISSAO = json.permissao;
+
+                        if (json.permissao == 0) {
+                            alert('você ainda não possui permissão para efeturar o login!')
+                        }else if (json.nivel == 1 || json.nivel == 2) {
+                            window.location = "DASHBOARD/dashboard.html";
+                        }
+                        else if (json.nivel == 3) {
+                            window.location = 'http://localhost:3001/'
+                        }
+                    });
+                    
                 } else {
-                     alert("Acesso bloqueado por excesso de tentativas!");
-                    ipt_email.value = "";
-                    ipt_senha.value = '';
-                    txt.innerHTML = `<span style="color: crimson;">Acesso bloqueado por excesso de tentativas. </span>`;
-                }
-                break;
+                    
+                console.log("Houve um erro ao tentar realizar o login!");
+                
+                resposta.text().then(texto => {
+                });
             }
+            
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+        
+        return false;
         }
     }
-
-
-
 </script>
