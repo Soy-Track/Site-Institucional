@@ -18,9 +18,6 @@ var app = express();
 var indexRouter = require("./src/routes/index");
 var soydashRouter = require("./src/routes/soydash");
 var solicitacoesRouter = require("./src/routes/solicitacoes");
-var usuarioRouter = require("./src/routes/usuarios");
-var silosRouter = require("./src/routes/silos");
-var empresasRouter = require("./src/routes/empresas");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -31,9 +28,6 @@ app.use(cors());
 app.use("/", indexRouter);
 app.use("/empresa", soydashRouter);
 app.use("/empresa", solicitacoesRouter);
-app.use("/usuarios", usuarioRouter);
-app.use("/silos", silosRouter);
-app.use("/empresas", empresasRouter);
 
 app.listen(PORTA_APP, function () {
     console.log(`http://${HOST_APP}:${PORTA_APP}`);
