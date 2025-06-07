@@ -17,13 +17,11 @@
                 <img id="icone_soytrack" src="../img/Logo-SoyTrack/iconeSoyTrackBRANCO.png" alt="Logo SoyTrack">
             </div>
             <div id="div_nav_links">
-                <div class="div_link" id="link_dashboard"onclick="window.location.href='dashboard.html'">Página Principal</div>
-                <div class="div_link" id="link_silos" onclick="window.location.href='silos.html'">Silos de Soja</div>
+                <div class="div_link" id="link_dashboard"onclick="window.location.href='dashboard.html'">Painel Geral</div>
+                <div class="div_link" id="link_silos" onclick="window.location.href='silos.html'">Painel Individual</div>
                 <div class="div_link" id="link_solicitacoes" onclick="window.location.href='solicitacoes.html'">Solicitações</div>
-                <div class="div_link" id="link_relatorio" onclick="window.location.href='relatorios.html'">Relatório
-                </div>
             </div>
-            <div id="div_sair">SAIR</div>
+            <div id="div_sair" onclick="sair()">SAIR</div>
         </div>
         <div id="solicitacoes">
             <div id="titulo">
@@ -46,10 +44,12 @@
                 </div>
             </div>
         </div>
-        
+        <div id="mensagem_negacao"></div>
     </section>
 </body>
 
 </html>
 
 <script src="pedidos.js"></script>
+
+<script src="sair.js"></script>

@@ -4,17 +4,13 @@ var qtd_silos = 0
 // Descobrir a quantidade de silos que devem aparecer nas opções
 function contarsilos() {
     var idempresaVar = localStorage.idEmpresa
-    // para teste
-    idempresaVar = 1
 
     fetch(`/empresa/contarsilos/${idempresaVar}`, {
         method: "GET",
     })
         .then(function (resposta) {
             resposta.json().then((resposta2) => {
-                console.log(resposta2)
                 qtd_silos = resposta2[0].quantidadeSILOS
-                console.log(qtd_silos)
             })
         })
         .catch(function (resposta) {
@@ -47,9 +43,9 @@ function VARsilos() {
     for (let i = 1; i <= qtd_silos; i++) {
         if (silo.value == i) {
             siloselecionado = i
-            console.log(siloselecionado)
             vt_ultimos7 = []
             selecionardadosgrafico()
+            parametrar()
         }
     }
     graficoLinha.data.datasets[0].data = dia
@@ -85,6 +81,11 @@ const config = {
                 title: {
                     display: true,
                     text: 'Altura(m)'
+                },
+                min: 0,
+                max: 7,
+                ticks: {
+                    stepSize: 1
                 }
             },
             x: {
@@ -114,6 +115,11 @@ const config2 = {
                 title: {
                     display: true,
                     text: 'Altura(m)'
+                },
+                min: 0,
+                max: 7,
+                ticks: {
+                    stepSize: 1
                 }
             }
         }
@@ -137,17 +143,13 @@ var vt_ultimosdias = []
 function selecionardadosgrafico() {
     var idempresaVar = localStorage.idEmpresa
     var idsiloVar = siloselecionado
-    // para teste
-    idempresaVar = 1
 
     fetch(`/empresa/selecionardadosgrafico/${idempresaVar}/${idsiloVar}`, {
         method: "GET",
     })
         .then(function (resposta) {
             resposta.json().then((resposta2) => {
-                console.log(resposta2)
                 for (let i = 6; i >= 0; i--) {
-                    console.log(resposta2[i])
                     vt_ultimos7.push(resposta2[i].distancia)
 
                     const dataatual = new Date(resposta2[i].dtCaptura);
@@ -163,8 +165,8 @@ function selecionardadosgrafico() {
 
                     labels[6 - i] = dataTratada
                 }
-                for (let i = 0; i < 7; i ++) {
-                    
+                for (let i = 0; i < 7; i++) {
+
                 }
                 iniciarsilos()
             })
@@ -178,15 +180,12 @@ function atualizardadosgrafico() {
     setInterval(() => {
         var idempresaVar = localStorage.idEmpresa
         var idsiloVar = siloselecionado
-        // para teste
-        idempresaVar = 1
 
         fetch(`/empresa/selecionardadosgrafico/${idempresaVar}/${idsiloVar}`, {
             method: "GET",
         })
             .then(function (resposta) {
                 resposta.json().then((resposta2) => {
-                    console.log(resposta2)
                     dadosDash = resposta2
                     for (let i = 6; i >= 0; i--) {
                         vt_ultimos7.push(resposta2[i].distancia)
@@ -219,8 +218,6 @@ function atualizardadosgrafico() {
 
 function exibirsilosbarra() {
     var idempresaVar = localStorage.idEmpresa
-    // para teste
-    idempresaVar = 1
 
     fetch(`/empresa/exibirsilosbarra/${idempresaVar}`, {
         method: "GET",
@@ -242,8 +239,6 @@ function exibirsilosbarra() {
 function atualizarsilosbarra() {
     setInterval(() => {
         var idempresaVar = localStorage.idEmpresa
-        // para teste
-        idempresaVar = 1
 
         fetch(`/empresa/exibirsilosbarra/${idempresaVar}`, {
             method: "GET",
@@ -269,15 +264,12 @@ selecionardadosgrafico()
 
 function exibirkpi1() {
     var idempresaVar = localStorage.idEmpresa
-    // para teste
-    idempresaVar = 1
 
     fetch(`/empresa/exibirkpi1/${idempresaVar}`, {
         method: "GET",
     })
         .then(function (resposta) {
             resposta.json().then((resposta2) => {
-                console.log(resposta2)
                 prox_txt.innerHTML = resposta2.length
 
                 novos_alertas.innerHTML = ""
@@ -296,23 +288,25 @@ function exibirkpi1() {
 var nomesilolength = 0
 function exibirkpi2() {
     var idempresaVar = localStorage.idEmpresa
-    // para teste
-    idempresaVar = 1
 
     fetch(`/empresa/exibirkpi2/${idempresaVar}`, {
         method: "GET",
     })
         .then(function (resposta) {
             resposta.json().then((resposta2) => {
-                console.log(resposta2)
-                if (nomesilolength != resposta2.length) {
-                    nomesilolength = 0
+                if (resposta2.length == 0) {
                     disponibilidade_txt.innerHTML = ""
-                    for (let i = 0; i < resposta2.length; i++) {
-                        if (i == 0) {
-                            disponibilidade_txt.innerHTML += `${resposta2[i].nomeSilo}`
-                        } else {
-                            disponibilidade_txt.innerHTML += `, ${resposta2[i].nomeSilo}`
+                    disponibilidade_txt.innerHTML += `0`
+                } else {
+                    if (nomesilolength != resposta2.length) {
+                        nomesilolength = 0
+                        disponibilidade_txt.innerHTML = ""
+                        for (let i = 0; i < resposta2.length; i++) {
+                            if (i == 0) {
+                                disponibilidade_txt.innerHTML += `${resposta2[i].nomeSilo}`
+                            } else {
+                                disponibilidade_txt.innerHTML += `, ${resposta2[i].nomeSilo}`
+                            }
                         }
                     }
                 }
@@ -325,15 +319,12 @@ function exibirkpi2() {
 
 function exibirkpi3() {
     var idempresaVar = localStorage.idEmpresa
-    // para teste
-    idempresaVar = 1
 
     fetch(`/empresa/exibirkpi3/${idempresaVar}`, {
         method: "GET",
     })
         .then(function (resposta) {
             resposta.json().then((resposta2) => {
-                console.log(resposta2)
                 armazenagem_txt.innerHTML = resposta2[0].nomeSilo
             })
         })
@@ -344,15 +335,12 @@ function exibirkpi3() {
 
 function exibirkpi4() {
     var idempresaVar = localStorage.idEmpresa
-    // para teste
-    idempresaVar = 1
 
     fetch(`/empresa/exibirkpi4/${idempresaVar}`, {
         method: "GET",
     })
         .then(function (resposta) {
             resposta.json().then((resposta2) => {
-                console.log(resposta2)
                 alertas_txt.innerHTML = resposta2[0].total_alertas
             })
         })
@@ -364,15 +352,12 @@ function exibirkpi4() {
 var alertaslength = 0
 function alertar() {
     var idempresaVar = localStorage.idEmpresa
-    // para teste
-    idempresaVar = 1
 
     fetch(`/empresa/alertar/${idempresaVar}`, {
         method: "GET",
     })
         .then(function (resposta) {
             resposta.json().then((resposta2) => {
-                console.log(resposta2)
                 if (alertaslength != resposta2.length) {
                     alertaslength = resposta2.length
                     box_alertas.innerHTML = ""
@@ -407,6 +392,39 @@ function alertar() {
             console.log(`#ERRO: ${resposta}`);
         });
 }
+
+function parametrar() {
+    var idempresaVar = localStorage.idEmpresa
+    var idsiloVar = siloselecionado
+
+    fetch(`/empresa/parametrar/${idempresaVar}/${idsiloVar}`, {
+        method: "GET",
+    })
+        .then(function (resposta) {
+            resposta.json().then((resposta2) => {
+                for (let i = 0; i < resposta2.length; i++) {
+                    if (resposta2[i].nivel == 1) {
+                        modalleve.innerHTML = `
+                        <span id="leve">Leve-</span> Nível de grãos maior que ${resposta2[i].nivelAlerta} metros
+                        `
+                    } else if (resposta2[i].nivel == 2) {
+                        modalmoderado.innerHTML = `
+                        <span id="moderado">Moderado-</span> Nível de grãos maior que ${resposta2[i].nivelAlerta} metros
+                        `
+                    } else if (resposta2[i].nivel == 3) {
+                        modalgrave.innerHTML = `
+                        <span id="grave">Grave-</span> Nível de grãos maior que ${resposta2[i].nivelAlerta} metros
+                        `
+                    }
+                }
+            })
+        })
+        .catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+}
+
+parametrar()
 
 function atualizarkpis() {
     setInterval(() => {

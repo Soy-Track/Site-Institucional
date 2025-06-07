@@ -51,4 +51,8 @@ router.get("/contagemsilos/:idempresa/:nomesilo", function (req, res) {
     dashboardController.contagemsilos(req, res);
 })
 
+router.get("/parametrar/:idempresa/:nomesilo", function (req, res) {
+    dashboardController.parametrar(req, res);
+})
+
 module.exports = router;

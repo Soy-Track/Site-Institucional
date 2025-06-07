@@ -1,7 +1,23 @@
+function validar() {
+    if (localStorage.nivel != 1) {
+        mensagem_negacao.innerHTML = `
+        <div id="tela_inteira">
+            <div id="modal">
+                <h2>Você não tem permissão para visualizar o painel de solicitações!! Por favor não insista</h2>
+                <button onclick="voltar()">Ok</button>
+            </div>
+        </div>
+        `
+    }
+}
+validar()
+
+function voltar() {
+    window.location.href = "dashboard.html"
+}
+
 function buscarPedidos() {
     var idempresaVar = localStorage.idEmpresa
-    // para teste
-    idempresaVar = 1
 
     fetch(`/empresa/buscarPedidos/${idempresaVar}`, {
         method: "GET",

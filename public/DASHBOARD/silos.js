@@ -4,17 +4,13 @@ var qtd_silos = 0
 // Descobrir a quantidade de silos que devem aparecer nas opções
 function contarsilos() {
     var idempresaVar = localStorage.idEmpresa
-    // para teste
-    idempresaVar = 1
 
     fetch(`/empresa/contarsilos/${idempresaVar}`, {
         method: "GET",
     })
         .then(function (resposta) {
             resposta.json().then((resposta2) => {
-                console.log(resposta2)
                 qtd_silos = resposta2[0].quantidadeSILOS
-                console.log(qtd_silos)
             })
         })
         .catch(function (resposta) {
@@ -49,7 +45,6 @@ function atualizarGraficos() {
     for (let i = 1; i <= qtd_silos; i++) {
         if (silo_selecionado.value == i) {
             siloselecionado = i
-            console.log(siloselecionado)
             vt_ultimos7 = []
             selecionardadosgrafico()
         }
@@ -151,17 +146,13 @@ var vt_ultimosdias = []
 function selecionardadosgrafico() {
     var idempresaVar = localStorage.idEmpresa
     var idsiloVar = siloselecionado
-    // para teste
-    idempresaVar = 1
 
     fetch(`/empresa/selecionardadosgrafico/${idempresaVar}/${idsiloVar}`, {
         method: "GET",
     })
         .then(function (resposta) {
             resposta.json().then((resposta2) => {
-                console.log(resposta2)
                 for (let i = 6; i >= 0; i--) {
-                    console.log(resposta2[i])
                     vt_ultimos7.push(resposta2[i].distancia)
 
                     const dataatual = new Date(resposta2[i].dtCaptura);
@@ -193,15 +184,12 @@ function atualizardadosgrafico() {
     setInterval(() => {
         var idempresaVar = localStorage.idEmpresa
         var idsiloVar = siloselecionado
-        // para teste
-        idempresaVar = 1
 
         fetch(`/empresa/selecionardadosgrafico/${idempresaVar}/${idsiloVar}`, {
             method: "GET",
         })
             .then(function (resposta) {
                 resposta.json().then((resposta2) => {
-                    console.log(resposta2)
                     dadosDash = resposta2
                     for (let i = 6; i >= 0; i--) {
                         vt_ultimos7.push(resposta2[i].distancia)
@@ -225,16 +213,13 @@ function atualizardadosgrafico() {
             .catch(function (resposta) {
                 console.log(`#ERRO: ${resposta}`);
             });
-    }, 2000);
+    }, 5000);
 }
 
 var valor_atual = 0
 function exibirbarrinha() {
     var idempresaVar = localStorage.idEmpresa
     var nomesiloVar = siloselecionado
-    console.log("socorro", nomesiloVar)
-    // para teste
-    idempresaVar = 1
 
     fetch(`/empresa/exibirbarrinha/${idempresaVar}/${nomesiloVar}`, {
         method: "GET",
@@ -257,9 +242,6 @@ function atualizarbarrinha() {
     setInterval(() => {
         var idempresaVar = localStorage.idEmpresa
         var nomesiloVar = siloselecionado
-        console.log("socorro", nomesiloVar)
-        // para teste
-        idempresaVar = 1
 
         fetch(`/empresa/exibirbarrinha/${idempresaVar}/${nomesiloVar}`, {
             method: "GET",
@@ -267,7 +249,6 @@ function atualizarbarrinha() {
             .then(function (resposta) {
                 resposta.json().then((resposta2) => {
                     valor_atual = resposta2[0].distancia
-                    console.log("valor_atual", valor_atual)
                     graficoBarra.data.labels[0] = (`silo${siloselecionado}`);
                     graficoBarra.data.datasets[0].data[0] = (resposta2[0].distancia)
                     graficoBarra.update()
@@ -277,14 +258,12 @@ function atualizarbarrinha() {
             .catch(function (resposta) {
                 console.log(`#ERRO: ${resposta}`);
             });
-    }, 2000);
+    }, 5000);
 }
 
 function calcularTON(valor_ocupado) {
     var idempresaVar = localStorage.idEmpresa
     var nomesiloVar = siloselecionado
-    // para teste
-    idempresaVar = 1
 
     fetch(`/empresa/calcularTON/${idempresaVar}/${nomesiloVar}`, {
         method: "GET",
@@ -314,8 +293,6 @@ var ultimadata = ""
 function alertarsilo() {
     var idempresaVar = localStorage.idEmpresa
     var nomesiloVar = siloselecionado
-    // para teste
-    idempresaVar = 1
 
     fetch(`/empresa/alertarsilo/${idempresaVar}/${nomesiloVar}`, {
         method: "GET",
@@ -359,15 +336,12 @@ function atualizaralerta() {
     setInterval(() => {
         var idempresaVar = localStorage.idEmpresa
         var nomesiloVar = siloselecionado
-        // para teste
-        idempresaVar = 1
 
         fetch(`/empresa/alertarsilo/${idempresaVar}/${nomesiloVar}`, {
             method: "GET",
         })
             .then(function (resposta) {
                 resposta.json().then((resposta2) => {
-                    console.log("teste vai", resposta2)
                     if (resposta2.length == 0) {
                         box_alertas.innerHTML = `
                         <div class="caixinhas">
@@ -410,21 +384,18 @@ function atualizaralerta() {
             .catch(function (resposta) {
                 console.log(`#ERRO: ${resposta}`);
             });
-    }, 2000);
+    }, 5000);
 }
 
 function contagemsilos() {
     var idempresaVar = localStorage.idEmpresa
     var nomesiloVar = siloselecionado
-    // para teste
-    idempresaVar = 1
 
     fetch(`/empresa/contagemsilos/${idempresaVar}/${nomesiloVar}`, {
         method: "GET",
     })
         .then(function (resposta) {
             resposta.json().then((resposta2) => {
-                console.log("ai que odio", resposta2)
                 total_alertas_txt.innerHTML = resposta2[0].qtd_alertas
             })
         })
@@ -436,7 +407,7 @@ function contagemsilos() {
 function atualizar() {
     setInterval(() => {
         contagemsilos()
-    }, 2000);
+    }, 5000);
 }
 
 atualizar()

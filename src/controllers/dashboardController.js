@@ -101,6 +101,15 @@ function contagemsilos(req, res) {
     });
 }
 
+function parametrar(req, res) {
+    var idempresa = req.params.idempresa;
+    var nomesilo = req.params.nomesilo;
+
+    dashboardModel.parametrar(idempresa, nomesilo).then((resultado) => {
+        res.status(201).json(resultado);
+    });
+}
+
 module.exports = {
     selecinardadosgrafico,
     contarsilos,
@@ -114,4 +123,5 @@ module.exports = {
     calcularTON,
     alertarsilo,
     contagemsilos,
+    parametrar,
 };

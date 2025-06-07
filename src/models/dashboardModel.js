@@ -242,6 +242,20 @@ function contagemsilos(idempresa, nomesilo) {
     return database.executar(instrucaoSql);
 }
 
+function parametrar(idempresa, nomesilo) {
+    var instrucaoSql = `
+    select nivel, (altura - distanciaMAX) as nivelAlerta from parametro 
+		join SiloParametro
+        on idParametro = FKparametro
+        join silo
+        on idSilo = FKsilo
+        join empresa
+        on idEmpresa = FKempresa
+        where nomeSilo = ${nomesilo} and idEmpresa = ${idempresa};
+    `
+    return database.executar(instrucaoSql);
+}
+
 module.exports = {
     selecinardadosgrafico,
     contarsilos,
@@ -255,4 +269,5 @@ module.exports = {
     calcularTON,
     alertarsilo,
     contagemsilos,
+    parametrar,
 }

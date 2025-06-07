@@ -18,7 +18,7 @@
         <input id="ipt_email" class="input_cadastro_login" placeholder="Digite seu e-mail" type="email">
         <label>Senha:</label>
         <input type="password" id="ipt_senha" class="input_cadastro_login" placeholder="Digite sua senha">
-        <button onclick="entrar()">Entrar</button>
+        <button onclick="login()">Entrar</button>
         <!-- <div class="link_login_esqueci_senha">
             <p id="esqueci_senha_login"><a href="#">Esqueci minha senha</a></p>
         </div> -->
@@ -37,65 +37,4 @@
 
 </html>
 
-<script>
-  function entrar() {
-        var emailVar = ipt_email.value;
-        var senhaVar = ipt_senha.value;
-        var logou = false;
-
-        if (emailVar == "" || senhaVar == "") {
-        alert('informe a senha e o email antes de fazer o login no site')
-        }
-        else {
-            console.log("FORM LOGIN: ", emailVar);
-            console.log("FORM SENHA: ", senhaVar);
-            
-            fetch("/usuarios/autenticar", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    emailServer: emailVar,
-                    senhaServer: senhaVar
-                })
-            }).then(function (resposta) {
-                console.log("ESTOU NO THEN DO entrar()!")
-        
-                if (resposta.ok) {
-                    console.log(resposta);
-                    resposta.json().then(json => {
-                        console.log(json);
-                        console.log(JSON.stringify(json));
-                        localStorage.EMAIL_FUNCIONARIO = json.email;
-                        localStorage.NOME_FUNCIONARIO = json.nome;
-                        localStorage.ID_FUNCIONARIO = json.id; 
-                        localStorage.EMPRESA = json.empresa; 
-                        localStorage.FK_NIVEL = json.nivel; 
-                        localStorage.PERMISSAO = json.permissao;
-                     
-
-                       
-                        if (json.permissao == 0) {
-                            alert('você ainda não possui permissão para efeturar o login!')
-                        }else if (json.nivel == 1 || json.nivel == 2) {
-                            window.location = "DASHBOARD/dashboard.html";
-                        }
-                        else if (json.nivel == 3) {
-                            window.location = 'http://localhost:3001/'
-                        }
-                    });
-                     } else {
-                        console.log("Houve um erro ao tentar realizar o login!");
-                resposta.text().then(texto => {
-                });
-            }
-            
-        }).catch(function (erro) {
-            console.log(erro);
-        })
-        
-        return false;
-        }
-    }
-</script>
+<script src="login.js"></script>

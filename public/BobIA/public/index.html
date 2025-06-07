@@ -21,7 +21,7 @@
                 <div class="div_link" id="link_relatorio" onclick="window.location.href='index.html'">BobIA</div>
                 <div class="div_link" onclick="redirecionar()">Jira</div>
             </div>
-            <div id="div_sair">SAIR</div>
+            <div id="div_sair" onclick="sair()">SAIR</div>
         </div>
         <div id="relatorio">
             <div id="titulo">
@@ -73,5 +73,15 @@
 <script>
     function redirecionar() {
         window.open('https://www.atlassian.com/br/software/jira')
+    }
+</script>
+
+<script>
+    function sair() {
+        localStorage.removeItem("idEmpresa");
+        localStorage.removeItem("nivel");
+        localStorage.removeItem("nome");
+
+        window.location.href = "http://192.168.0.61:3333/"
     }
 </script>

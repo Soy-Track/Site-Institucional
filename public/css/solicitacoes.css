@@ -177,3 +177,53 @@ td {
     padding: 30px;
     font-size: 30px;
 }
+
+#tela_inteira {
+    left: 0;
+    top: 0;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0000002a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#modal {
+    width: 600px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    background-color: #f7f7f7;
+    border-radius: 25px;
+    border: 3px solid #d5d5d5;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+
+#modal h2 {
+    font-family: Poppins;
+    text-align: center;
+    max-width: 480px;
+    color: #002a51;
+}
+
+#modal button {
+    font-family: Montserrat;
+    width: 230px;
+    height: 80px;
+    border-radius: 18px;
+    border: 2px solid #d5d5d5;
+    background-color: #ffffff;
+    font-size: 25px;
+    color: #001e3a;
+}
+
+#modal button:hover {
+    cursor: pointer;
+    border-color: #001e3a;
+    border: 3px solid #003b72;
+}
