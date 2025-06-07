@@ -29,7 +29,7 @@ function logar(s_email, s_senha) {
                         localStorage.nivel = resposta2[0].FKnivel
 
                         if (resposta2[0].FKnivel == 3) {
-                            window.location.href = "http://192.168.0.61:3001/"
+                            window.location.href = "http://192.168.0.61:3001/" 
                         } else {
                             window.location.href = "DASHBOARD/dashboard.html"
                         }
