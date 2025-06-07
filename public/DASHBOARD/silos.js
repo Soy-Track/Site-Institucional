@@ -213,7 +213,7 @@ function atualizardadosgrafico() {
             .catch(function (resposta) {
                 console.log(`#ERRO: ${resposta}`);
             });
-    }, 5000);
+    }, 3500);
 }
 
 var valor_atual = 0
@@ -258,7 +258,7 @@ function atualizarbarrinha() {
             .catch(function (resposta) {
                 console.log(`#ERRO: ${resposta}`);
             });
-    }, 5000);
+    }, 3500);
 }
 
 function calcularTON(valor_ocupado) {
@@ -314,10 +314,20 @@ function alertarsilo() {
 
                     const datadalerta = `${diaA}/${mesA}/${ano} ${horasA}:${minutosA}:${segundosA}`;
 
+                    var coralerta = ""
+
+                    if (resposta2[i].nivel == 3) {
+                        coralerta = "vermelho"
+                    } else if (resposta2[i].nivel == 2) {
+                        coralerta = "azul"
+                    } else if (resposta2[i].nivel == 1) {
+                        coralerta = "verde"
+                    }
+
                     var estado = resposta2[i].nome
                     box_alertas.innerHTML += `
                         <div class="caixinhas">
-                            <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%" />
+                            <img src="../img/alerta${coralerta}.png" width="15%" />
                             <div class="estado-alerta">
                             Silo ${resposta2[i].nomeSilo} em estado de alerta ${estado}!
                             <b style="font-size: 70%">${datadalerta}</b>
@@ -367,10 +377,20 @@ function atualizaralerta() {
 
                             const datadalerta = `${diaA}/${mesA}/${ano} ${horasA}:${minutosA}:${segundosA}`;
 
+                            var coralerta = ""
+
+                            if (resposta2[i].nivel == 3) {
+                                coralerta = "vermelho"
+                            } else if (resposta2[i].nivel == 2) {
+                                coralerta = "azul"
+                            } else if (resposta2[i].nivel == 1) {
+                                coralerta = "verde"
+                            }
+
                             var estado = resposta2[i].nome
                             box_alertas.innerHTML += `
                             <div class="caixinhas">
-                                <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%" />
+                                <img src="../img/alerta${coralerta}.png" width="15%" />
                                 <div class="estado-alerta">
                                 Silo ${resposta2[i].nomeSilo} em estado de alerta ${estado}!
                                 <b style="font-size: 70%">${datadalerta}</b>
@@ -384,7 +404,7 @@ function atualizaralerta() {
             .catch(function (resposta) {
                 console.log(`#ERRO: ${resposta}`);
             });
-    }, 5000);
+    }, 3500);
 }
 
 function contagemsilos() {
@@ -407,7 +427,7 @@ function contagemsilos() {
 function atualizar() {
     setInterval(() => {
         contagemsilos()
-    }, 5000);
+    }, 3500);
 }
 
 atualizar()

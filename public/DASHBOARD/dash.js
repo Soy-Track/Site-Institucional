@@ -359,6 +359,7 @@ function alertar() {
         .then(function (resposta) {
             resposta.json().then((resposta2) => {
                 if (alertaslength != resposta2.length) {
+                    console.log(resposta2)
                     alertaslength = resposta2.length
                     box_alertas.innerHTML = ""
                     for (let i = resposta2.length - 1; i >= 0; i--) {
@@ -375,9 +376,19 @@ function alertar() {
                         const datadalerta = `${diaA}/${mesA}/${ano} ${horasA}:${minutosA}:${segundosA}`;
 
                         var estado = resposta2[i].nome
+                        var coralerta = "vermelho"
+
+                        if (resposta2[i].nivel == 3) {
+                            coralerta = "vermelho"
+                        } else if (resposta2[i].nivel == 2) {
+                            coralerta = "azul"
+                        } else if (resposta2[i].nivel == 1) {
+                            coralerta = "verde"
+                        }
+
                         box_alertas.innerHTML += `
                         <div class="caixinhas">
-                            <img src="../img/Imagens-Site/Caution-Background-PNG.png" width="15%">
+                            <img src="../img/alerta${coralerta}.png" width="19%">
                             <div class="estado-alerta">
                                 Silo ${resposta2[i].nomeSilo} em estado de alerta ${estado}!
                                 <b style="font-size: 70%;">${datadalerta}</b>
