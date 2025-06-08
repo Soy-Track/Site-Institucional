@@ -32,17 +32,17 @@ function buscarPedidos() {
                 for (let i = 0; i < resposta2.length; i++) {
                     conteudoPedidos.innerHTML += `
                     <tr class="dados_tabela">
-                        <td>${i + 1}</td>
-                        <td>${resposta2[i].nome}</td>
-                        <td>${resposta2[i].email}</td>
-                        <td>
+                        <td id="numeroElementos">${i + 1}</td>
+                        <td id="titulo_nome">${resposta2[i].nome}</td>
+                        <td id="titulo_email">${resposta2[i].email}</td>
+                        <td id="buttonsSolicitacoes">
                             <div class="div_btSolicitacao">
                                 <button onclick="aceitar(${resposta2[i].idFuncionario})" class="btAceitar">Aceitar</button>
                                 <button onclick="negar(${resposta2[i].idFuncionario})" class="btNegar">Negar</button>
                             </div>
                         </td>
                     </tr>
-                    <br>
+                    
                     `;
                 }
             })

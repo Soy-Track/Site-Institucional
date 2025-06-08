@@ -70,6 +70,8 @@ function efetuarcadastro(id_empresa) {
             ipt_senhaCadastro.value = "" 
             ipt_confirSenha.value = ""
             ipt_tokenCadastro.value = ""
+
+            alert('✅ Cadastro realizado com sucesso! Aguarde liberação.')
         })
         .catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
