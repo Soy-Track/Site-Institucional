@@ -13,7 +13,7 @@ body {
     display: flex;
     height: 100vh;
 }
-      /*---- LADO ESQUERDO ---- */
+/*---- LADO ESQUERDO ---- */
 .lado_esquerdo {
 /*flex: 1; -- Usa a metada da tela*/
     flex: 1;
@@ -168,4 +168,29 @@ body {
 
 #entrar {
   color:white;
+}
+.div_btVoltarCadastro {
+    position: absolute;
+    top: 3%;
+    left: 52%;
+}
+.div_btVoltarCadastro img {
+    width: 50%;
+}
+.div_btVoltarCadastro img:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.div_btVoltarLogin {
+    position: absolute;
+    top: 3%;
+    left: 2%;
+}
+.div_btVoltarLogin img {
+    width: 50%;
+}
+.div_btVoltarLogin img:hover {
+    cursor: pointer;
+    transform: scale(1.1);
 }
