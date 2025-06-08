@@ -269,14 +269,19 @@ section#inicio {
 .section-fileira1{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     margin-top: 3%;
+    gap: 10%;
+
 }
 .section-fileira2{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     margin-top: 2%;
+    gap: 13%;
+    /* margin-left: 10%;
+    margin-right: 10%; */
 }
 
 #integrante {
@@ -346,138 +351,6 @@ section#inicio {
 }
 
 
-/* SECTION - FALE CONOSCO --------------------------------------- */
-.faleconosco {
-    display: flex;
-    flex-direction: column;
-    background-image: url('../img/Imagens-Site/fundoFaleConosco.png');
-}
-
-
-.titulo-faleconosco {
-    font-family: "Poppins", sans-serif;
-    font-size: 50px;
-    font-weight: 900;
-    line-height: 20px;
-    color: #ffffff;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    padding-bottom: 2%;
-}
-
-.conteudo-fale-conosco {
-    display: flex;
-    flex-direction: row;
-    height: 60%;
-}
-
-.imagem-mulher {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 50%;
-}
-
-#mulher {
-    width: 50%;
-    height: 90%;
-    border: 10px solid white; 
-    border-radius: 100%;
-}
-
-.contato {
-    /* padding-right: 5%; */
-    /* padding-left: 5%; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 40%;
-    gap: 20px;
-}
-label {
-    font-weight: 600;
-}
-.nome-sobrenome {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding-left: 20%;
-    padding-right: 10%;
-}
-.nome-sobrenome label {
-    display: block;
-    width: 100%;
-}
-input {
-    margin: 0;
-    padding: 0;
-}
-.inputFaleConosco {
-    height: 40px;
-    text-indent: 10px;
-    font-size: 17px;
-}
-.campo {
-    color: white;
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-}
-.campo #nome {
-    width: 90%;
-}
-.labelFaleConosco {
-    padding-bottom: 1%;
-}
-
-#nome {
-    width: 80%;
-    /* height: 50px; */
-    border-radius: 15px;
-    border: solid white;
-}
-
-#sobrenome {
-    width: 80%;
-    /* height: 50px; */
-    border-radius: 15px;
-    border: solid white;
-}
-
-#email {
-    width: 100%;
-    /* height: 50px; */
-    border-radius: 15px;
-    border: solid white;
-}
-
-#mensagem {
-    width: 96%; 
-    padding: 2% 2%;
-    font-size: 17px;
-    resize: vertical;
-    border-radius: 15px;
-    border: solid white;
-}
-
-#botao-enviar {
-    width: 91%;
-    padding:15px;
-    border-radius: 15px;
-    border: none;
-    background-color: #ac4800;
-    color: white;
-    font-size: 17px;
-    font-family: Montserrat;
-}
-#botao-enviar:hover {
-    background-color: #893900;
-    cursor: pointer;
-    transition: 0.3s;
-}
 /* SECTION - SIMULADOR FINANCEIRO ------------------------------- */
 .titulo-simulador {
     font-family: "Poppins", sans-serif;

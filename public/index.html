@@ -21,8 +21,8 @@
                     <li><a href="#inicio">Início</a></li>
                     <li><a href="#nossa-solucao">Nossa Solução</a></li>
                     <li><a href="#integrantes">Integrantes</a></li>
-                    <li><a href="#fale-conosco">Fale Conosco</a></li>
                     <li><a href="#simulador-financeiro">Simulador Financeiro</a></li>
+                    <li><a href="#rodape">Contato</a></li>
                 </ul>
             </div>
             <div id="div_buttons">
@@ -149,47 +149,10 @@
                     <img id="integrante" src="img/Integrantes/marco.png" alt="Imagem">
                     <p>Marco Vinicius</p>
                 </div>
-                <div class="imagem-integrante">
-                    <img id="integrante" src="img/Integrantes/pedro.png" alt="Imagem">
-                    <p>Pedro André</p>
-                </div>
             </div>
         </div>
     </section>
 
-    <section id="fale-conosco" class="faleconosco" style="height: 100vh;">
-        <div class="titulo-faleconosco">
-            <p>Fale Conosco</p>
-        </div>
-
-        <div class="conteudo-fale-conosco">
-            <div class="imagem-mulher">
-                <img id="mulher" src="img/Imagens-Site/fotoMulherFaleConosco.png" alt="Imagem">
-            </div>
-            <div class="contato">
-                <div class="nome-sobrenome">
-                    <div class="campo">
-                        <label class="labelFaleConosco">Nome</label>
-                        <input type="text" id="nome" class="inputFaleConosco">
-                    </div>
-                    <div class="campo">
-                        <label class="labelFaleConosco">Sobrenome</label>
-                        <input type="text" id="sobrenome" class="inputFaleConosco">
-                    </div>
-                </div>
-                <div class="campo">
-                    <label class="labelFaleConosco">E-mail</label>
-                    <input type="text" id="email" class="inputFaleConosco">
-                </div>
-                <div class="campo">
-                    <label class="labelFaleConosco">Mensagem</label>
-                    <textarea rows="4" id="mensagem" ></textarea>
-                </div>
-                <button id="botao-enviar" onclick="faleConosco()">Enviar</button>
-            </div>
-        </div>
-
-    </section>
 
     <section id="simulador-financeiro" style="height: 100vh; background-color: rgb(247, 247, 247);">
         <!-- A cor de fundo é apenas um apoio :) -->
@@ -266,7 +229,6 @@
                         <li><a href="#inicio">Início</a></li>
                         <li><a href="#nossa-solucao">Nossa Solução</a></li>
                         <li><a href="#integrantes">Integrantes</a></li>
-                        <li><a href="#fale-conosco">Fale Conosco</a></li>
                         <li><a href="#simulador-financeiro">Simulador Financeiro</a></li>
                     </ul>
                 </div>
@@ -277,13 +239,11 @@
                 </div>
                 <div id="div-email-rodape">
                     <div id="conteudo-email">
-                        <img src="img/Imagens-Site/emailIcone.png"> <span>soytrack@gmail.com</span>
+                        <img src="img/Imagens-Site/emailIcone.png"> <span>support@soytrack.atlassian.net</span>
                     </div>
                 </div>
-                <div id="div-telefone-rodape">
-                    <div id="conteudo-telefone">
-                        <img src="  img/Imagens-Site/telefoneIcone.png"> <span>+55 (11) 2069-8059</span>
-                    </div>
+                <div id="div-email-rodape">
+                    <!-- Apenas ocupando espaço no rodapé -->
                 </div>
             </div>
 
@@ -318,26 +278,6 @@
 </script>
 
 <script>
-    function faleConosco() {
-        var ax_nome = nome.value;
-        var ax_sobrenome = sobrenome.value;
-        var ax_email = email.value;
-        var ax_mensagem = mensagem.value;
-        if (ax_nome == '') {
-            alert('Campo de nome vazio!' + '\n' + 'Por favor preencha com seu nome');
-        } else if (ax_email == '') {
-            alert('Campo de e-mail vazio!' + '\n' + 'Por favor preencha com seu e-mail');
-        } else if (ax_email.includes('@') == false || ax_email.includes('.') == false) {
-            alert('E-mail inválido!' + '\n' + 'Por favor digite um e-mail válido')
-        } else if (ax_mensagem == '') {
-            alert('Campo de mensagem vazio!' + '\n' + 'Por favor escreva sua mensagem antes de enviar')
-        } else {
-            alert('Mensagem enviada com sucesso! ✅')
-        }
-    }
-</script>
-
-<script>
     function calcular() {
         if (ipt_silos.value < 1) {
             alert('Por favor insira o número de silos')
@@ -359,10 +299,10 @@
 
             // Mostrar resultados
             resultados.innerHTML = `<div style='font-weight: 600;'>Resultados:</div> <br>
-                                    Perda sem sensor: <i style='color:red; font-weight: 600;'>${(perdaSem.toFixed(2))} ton </i> <br>
-                                    Perda com sensor: <i style='color:green; font-weight: 600;'> ${(perdaCom.toFixed(2))} ton </i> <br>
-                                    Economia: <i style='color:green; font-weight: 600;'>${(economia.toFixed(2))} ton </i> <br>
-                                    Valor economizado: <i style='color:green; font-weight: 600;'>R$${(valorEconomizado.toFixed(2))} </i> <br>`;
+                                    Perda sem sensor: <i style='color:red; font-weight: 600;'>${(perdaSem.toFixed(2))} toneladas </i> <br>
+                                    Perda com sensor: <i style='color:green; font-weight: 600;'> ${(perdaCom.toFixed(2))} toneladas </i> <br>
+                                    Economia: <i style='color:green; font-weight: 600;'>${(economia.toFixed(2))} toneladas </i> <br>
+                                    Valor economizado: <i style='color:green; font-weight: 600;'>R$ ${(valorEconomizado.toFixed(2))} </i> <br>`;
         }
 
     }
