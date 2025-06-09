@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dashboard Soytrack</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1"></script>
+  <link rel="shortcut icon" type="imagex/png" href="../img/Logo-SoyTrack/iconeSoyTrackVERDE.png">
   <link rel="stylesheet" href="../css/silos.css" />
   <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
 </head>
@@ -21,6 +22,7 @@
         <div class="div_link" id="link_silos" onclick="window.location.href='silos.html'">Painel Individual</div>
         <div class="div_link" id="link_solicitacoes" onclick="window.location.href='solicitacoes.html'">Solicitações
         </div>
+        <div class="div_link" id="link_ajuda" onclick="window.location.href='https:/soytrack.atlassian.net/servicedesk/customer/portal/35'">Ajuda</div>
       </div>
       <div id="div_sair" onclick="sair()">SAIR</div>
     </div>
@@ -82,7 +84,7 @@
 
             <!-- Gráfico de linhas para o silo selecionado -->
             <div class="graf">
-              <h5>Histórico dos últimos 7 dias</h5>
+              <h5>Nível de grãos de soja em tempo real</h5>
               <canvas id="graficoLinha" style="width: 100%; height: 100%"></canvas>
             </div>
           </div>
