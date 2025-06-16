@@ -376,19 +376,10 @@ function alertar() {
                         const datadalerta = `${diaA}/${mesA}/${ano} ${horasA}:${minutosA}:${segundosA}`;
 
                         var estado = resposta2[i].nome
-                        var coralerta = "vermelho"
-
-                        if (resposta2[i].nivel == 3) {
-                            coralerta = "vermelho"
-                        } else if (resposta2[i].nivel == 2) {
-                            coralerta = "azul"
-                        } else if (resposta2[i].nivel == 1) {
-                            coralerta = "verde"
-                        }
 
                         box_alertas.innerHTML += `
                         <div class="caixinhas">
-                            <img src="../img/alerta${coralerta}.png" width="19%">
+                            <img src="../img/alertavermelho.png" width="19%">
                             <div class="estado-alerta">
                                 Silo ${resposta2[i].nomeSilo} em estado de alerta ${estado}!
                                 <b style="font-size: 70%;">${datadalerta}</b>
